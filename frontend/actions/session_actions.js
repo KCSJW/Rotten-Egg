@@ -1,0 +1,33 @@
+import * as ApiUtil from "../util/session_api_util";
+
+export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS'
+
+export const getCurrentUser = (currentUser) => ({
+    type: RECEIVE_CURRENT_USER,
+    currentUser
+});
+
+export const getErrors = (errors) => ({
+    type: RECEIVE_ERRORS,
+    errors
+});
+
+export const signin = (user) => dispatch (
+    ApiUtil.sign_in(user)
+        .then(user => dispatch(getCurrentUser(user)), 
+              errors => dispatch(getErrors(errors.responseJSON))
+             )
+);
+
+export const signup = (user) => dispatch(
+    ApiUtil.signup(user)
+        .then(user => dispatch(getCurrentUser(user)),
+            errors => dispatch(getErrors(errors.responseJSON))
+        )
+);
+
+export const signout = (user) => dispatch(
+    ApiUtil.sign_out()
+        .then(user => dispatch(getCurrentUser(null)))
+);
