@@ -23,7 +23,7 @@ class Api::SessionsController < ApplicationController
 
         if @user 
             sign_out
-            render {}
+            render json: {}
         else
             render(
                 json: ['Not sign in yet'],

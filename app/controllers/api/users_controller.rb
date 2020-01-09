@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
             render json: @user
         else
             render(
-                json: ['username has already been taken'],
+                json: @user.errors.full_messages,
                 status: 422
             )
         end

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SessionForm extends React.Component {
+class sessionForm extends React.Component {
 
     constructor(props) {
         super(props);
@@ -16,25 +16,29 @@ class SessionForm extends React.Component {
     };
 
     handleSubmit(e) {
-        console.log(this.props);
         e.preventDefault();
-        this.props.signin(this.state);
+        this.props.action(this.state);
     }
 
-    errors() {
-        if (this.props.errors) {
-            return <div>{this.props.errors[0]}</div>
-        } else {
-            return null
-        }
-    }
- 
     render() {
+
         return (
-                <div>
-                    {this.errors()}
-                    <form className="session-form-main" onSubmit={this.handleSubmit}>
-                        <label>Username
+            <div className='modal-component session-form-container'>
+
+                    <div className='session-form-header'>
+                        <div className="session-form-modal-header">
+                            <p className="session-form-title">{this.props.formType}</p>
+                            <p className="modal-close-x" onClick={(e) => this.props.hideModal()}>x</p>
+                        </div>
+                    </div>
+
+                    <ul className="session-form-errors">
+                        {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
+                    </ul>
+
+                    <form className="modal-form-box" onSubmit={this.handleSubmit}>
+
+                        <label className="session-form-label">Username
                             <input
                                 type="text"
                                 className="session-form-input"
@@ -42,7 +46,10 @@ class SessionForm extends React.Component {
                                 onChange={this.update('username')}
                             />
                         </label>
-                        <label>Password
+
+                        <br/>
+                        
+                        <label className="session-form-label">Password
                             <input
                                 type="password"
                                 className="session-form-input"
@@ -50,13 +57,20 @@ class SessionForm extends React.Component {
                                 onChange={this.update('password')}
                             />
                         </label>
-                        <input type="submit" className="session-form-button" value="Sign In"/>
+
+                        <input type="submit" className="session-form-submit" value="Next"/>
+
+                        <div className="session-form-footer">
+                            <p>Don't have an rotten egg?</p>
+                            <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Sign up here</p>
+                        </div>
+
                     </form>
+
                 </div>
         );
     }
         
 }
-
         
-export default SessionForm;
+export default sessionForm;

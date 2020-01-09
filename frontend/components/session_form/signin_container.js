@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
 import { signin } from '../../actions/session_actions';
-import SessionForm from './session_form';
+import { showModal, hideModal } from '../../actions/modal_actions';
+import sessionForm from './session_form';
 
-const mSTP = state => {
-    return {
-    signedIn: Boolean(state.session.currentUser),
-    errors: state.errors.session
-    };
-}
-
-const mDTP = dispatch => ({
-    signin: user => dispatch(signin(user)),
-    getErrors: errors => dispatch(getErrors(errors))
+const mSTP = state => ({
+    errors: state.errors.session,
+    formType: 'Sign In'
 });
 
-export default connect(mSTP, mDTP)(SessionForm);
+const mDTP = dispatch => ({
+    action: user => dispatch(signin(user)),
+    demoSignin: user => dispatch(signin(user)),
+    hideModal: () => dispatch(hideModal()),
+    switchModal: () => dispatch(showModal('signup'))
+});
+
+export default connect(mSTP, mDTP)(sessionForm);
