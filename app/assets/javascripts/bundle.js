@@ -196,19 +196,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer */ "./frontend/components/footer.jsx");
-/* harmony import */ var _nav_bar_nav_bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nav_bar/nav_bar */ "./frontend/components/nav_bar/nav_bar.jsx");
+/* harmony import */ var _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nav_bar/nav_bar_container */ "./frontend/components/nav_bar/nav_bar_container.js");
 
 
 
 
 var App = function App(_ref) {
   var modal = _ref.modal,
-      hideModal = _ref.hideModal;
+      hideModal = _ref.hideModal,
+      formType = _ref.formType;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     className: "app-header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Main space"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Main space"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
     className: "app-foot"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
 };
@@ -262,7 +263,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-var ModalPart = function ModalPart(_ref) {
+var modalForm = function modalForm(_ref) {
   var modal = _ref.modal,
       Component = _ref.component,
       hideModal = _ref.hideModal;
@@ -282,7 +283,7 @@ var ModalPart = function ModalPart(_ref) {
   return modalContent;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (ModalPart);
+/* harmony default export */ __webpack_exports__["default"] = (modalForm);
 
 /***/ }),
 
@@ -309,30 +310,59 @@ __webpack_require__.r(__webpack_exports__);
 
 var NavBar = function NavBar(_ref) {
   var modal = _ref.modal,
-      hideModal = _ref.hideModal,
-      formType = _ref.formType;
+      hideModal = _ref.hideModal;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "navbar-main"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_status_signin_status_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    component: formType === 'Sign In' ? _session_form_signin_container__WEBPACK_IMPORTED_MODULE_1__["default"] : _session_form_signup_container__WEBPACK_IMPORTED_MODULE_2__["default"],
+    component: modal === 'signin' ? _session_form_signin_container__WEBPACK_IMPORTED_MODULE_1__["default"] : _session_form_signup_container__WEBPACK_IMPORTED_MODULE_2__["default"],
     modal: modal,
     hideModal: hideModal
   }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (NavBar); // <Switch>
-//     <AuthRoute exact path='/signin' component={SigninContainer} />
-//     <AuthRoute exact path='/signup' component={SignupContainer} />
-//     <Redirect to='/' />
-// </Switch>
-// <div className="session-form-footer">
-//     <p>New user?</p>
-//     <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Sign Up here!</p>
-// </div>
-// <div className="session-form-footer">
-//     <p>Have an account?</p>
-//     <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Sign In here!</p>
-// </div>
+/* harmony default export */ __webpack_exports__["default"] = (NavBar);
+
+/***/ }),
+
+/***/ "./frontend/components/nav_bar/nav_bar_container.js":
+/*!**********************************************************!*\
+  !*** ./frontend/components/nav_bar/nav_bar_container.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _nav_bar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./nav_bar */ "./frontend/components/nav_bar/nav_bar.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+var mSTP = function mSTP(state) {
+  return {
+    modal: state.ui.modal
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    hideModal: function (_hideModal) {
+      function hideModal() {
+        return _hideModal.apply(this, arguments);
+      }
+
+      hideModal.toString = function () {
+        return _hideModal.toString();
+      };
+
+      return hideModal;
+    }(function () {
+      return dispatch(hideModal());
+    })
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_nav_bar__WEBPACK_IMPORTED_MODULE_0__["default"]));
 
 /***/ }),
 
@@ -442,8 +472,6 @@ function (_React$Component) {
         className: "modal-component session-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "session-form-modal-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "session-form-title"
       }, this.props.formType), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -451,7 +479,7 @@ function (_React$Component) {
         onClick: function onClick(e) {
           return _this3.props.hideModal();
         }
-      }, "x"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, "x")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "session-form-errors"
       }, this.props.errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -460,25 +488,25 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "modal-form-box",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form-label"
-      }, "Username", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Username"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         className: "session-form-input",
         value: this.state.username,
         onChange: this.update('username')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form-label"
-      }, "Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         className: "session-form-input",
         value: this.state.password,
         onChange: this.update('password')
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
-        className: "session-form-submit",
-        value: "Next"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "session-form-button",
+        value: this.props.formType
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form-footer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Don't have an rotten egg?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "session-form-modal-switch",
@@ -659,10 +687,8 @@ function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-component session-form-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-        className: "session-form-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "session-form-modal-header"
+        className: "session-form-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "session-form-title"
       }, this.props.formType), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -670,7 +696,7 @@ function (_React$Component) {
         onClick: function onClick(e) {
           return _this3.props.hideModal();
         }
-      }, "x"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, "x")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "session-form-errors"
       }, this.props.errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -679,25 +705,25 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "modal-form-box",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form-label"
-      }, "Username", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Username"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         className: "session-form-input",
         value: this.state.username,
         onChange: this.update('username')
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form-label"
-      }, "Password", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         className: "session-form-input",
         value: this.state.password,
         onChange: this.update('password')
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
-        className: "session-form-submit",
-        value: "Next"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "session-form-button",
+        value: this.props.formType
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form-footer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Already have an rotten egg?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "session-form-modal-switch",
@@ -740,12 +766,12 @@ var noUser = function noUser(showModal, signin) {
     onClick: function onClick(e) {
       return signin(demo);
     }
-  }, "Demo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, "Demo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " | "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "signin-status",
     onClick: function onClick(e) {
       return showModal('signup');
     }
-  }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " | "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "signin-status",
     onClick: function onClick(e) {
       return showModal('signin');
@@ -758,7 +784,7 @@ var hadUser = function hadUser(currentUser, signout) {
     className: "session-list"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "signin-status"
-  }, currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " | "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "signin-status",
     onClick: signout
   }, "Sign Out"));

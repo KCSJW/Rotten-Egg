@@ -26,12 +26,11 @@ class userForm extends React.Component {
         return (
             <div className='modal-component session-form-container'>
 
-                <header className='session-form-header'>
-                    <div className="session-form-modal-header">
-                        <p className="session-form-title">{this.props.formType}</p>
-                        <p className="modal-close-x" onClick={(e) => this.props.hideModal()}>x</p>
-                    </div>
-                </header>
+                <div className='session-form-header'>
+                    <p className="session-form-title">{this.props.formType}</p>
+                    <p className="modal-close-x" onClick={(e) => this.props.hideModal()}>x</p>
+
+                </div>
 
                 <ul className="session-form-errors">
                     {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
@@ -39,28 +38,25 @@ class userForm extends React.Component {
 
                 <form className="modal-form-box" onSubmit={this.handleSubmit}>
 
-                    <label className="session-form-label">Username
+                    <div className="session-form-label">
+                        <label >Username</label>
                         <input
                             type="text"
                             className="session-form-input"
                             value={this.state.username}
-                            onChange={this.update('username')}
-                        />
-                    </label>
-
-                    <br/>
-                    
-                    <label className="session-form-label">Password
+                            onChange={this.update('username')} />
+                    </div>
+                    <div className="session-form-label">
+                        <label>Password</label>
                         <input
                             type="password"
                             className="session-form-input"
                             value={this.state.password}
-                            onChange={this.update('password')}
-                        />
-                    </label>
+                            onChange={this.update('password')} />
+                    </div>
 
-                    <input type="submit" className="session-form-submit" value="Next"/>
-
+                    <input type="submit" className="session-form-button" value={this.props.formType}/>
+                    <br/>
                     <div className="session-form-footer">
                         <p>Already have an rotten egg?</p>
                         <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Sign in!</p>

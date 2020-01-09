@@ -1,4 +1,3 @@
-
 .modal-backdrop {
    position: fixed;
    z-index: 10;
@@ -21,109 +20,110 @@
    border-radius: 5px 5px 0 0 ;
    font-family: 'Source Sans Pro', sans-serif;
 
+    .session-form-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+   .session-form-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: .2px solid #E0E0E0;
+      background-color:  rgb(255, 208, 0);
+      
+      .session-form-title {
+        display: flex;
+        margin:0 5px;
+        padding:  15px 0 15px 10px;
+        color: white;
+        font-weight: 600;
+      }
+      
+      .modal-close-x {
+        display: flex;
+        color: rgb(167, 119, 0);
+        cursor: pointer;
+        font-weight: 400;
+        font-size: 17px;
+        font-family: 'Varela Round', sans-serif;
+        margin:0 5px;
+        padding: 7px;
+      }
+
+    }
+
+    .session-form-errors{
+      font-size: 14px;
+      color: red;
+      margin-left: 10px;
+    }
+
+    .modal-form-box {
+      padding: 10px 20px 20px 20px;
+      width: 250px;
+      
+      .session-form-label {
+        display: flex;
+        flex-wrap: wrap;
+        font-weight: 600;
+        padding: 10px 0 5px 0;
+        
+        .session-form-input {
+          display: block;
+          width: 90%;
+          height: 34px;
+          padding: 0px 10px;
+          font-size: 16px;
+          line-height: 1.25;
+          color: #555;
+          border: 1px solid #ccc;
+          background-color: #fff;
+          border-radius: 4px;
+          font-family: 'Source Sans Pro', sans-serif;
+          margin: 0 auto;
+          font-weight: lighter;
+        }
+      }
+      .session-form-button {
+        display: flex;
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 10px;
+        font-family: 'Libre Franklin', sans-serif;
+        font-weight: 200;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        font-size: 13px;
+        line-height: 1.25;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: rgb(255, 208, 0);
+        border-color: rgb(252, 206, 3);
+        color: white;
+      }
+
+      .session-form-button:hover{
+        background-color: rgb(160, 189, 0);
+        border-color: #b3ff00;
+      }
+
+    }
+    .session-form-footer{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      border-top: 1px solid #E0E0E0;
+      width: 100%;
+      background-color: #eeeeee;
+    }
+
+    .session-form-modal-switch{
+      color: rgb(255, 208, 0);
+      padding-left: 5px;
+      cursor: pointer;
+    }
+    .session-form-modal-switch:hover{
+      color:  rgb(160, 189, 0);
+    }
  }
-
- .modal-close-x {
-   display: flex;
-   color: #c2c2c2;
-   cursor: pointer;
-   font-weight: 400;
-   font-size: 17px;
-   font-family: 'Varela Round', sans-serif;
-   margin:0 5px;
-   padding: 7px;
- }
-
-
- .modal-form-box {
-   padding: 10px 20px 20px 20px;
-   width: 250px;
- }
-
- .session-errors{
-   font-size: 14px;
-   color: red;
-   margin-left: 10px;
- }
-
- .session-form-container {
-   display: flex;
-   justify-content: center;
-   margin-top: 50px;
- }
-
-.session-form-header{
-  display: flex;
-  justify-content: space-between;
-  border-bottom: .2px solid #E0E0E0;
-}
-
-.session-form-title {
-  display: flex;
-  margin:0 5px;
-  padding:  15px 0 15px 10px;
-  color: #343434;
-  font-weight: 600;
-}
-
-.session-form-input {
-  display: block;
-  width: 90%;
-  height: 34px;
-  padding: 0px 10px;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #555;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  border-radius: 4px;
-  font-family: 'Source Sans Pro', sans-serif;
-  margin: 0 auto;
-  font-weight: lighter;
-}
-.session-form-label {
-  display: flex;
-  font-weight: 600;
-  padding: 10px 0 5px 0;
-}
-
-.session-form-button {
-  display: flex;
-  margin: 0 auto;
-  margin-top: 15px;
-  padding: 10px;
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 200;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  font-size: 13px;
-  line-height: 1.25;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: rgb(255, 208, 0);
-  border-color: rgb(252, 206, 3);
-  color: white;
-}
-.session-form-button:hover{
-  background-color: rgb(160, 189, 0);
-  border-color: #b3ff00;
-}
-
-.session-form-footer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  border-top: 1px solid #E0E0E0;
-  width: 100%;
-  background-color: #eeeeee;
-}
-
-.session-form-modal-switch{
-  color: #3d9bd1;
-  padding-left: 5px;
-  cursor: pointer;
-}
-.session-form-modal-switch:hover{
-  color: #53bbf1;
-}

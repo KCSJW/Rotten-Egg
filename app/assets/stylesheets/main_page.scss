@@ -34,10 +34,6 @@ body {
   margin: 0 auto;
 }
 
-.photo-banner-image{
-
-}
-
 .main-page-show-lists {
   display: flex;
   align-items: flex-start;
@@ -98,7 +94,7 @@ body {
   margin: 0;
 }
 
-.footer-container {
+.footer-box {
   display: flex;
   flex-direction: row;
   background-color: black;
@@ -107,7 +103,7 @@ body {
   margin-bottom: 20px;
 }
 
-.footer-main {
+.footer-link {
   display: flex;
   flex-direction: column;
   height: 90px;
@@ -115,7 +111,7 @@ body {
 
 }
 
-.footer-text, .contact-text{
+.footer-text, .conntact-info{
   color: white;
   font-weight: lighter;
   font-size: 13px;
@@ -124,7 +120,7 @@ body {
   margin: 0 10px;
 }
 
-.contact-text:hover {
+.conntact-info:hover {
   color: #f2e817;
   cursor: pointer;
 }

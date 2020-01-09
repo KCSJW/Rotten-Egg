@@ -1,7 +1,8 @@
 import NavBar from './nav_bar';
+import { connect } from 'react-redux';
 
-const mSTP = ({ ui: { modal } }) => ({
-    modal: modal
+const mSTP = (state) => ({
+    modal: state.ui.modal
 });
 
 const mDTP = dispatch => ({

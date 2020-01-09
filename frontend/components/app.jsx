@@ -1,12 +1,11 @@
 import React from 'react';
 import Footer from './footer'
-import NavBar from './nav_bar/nav_bar';
+import NavBarContainer from './nav_bar/nav_bar_container';
 
-
-const App = ({ modal, hideModal }) => (
+const App = ({ modal, hideModal, formType }) => (
     <div className="main">
         <header className="app-header">
-            <NavBar />
+            <NavBarContainer />
         </header>
 
         <h1>Main space</h1>

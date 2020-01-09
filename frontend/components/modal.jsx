@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ModalPart = ({ modal, component: Component, hideModal}) => {
+const modalForm = ({ modal, component: Component, hideModal}) => {
     let modalContent = null;
     if (modal) {
         modalContent = (
@@ -14,4 +14,4 @@ const ModalPart = ({ modal, component: Component, hideModal}) => {
     return modalContent;
 };
 
-export default ModalPart;
+export default modalForm;
