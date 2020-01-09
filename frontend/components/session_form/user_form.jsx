@@ -63,7 +63,7 @@ class userForm extends React.Component {
 
                     <div className="session-form-footer">
                         <p>Already have an rotten egg?</p>
-                        <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Log in here</p>
+                        <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Sign in!</p>
                     </div>
 
                 </form>

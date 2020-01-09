@@ -485,7 +485,7 @@ function (_React$Component) {
         onClick: function onClick() {
           return _this3.props.switchModal();
         }
-      }, "Sign up here"))));
+      }, "Sign up!"))));
     }
   }]);
 
@@ -704,7 +704,7 @@ function (_React$Component) {
         onClick: function onClick() {
           return _this3.props.switchModal();
         }
-      }, "Log in here"))));
+      }, "Sign in!"))));
     }
   }]);
 

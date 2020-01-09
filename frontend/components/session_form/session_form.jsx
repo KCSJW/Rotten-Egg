@@ -62,7 +62,7 @@ class sessionForm extends React.Component {
 
                         <div className="session-form-footer">
                             <p>Don't have an rotten egg?</p>
-                            <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Sign up here</p>
+                            <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Sign up!</p>
                         </div>
 
                     </form>
