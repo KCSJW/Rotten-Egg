@@ -6,9 +6,8 @@ class Api::ReviewsController < ApplicationController
 
     def create
         @review = Review.new(review_params)
-        @review.type = "UserReview"
         @review.author_name = current_user.username
-        @review.author_id = current_user.id.to_i
+        @review.author_id = current_user.id
 
         if @review.save
             render :show
@@ -42,17 +41,18 @@ class Api::ReviewsController < ApplicationController
 
     def destroy
         @review = Review.find(params[:id])
-        unless @review.destroy
-            render (
-                json: @review.errors.full_messages, 
-                status: 422)
+        if current_user.id == @review.user_id
+            @review.destroy
+            render :show
+        else
+            render json: ['Must be owner of comment to destroy'], status: 422
         end
     end
 
     private
 
     def review_params
-        params.require(:review).permit(:body, :rating, :movie_id)
+        params.require(:review).permit(:body, :rating, :author_id, :movie_id)
     end
 
 end
