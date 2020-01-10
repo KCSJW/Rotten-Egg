@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import userForm from './user_form';
+import sessionForm from './session_form'
 import { signup } from '../../actions/session_actions';
 import { showModal, hideModal } from '../../actions/modal_actions'
 
@@ -14,4 +14,4 @@ const mDTP = dispatch => ({
     switchModal: () => dispatch(showModal('signin'))
 });
 
-export default connect(mSTP, mDTP)(userForm)
+export default connect(mSTP, mDTP)(sessionForm)

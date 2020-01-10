@@ -1,11 +1,8 @@
 import React from 'react';
 
-const noUser = (showModal, signin) => {
-    let demo = { username: 'RottenEgg', password:'iamarotten'};
+const noUser = (showModal) => {
     return (
         <ul className="session-list">
-            <li className="signin-status" onClick={(e) => signin(demo)}>Demo</li>
-            <li> | </li>
             <li className="signin-status" onClick={(e) => showModal('signup')}>Sign Up</li>
             <li> | </li>
             <li className="signin-status" onClick={(e) => showModal('signin')}>Sign In</li>
@@ -13,13 +10,13 @@ const noUser = (showModal, signin) => {
     )
 }
 
-const hadUser = (currentUser, signout) => {(
+const hadUser = (currentUser, signout) => (
     <ul className="session-list">
         <li className="signin-status" >{currentUser.username}</li>
         <li> | </li>
         <li className="signin-status" onClick={signout}>Sign Out</li>
     </ul>
-)};
+);
 
 const signinStatus = ({ currentUser, signout, showModal, signin }) => {
     if (currentUser) {

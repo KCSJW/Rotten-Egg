@@ -8,7 +8,8 @@ class Api::SessionsController < ApplicationController
         
         if @user 
             sign_in(@user)
-            render 'api/user/movie'
+            @movies = @user.movies
+            render 'api/movies/index'
         else
             render(
             json: ['Invalid Credentials'],

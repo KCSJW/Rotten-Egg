@@ -61,6 +61,50 @@
     .modal-form-box {
       padding: 10px 20px 20px 20px;
       width: 250px;
+
+      .session-demo-button {
+        display: flex;
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 10px;
+        font-family: 'Franklin Gothic FS Book',sans-serif;
+        font-weight: 800;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        font-size: 18px;
+        line-height: 1.25;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: rgb(255, 208, 0);
+        border-color: rgb(252, 206, 3);
+        color: white;
+        padding-bottom: 5px;
+        
+        .demo-button-icon {
+          width: 30px;
+          height: 30px;
+        }
+
+      }
+
+      .session-demo-button:hover{
+        background-color: rgb(160, 189, 0);
+        border-color: #b3ff00;
+      }
+
+      .session-modal-divider {
+        border-bottom: 1px solid gray;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+      }
+
+      .session-modal-divider-text {
+        background-color: #FFF;
+        left: 50%;
+        margin-left: -18px;
+        padding: 0 10px;
+        position: absolute;
+      }
       
       .session-form-label {
         display: flex;
@@ -90,7 +134,7 @@
         margin-top: 15px;
         padding: 10px;
         font-family: 'Libre Franklin', sans-serif;
-        font-weight: 200;
+        font-weight: 400;
         border: 1px solid transparent;
         white-space: nowrap;
         font-size: 13px;

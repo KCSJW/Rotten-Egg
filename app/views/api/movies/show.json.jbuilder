@@ -1,4 +1,4 @@
 json.movie do
-  json.extract! @movie, :id, :title, :type, :status, :info
+  json.extract! @movie, :id, :title, :genres, :status, :info
 end
 

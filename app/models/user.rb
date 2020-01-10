@@ -3,7 +3,21 @@ class User < ApplicationRecord
     validates :username, :session_token, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
     validates :top_critic, inclusion: [true, false] 
-
+    
+    has_many :reviews,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Review
+    
+    has_many :interested_movies,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Interested
+    
+    has_many :movies,
+    through: :interested_movies,
+    source: :movie
+    
     after_initialize :ensure_session_token
     attr_reader :password
 

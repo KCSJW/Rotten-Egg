@@ -1,4 +1,5 @@
 import * as ApiUtil from "../util/session_api_util";
+import { hideModal } from "./modal_actions";
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS'
@@ -20,9 +21,11 @@ export const getErrors = errors => ({
 
 export const signin = user => dispatch => (
     ApiUtil.sign_in(user)
-        .then(user => dispatch(getCurrentUser(user)), 
-              errors => dispatch(getErrors(errors.responseJSON))
-             )
+        .then(user => {
+            dispatch(getCurrentUser(user))
+            dispatch(hideModal())
+        }, 
+        errors => dispatch(getErrors(errors.responseJSON)))
 );
 
 export const signup = user => dispatch => (

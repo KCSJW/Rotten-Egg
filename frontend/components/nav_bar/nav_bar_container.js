@@ -1,5 +1,6 @@
 import NavBar from './nav_bar';
 import { connect } from 'react-redux';
+import { hideModal } from '../../actions/modal_actions'
 
 const mSTP = (state) => ({
     modal: state.ui.modal

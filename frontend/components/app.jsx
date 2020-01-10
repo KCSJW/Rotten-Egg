@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './footer'
 import NavBarContainer from './nav_bar/nav_bar_container';
 
-const App = ({ modal, hideModal, formType }) => (
+const App = () => (
     <div className="main">
         <header className="app-header">
             <NavBarContainer />
