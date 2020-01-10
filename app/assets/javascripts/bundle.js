@@ -473,17 +473,35 @@ function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
-      var footerText, formSwitch;
+      var footerText, formSwitch, demoButton;
 
       if (this.props.formType === 'Sign In') {
+        demoButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "session-demo-button",
+          onClick: this.handleDemo
+        }, "Sign in as Demo Egg", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "demo-button-icon"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "/assets/demo_egg"
+        })));
         footerText = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Not a rotten egg?");
         formSwitch = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "session-form-modal-switch",
           onClick: function onClick() {
             return _this4.props.switchModal();
           }
-        }, "Sign up!");
+        }, "Become one!");
       } else if (this.props.formType === "Sign Up") {
+        demoButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "session-demo-button",
+          onClick: function onClick() {
+            return _this4.props.switchModal();
+          }
+        }, "Go use a Demo Egg", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "demo-button-icon"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "/assets/demo_egg"
+        })));
         footerText = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Already a rotten egg?");
         formSwitch = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "session-form-modal-switch",
@@ -500,7 +518,7 @@ function (_React$Component) {
         className: "session-form-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "session-form-title"
-      }, this.props.formType), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, this.props.formType, " Here!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "modal-close-x",
         onClick: function onClick(e) {
           return _this4.props.hideModal();
@@ -514,14 +532,7 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "modal-form-box",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "session-demo-button",
-        onClick: this.handleDemo
-      }, "Sign in as Demo Egg", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "demo-button-icon"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/assets/demo_egg"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, demoButton, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-modal-divider"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-modal-divider-text"
@@ -586,9 +597,7 @@ var mDTP = function mDTP(dispatch) {
     action: function action(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["signin"])(user));
     },
-    demoSignin: function demoSignin(user) {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["signin"])(user));
-    },
+    // demoSignin: user => dispatch(signin(user)),
     hideModal: function hideModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["hideModal"])());
     },
@@ -721,6 +730,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
+  // debugger
   return {
     currentUser: state.session.currentUser
   };

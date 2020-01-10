@@ -14,7 +14,7 @@ const hadUser = (currentUser, signout) => (
     <ul className="session-list">
         <li className="signin-status" >{currentUser.username}</li>
         <li> | </li>
-        <li className="signin-status" onClick={signout}>Sign Out</li>
+        <li className="signin-status" onClick={signout} >Sign Out</li>
     </ul>
 );
 

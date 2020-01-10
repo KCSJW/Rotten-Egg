@@ -10,7 +10,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     action: user => dispatch(signin(user)),
-    demoSignin: user => dispatch(signin(user)),
+    // demoSignin: user => dispatch(signin(user)),
     hideModal: () => dispatch(hideModal()),
     switchModal: () => dispatch(showModal('signup'))
 });

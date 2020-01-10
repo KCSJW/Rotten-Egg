@@ -30,12 +30,22 @@ class sessionForm extends React.Component {
 
     render() {
 
-        let footerText, formSwitch;
+        let footerText, formSwitch, demoButton;
 
         if (this.props.formType === 'Sign In') {
+            demoButton = 
+                <button className="session-demo-button" onClick={this.handleDemo}>
+                    Sign in as Demo Egg
+                    <div className="demo-button-icon" ><img src='/assets/demo_egg' /></div>
+                </button>
             footerText = <p>Not a rotten egg?</p>
-            formSwitch =  <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Sign up!</p>
+            formSwitch =  <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Become one!</p>
         } else if ( this.props.formType === "Sign Up") {
+            demoButton = 
+                <button className="session-demo-button" onClick={() => this.props.switchModal()}>
+                    Go use a Demo Egg
+                    <div className="demo-button-icon" ><img src='/assets/demo_egg' /></div>
+                </button>
             footerText = <p>Already a rotten egg?</p>
             formSwitch = <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Sign In!</p>
         };
@@ -44,7 +54,7 @@ class sessionForm extends React.Component {
             <div className='modal-component session-form-container'>
 
                     <div className='session-form-header'>
-                        <p className="session-form-title">{this.props.formType}</p>
+                        <p className="session-form-title">{this.props.formType} Here!</p>
                         <p className="modal-close-x" onClick={(e) => this.props.hideModal()}>x</p>
                     </div>
 
@@ -53,18 +63,11 @@ class sessionForm extends React.Component {
                     </ul>
 
                     <form className="modal-form-box" onSubmit={this.handleSubmit}>
-
-                        <button className="session-demo-button" onClick={this.handleDemo}>
-                            Sign in as Demo Egg
-                            <div className="demo-button-icon" ><img src='/assets/demo_egg' /></div>
-                        </button>
-
+                        {demoButton}
                         <br/>
-
                         <div className="session-modal-divider">
                             <div className="session-modal-divider-text">OR</div>
                         </div>
-
                         <div className="session-form-label">
                             <label >Username</label>
                             <input
