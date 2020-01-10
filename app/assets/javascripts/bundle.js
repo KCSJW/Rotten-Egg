@@ -482,7 +482,7 @@ function (_React$Component) {
         }, "Sign in as Demo Egg", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "demo-button-icon"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "/assets/demo_egg"
+          src: window.demoImage
         })));
         footerText = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Not a rotten egg?");
         formSwitch = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -500,7 +500,7 @@ function (_React$Component) {
         }, "Go use a Demo Egg", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "demo-button-icon"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "/assets/demo_egg"
+          src: window.demoImage
         })));
         footerText = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Already a rotten egg?");
         formSwitch = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -700,7 +700,7 @@ var signinStatus = function signinStatus(_ref) {
       showModal = _ref.showModal,
       signin = _ref.signin;
 
-  if (currentUser) {
+  if (currentUser && currentUser.id) {
     return hadUser(currentUser, signout);
   } else {
     return noUser(showModal, signin);
@@ -730,9 +730,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
-  // debugger
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
@@ -901,7 +900,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
 
 var _nullUser = {
-  currentUser: null
+  id: null
 };
 
 var sessionReducer = function sessionReducer() {
@@ -912,12 +911,10 @@ var sessionReducer = function sessionReducer() {
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       var currentUser = action.currentUser;
-      return Object.assign({}, oldState, {
-        currentUser: currentUser
-      });
+      return Object.assign({}, oldState, currentUser);
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["SIGNOUT_CURRENT_USER"]:
-      return oldState;
+      return _nullUser;
 
     default:
       return oldState;

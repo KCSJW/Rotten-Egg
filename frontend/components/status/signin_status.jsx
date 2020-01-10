@@ -1,5 +1,5 @@
 import React from 'react';
-
+ 
 const noUser = (showModal) => {
     return (
         <ul className="session-list">
@@ -10,16 +10,18 @@ const noUser = (showModal) => {
     )
 }
 
-const hadUser = (currentUser, signout) => (
-    <ul className="session-list">
-        <li className="signin-status" >{currentUser.username}</li>
-        <li> | </li>
-        <li className="signin-status" onClick={signout} >Sign Out</li>
-    </ul>
-);
+const hadUser = (currentUser, signout) => {
+    return(
+        <ul className="session-list">
+            <li className="signin-status" >{currentUser.username}</li>
+            <li> | </li>
+            <li className="signin-status" onClick={signout}>Sign Out</li>
+        </ul>
+    )
+}
 
 const signinStatus = ({ currentUser, signout, showModal, signin }) => {
-    if (currentUser) {
+    if (currentUser && currentUser.id) {
         return (hadUser(currentUser, signout))
     } else {
         return noUser(showModal, signin)

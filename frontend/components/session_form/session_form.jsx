@@ -36,7 +36,7 @@ class sessionForm extends React.Component {
             demoButton = 
                 <button className="session-demo-button" onClick={this.handleDemo}>
                     Sign in as Demo Egg
-                    <div className="demo-button-icon" ><img src='/assets/demo_egg' /></div>
+                    <div className="demo-button-icon" ><img src={window.demoImage} /></div>
                 </button>
             footerText = <p>Not a rotten egg?</p>
             formSwitch =  <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Become one!</p>
@@ -44,7 +44,7 @@ class sessionForm extends React.Component {
             demoButton = 
                 <button className="session-demo-button" onClick={() => this.props.switchModal()}>
                     Go use a Demo Egg
-                    <div className="demo-button-icon" ><img src='/assets/demo_egg' /></div>
+                    <div className="demo-button-icon" ><img src={window.demoImage} /></div>
                 </button>
             footerText = <p>Already a rotten egg?</p>
             formSwitch = <p className="session-form-modal-switch" onClick={() => this.props.switchModal()}>Sign In!</p>

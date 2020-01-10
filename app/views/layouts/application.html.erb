@@ -2,6 +2,16 @@
 <html>
   <head>
     <%= favicon_link_tag asset_path('rotten_egg.png') %>
+    
+    <% if current_user %>
+      <script type="text/javascript">
+        window.currentUser = {
+          id: <%= current_user.id %>,
+          username: "<%= current_user.username %>",
+        };
+      </script>
+    <% end %>
+
     <title>RottenEgg</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
