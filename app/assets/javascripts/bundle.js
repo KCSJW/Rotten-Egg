@@ -200,6 +200,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer */ "./frontend/components/footer.jsx");
 /* harmony import */ var _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nav_bar/nav_bar_container */ "./frontend/components/nav_bar/nav_bar_container.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 
 
@@ -209,7 +211,15 @@ var App = function App() {
     className: "main"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     className: "app-header"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Main space"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    exact: true,
+    path: "/",
+    component: _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+    path: "*"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Redirect"], {
+    to: "/"
+  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Main")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
     className: "app-foot"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
 };
@@ -469,6 +479,11 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.props.getErrors([]);
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this4 = this;
@@ -597,7 +612,9 @@ var mDTP = function mDTP(dispatch) {
     action: function action(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["signin"])(user));
     },
-    // demoSignin: user => dispatch(signin(user)),
+    getErrors: function getErrors(errors) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["getErrors"])(errors));
+    },
     hideModal: function hideModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["hideModal"])());
     },
@@ -640,6 +657,9 @@ var mDTP = function mDTP(dispatch) {
   return {
     action: function action(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["signup"])(user));
+    },
+    getErrors: function getErrors(errors) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["getErrors"])(errors));
     },
     hideModal: function hideModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["hideModal"])());

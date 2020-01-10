@@ -5,6 +5,7 @@ import SigninStatusContainer from '../status/signin_status_container';
 import ModalForm from '../modal';
 
 const NavBar = ({modal, hideModal}) => {
+
     return (
         <div className="navbar-main">
             <SigninStatusContainer />

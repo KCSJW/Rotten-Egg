@@ -28,6 +28,10 @@ class sessionForm extends React.Component {
         }, () => this.props.action(this.state));
     }
 
+    componentWillUnmount() {
+        this.props.getErrors([]);
+    }
+
     render() {
 
         let footerText, formSwitch, demoButton;

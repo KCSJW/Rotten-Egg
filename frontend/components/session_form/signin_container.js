@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signin } from '../../actions/session_actions';
+import { signin, getErrors } from '../../actions/session_actions';
 import { showModal, hideModal } from '../../actions/modal_actions';
 import sessionForm from './session_form';
 
@@ -10,7 +10,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     action: user => dispatch(signin(user)),
-    // demoSignin: user => dispatch(signin(user)),
+    getErrors: errors => dispatch(getErrors(errors)),
     hideModal: () => dispatch(hideModal()),
     switchModal: () => dispatch(showModal('signup'))
 });
