@@ -8,9 +8,9 @@ export const getAllMovies = (movies) => ({
     movies
 });
 
-export const getMovie = (movie) => ({
+export const getMovie = (payload) => ({
     type: RECEIVE_MOVIE,
-    movie
+    payload
 });
 
 export const requestAllMovies = () => dispatch => (

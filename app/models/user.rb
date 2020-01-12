@@ -17,6 +17,8 @@ class User < ApplicationRecord
     has_many :movies,
     through: :interested_movies,
     source: :movie
+
+    has_one_attached :user_photo
     
     after_initialize :ensure_session_token
     attr_reader :password

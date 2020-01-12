@@ -113,14 +113,19 @@ body {
 
 .footer-text, .conntact-info{
   color: white;
-  font-weight: lighter;
+  font-weight: blod;
   font-size: 13px;
   text-decoration: none;
-  padding: 2px;
-  margin: 0 10px;
+  margin: 5px;
 }
 
 .conntact-info:hover {
   color: #f2e817;
   cursor: pointer;
+}
+
+.footer-icon {
+  width: 18px;
+  height: 18px;
+  margin-top: 5px;
 }

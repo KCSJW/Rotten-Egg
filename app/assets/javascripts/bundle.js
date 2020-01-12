@@ -116,6 +116,54 @@ var hideModal = function hideModal() {
 
 /***/ }),
 
+/***/ "./frontend/actions/movies_action.js":
+/*!*******************************************!*\
+  !*** ./frontend/actions/movies_action.js ***!
+  \*******************************************/
+/*! exports provided: RECEIVE_ALL_MOVIES, RECEIVE_MOVIE, getAllMovies, getMovie, requestAllMovies, requestMovie */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_MOVIES", function() { return RECEIVE_ALL_MOVIES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_MOVIE", function() { return RECEIVE_MOVIE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllMovies", function() { return getAllMovies; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestAllMovies", function() { return requestAllMovies; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestMovie", function() { return requestMovie; });
+/* harmony import */ var _util_movies_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/movies_api_util */ "./frontend/util/movies_api_util.js");
+
+var RECEIVE_ALL_MOVIES = 'RECEIVE_ALL_MOVIES';
+var RECEIVE_MOVIE = 'RECEIVE_MOVIE';
+var getAllMovies = function getAllMovies(movies) {
+  return {
+    type: RECEIVE_ALL_MOVIES,
+    movies: movies
+  };
+};
+var getMovie = function getMovie(payload) {
+  return {
+    type: RECEIVE_MOVIE,
+    payload: payload
+  };
+};
+var requestAllMovies = function requestAllMovies() {
+  return function (dispatch) {
+    return _util_movies_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllMovies"]().then(function (movies) {
+      return dispatch(getAllMovies(movies));
+    });
+  };
+};
+var requestMovie = function requestMovie(id) {
+  return function (dispatch) {
+    return _util_movies_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchMovie"](id).then(function (movie) {
+      return dispatch(getMovie(movie));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -249,11 +297,17 @@ var Footer = function Footer() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "mailto:johnson9710@gmail.com",
     className: "conntact-info"
-  }, "Conntact"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "Conntact"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: emailImage,
+    className: "footer-icon"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/KCSJW",
     className: "conntact-info",
     target: "_blank"
-  }, "GitHub")));
+  }, "GitHub"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: githubImage,
+    className: "footer-icon"
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -784,10 +838,13 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
+/* harmony import */ var _movies_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./movies_reducer */ "./frontend/reducers/movies_reducer.js");
+
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  movies: _movies_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -843,6 +900,41 @@ var modalReducer = function modalReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modalReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/movies_reducer.js":
+/*!*********************************************!*\
+  !*** ./frontend/reducers/movies_reducer.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_movies_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/movies_action */ "./frontend/actions/movies_action.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var moviesReducer = function moviesReducer() {
+  var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(oldState);
+
+  switch (action.type) {
+    case _actions_movies_action__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_MOVIES"]:
+      return action.movies;
+
+    case _actions_movies_action__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_MOVIE"]:
+      return Object.assign({}, oldState, _defineProperty({}, action.payload.id, action.payload.movie));
+
+    default:
+      return oldState;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (moviesReducer);
 
 /***/ }),
 
@@ -1069,6 +1161,32 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/movies_api_util.js":
+/*!******************************************!*\
+  !*** ./frontend/util/movies_api_util.js ***!
+  \******************************************/
+/*! exports provided: fetchAllMovies, fetchMovie */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllMovies", function() { return fetchAllMovies; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMovie", function() { return fetchMovie; });
+var fetchAllMovies = function fetchAllMovies() {
+  return $.ajax({
+    method: 'get',
+    url: "api/movies"
+  });
+};
+var fetchMovie = function fetchMovie(id) {
+  return $.ajax({
+    method: 'get',
+    url: "api/movies/".concat(id)
+  });
+};
 
 /***/ }),
 

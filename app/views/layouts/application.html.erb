@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= favicon_link_tag asset_path('rotten_egg.png') %>
-    
+
     <% if current_user %>
       <script type="text/javascript">
         window.currentUser = {
@@ -13,9 +12,9 @@
     <% end %>
 
     <title>RottenEgg</title>
+    <%= favicon_link_tag asset_path('rotten_egg.png') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
