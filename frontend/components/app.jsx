@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from './footer'
 import NavBarContainer from './nav_bar/nav_bar_container';
+import MoviesIndexContainer from './movies/movies_index_container';
 import { Route, Switch, Redirect } from 'react-router-dom'
 
 const App = () => (
@@ -13,7 +14,7 @@ const App = () => (
         </header>
 
         <main>
-            <h1>Main</h1>
+            <Route exact path='/' component={MoviesIndexContainer} />
         </main>
 
         <footer className="app-foot">

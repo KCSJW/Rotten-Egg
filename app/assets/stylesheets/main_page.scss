@@ -20,7 +20,7 @@ body {
   width: 98%
 }
 
-.show-index {
+.movies-index {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -32,6 +32,11 @@ body {
 .photo-banner {
   display: flex;
   margin: 0 auto;
+}
+
+.photo-banner-image{
+  width: 10%;
+  height: auto;
 }
 
 .main-page-show-lists {
@@ -120,7 +125,7 @@ body {
 }
 
 .conntact-info:hover {
-  color: #f2e817;
+  color: #4472CA;
   cursor: pointer;
 }
 

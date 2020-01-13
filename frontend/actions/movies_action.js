@@ -1,24 +1,30 @@
 import * as APIUtil from '../util/movies_api_util';
 
-export const RECEIVE_ALL_MOVIES = 'RECEIVE_ALL_MOVIES';
-export const RECEIVE_MOVIE = 'RECEIVE_MOVIE';
+export const GET_ALL_MOVIES = 'GET_ALL_MOVIES';
+export const SET_ALL_MOVIES = 'SET_ALL_MOVIES';
+export const GET_MOVIE = 'GET_MOVIE';
 
 export const getAllMovies = (movies) => ({
-    type: RECEIVE_ALL_MOVIES,
+    type: GET_ALL_MOVIES,
     movies
 });
 
 export const getMovie = (payload) => ({
-    type: RECEIVE_MOVIE,
+    type: GET_MOVIE,
     payload
 });
 
-export const requestAllMovies = () => dispatch => (
+export const setAllMovies = (payload) => ({
+    type: SET_ALL_MOVIES,
+    payload
+})
+
+export const setMovies = () => dispatch => (
     APIUtil.fetchAllMovies()
-        .then(movies => dispatch(getAllMovies(movies)))
+        .then(movies => dispatch(setAllMovies(movies)))
 );
 
-export const requestMovie = (id) => dispatch => (
+export const requestMovie = id => dispatch => (
     APIUtil.fetchMovie(id)
         .then(movie => dispatch(getMovie(movie)))
 );

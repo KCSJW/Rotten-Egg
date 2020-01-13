@@ -1,1 +1,5 @@
-json.extract! @review, :id, :body, :rating, :author_id, :author_name, :movie_id
+json.reviews do
+    json.set! @review.id do
+        json.partal 'api/movies/reviews', review: @review
+    end
+end

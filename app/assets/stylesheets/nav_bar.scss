@@ -3,6 +3,19 @@
   flex-direction: column;
 }
 
+.logo-and-search-bar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color:  rgb(255, 208, 0);
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  float: left;
+}
+
 .nav-bar-main {
   display: flex;
   justify-content: center;
@@ -29,16 +42,17 @@
   display: flex;
   flex: center;
   margin-right: 5px;
+  float: right;
 }
 
 .session-list li {
-  color: rgb(255, 208, 0);
+  color: rgb(250, 255, 187);
   padding: 5px;
   font-weight: lighter;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   max-height: 20px;
-  background: rgb(250, 255, 187);
+  background: rgb(255, 208, 0);
 }
 
 .session-list li:hover {
@@ -48,4 +62,42 @@
 .signin-status {
   font-family: 'Source Sans Pro', sans-serif;
   font-style: bold;
+}
+
+.trending-bar-under-nav {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+  height: 25px;
+  border-top: .5px solid #F0F0F0;
+  border-bottom: .5px solid #F0F0F0;
+}
+
+.trending-text {
+  color: #f2e817;
+  font-weight: lighter;
+  font-size: 13px;
+  padding: 2px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.trending-icon {
+  width: 18px;
+  height: 18px;
+  margin-left: 475px
+}
+
+.trending-show {
+  color: white;
+  font-weight: lighter;
+  font-size: 13px;
+  text-decoration: none;
+  padding: 2px;
+  margin: 0 10px;
+}
+
+.trending-show:hover {
+  color: #f2e817;
 }
