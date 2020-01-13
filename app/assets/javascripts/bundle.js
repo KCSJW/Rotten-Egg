@@ -120,7 +120,7 @@ var hideModal = function hideModal() {
 /*!*******************************************!*\
   !*** ./frontend/actions/movies_action.js ***!
   \*******************************************/
-/*! exports provided: GET_ALL_MOVIES, SET_ALL_MOVIES, GET_MOVIE, getAllMovies, getMovie, setAllMovies, setMovies, requestMovie */
+/*! exports provided: GET_ALL_MOVIES, SET_ALL_MOVIES, GET_MOVIE, getAllMovies, getMovie, setAllMovies, getAllDBMovies, setMovies, requestMovie */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -131,9 +131,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllMovies", function() { return getAllMovies; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getMovie", function() { return getMovie; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setAllMovies", function() { return setAllMovies; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllDBMovies", function() { return getAllDBMovies; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setMovies", function() { return setMovies; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestMovie", function() { return requestMovie; });
 /* harmony import */ var _util_movies_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/movies_api_util */ "./frontend/util/movies_api_util.js");
+/* harmony import */ var _util_search_api_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/search_api_util */ "./frontend/util/search_api_util.js");
+
 
 var GET_ALL_MOVIES = 'GET_ALL_MOVIES';
 var SET_ALL_MOVIES = 'SET_ALL_MOVIES';
@@ -154,6 +157,13 @@ var setAllMovies = function setAllMovies(payload) {
   return {
     type: SET_ALL_MOVIES,
     payload: payload
+  };
+};
+var getAllDBMovies = function getAllDBMovies() {
+  return function (dispatch) {
+    return Object(_util_search_api_util__WEBPACK_IMPORTED_MODULE_1__["fetchAllDBMovies"])().then(function (movies) {
+      return dispatch(getAllMovies(movies));
+    });
   };
 };
 var setMovies = function setMovies() {
@@ -312,7 +322,7 @@ var Footer = function Footer() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "mailto:johnson9710@gmail.com",
     className: "conntact-info"
-  }, "Conntact"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, "Contact"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: emailImage,
     className: "footer-icon"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -432,7 +442,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movies-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "photo-banner"
@@ -442,7 +452,7 @@ function (_React$Component) {
           src: "https://image.tmdb.org/t/p/w342".concat(url),
           key: i
         });
-      })));
+      }))));
     }
   }]);
 
@@ -502,8 +512,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_form_signin_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../session_form/signin_container */ "./frontend/components/session_form/signin_container.js");
 /* harmony import */ var _session_form_signup_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../session_form/signup_container */ "./frontend/components/session_form/signup_container.js");
 /* harmony import */ var _status_signin_status_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../status/signin_status_container */ "./frontend/components/status/signin_status_container.js");
-/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modal */ "./frontend/components/modal.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _search_search_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../search/search_container */ "./frontend/components/search/search_container.js");
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modal */ "./frontend/components/modal.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 
 
@@ -520,12 +532,12 @@ var NavBar = function NavBar(_ref) {
     className: "navbar-main"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "logo-and-search-bar-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
     to: "/"
   }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "logo",
     src: window.logoImage
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_status_signin_status_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_status_signin_status_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal__WEBPACK_IMPORTED_MODULE_5__["default"], {
     component: modal === 'signin' ? _session_form_signin_container__WEBPACK_IMPORTED_MODULE_1__["default"] : _session_form_signup_container__WEBPACK_IMPORTED_MODULE_2__["default"],
     modal: modal,
     hideModal: hideModal
@@ -621,6 +633,198 @@ var Root = function Root(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Root);
+
+/***/ }),
+
+/***/ "./frontend/components/search/search.jsx":
+/*!***********************************************!*\
+  !*** ./frontend/components/search/search.jsx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_search_api_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/search_api_util */ "./frontend/util/search_api_util.js");
+/* harmony import */ var _search_results__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search_results */ "./frontend/components/search/search_results.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var SearchBar =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SearchBar, _React$Component);
+
+  function SearchBar(props) {
+    var _this;
+
+    _classCallCheck(this, SearchBar);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchBar).call(this, props));
+    _this.state = {
+      text: "",
+      searchResults: []
+    };
+    _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
+    _this.resetSearch = _this.resetSearch.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(SearchBar, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.getAllDBMovies();
+    }
+  }, {
+    key: "handleInput",
+    value: function handleInput(e) {
+      this.setState({
+        text: e.currentTarget.value
+      });
+    }
+  }, {
+    key: "resetSearch",
+    value: function resetSearch(e) {
+      this.setState({
+        text: ""
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var searchResults;
+
+      if (this.state.text === '') {
+        searchResults = [];
+      } else {
+        searchResults = Object(_util_search_api_util__WEBPACK_IMPORTED_MODULE_1__["searchMovies"])(this.props.movies, this.state.text).map(function (movie, i) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_results__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            resetSearch: _this2.resetSearch,
+            movie: movie.movies.title,
+            key: i,
+            requestMovie: _this2.props.requestMovie
+          });
+        });
+      }
+
+      ;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search-bar-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        placeholder: "Search for Movies",
+        className: "search-bar",
+        onChange: this.handleInput,
+        value: this.state.text
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "search-dropdown"
+      }, searchResults));
+    }
+  }]);
+
+  return SearchBar;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (SearchBar);
+
+/***/ }),
+
+/***/ "./frontend/components/search/search_container.js":
+/*!********************************************************!*\
+  !*** ./frontend/components/search/search_container.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions_movies_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/movies_action */ "./frontend/actions/movies_action.js");
+/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./search */ "./frontend/components/search/search.jsx");
+
+
+
+
+
+var mSTP = function mSTP(state) {
+  console.log(state);
+  return {
+    dbMovies: Object.values(state.entities.movies)
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    getAllDBMovies: function getAllDBMovies() {
+      return dispatch(Object(_actions_movies_action__WEBPACK_IMPORTED_MODULE_2__["getAllDBMovies"])());
+    },
+    requestMovie: function requestMovie(id) {
+      return dispatch(Object(_actions_movies_action__WEBPACK_IMPORTED_MODULE_2__["requestMovie"])(id));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_search__WEBPACK_IMPORTED_MODULE_3__["default"])));
+
+/***/ }),
+
+/***/ "./frontend/components/search/search_results.jsx":
+/*!*******************************************************!*\
+  !*** ./frontend/components/search/search_results.jsx ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var SearchResult = function SearchResult(_ref) {
+  var movie = _ref.movie,
+      resetSearch = _ref.resetSearch,
+      requestMovie = _ref.requestMovie;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    onClick: function onClick(e) {
+      requestMovie(movie.id);
+      resetSearch();
+    },
+    className: "search-list-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/movies/".concat(movie.id),
+    className: "link-to-show"
+  }, movie.title));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SearchResult);
 
 /***/ }),
 
@@ -1096,10 +1300,9 @@ var moviesReducer = function moviesReducer() {
 
   switch (action.type) {
     case _actions_movies_action__WEBPACK_IMPORTED_MODULE_0__["GET_ALL_MOVIES"]:
-      return Object.assign({}, oldState, action.original_title);
+      return action.movies;
 
     case _actions_movies_action__WEBPACK_IMPORTED_MODULE_0__["SET_ALL_MOVIES"]:
-      // console.log(Object.assign({}, oldState, action.payload.results))
       return Object.assign({}, oldState, action.payload.results);
 
     case _actions_movies_action__WEBPACK_IMPORTED_MODULE_0__["GET_MOVIE"]:
@@ -1363,8 +1566,34 @@ var fetchAllMovies = function fetchAllMovies() {
 };
 var fetchMovie = function fetchMovie(id) {
   return $.ajax({
-    method: 'get',
+    method: 'GET',
     url: "api/movies/".concat(id)
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/search_api_util.js":
+/*!******************************************!*\
+  !*** ./frontend/util/search_api_util.js ***!
+  \******************************************/
+/*! exports provided: fetchAllDBMovies */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllDBMovies", function() { return fetchAllDBMovies; });
+// export const searchMovies = (movies, searchText) => {
+//     return (
+//         movies.filter((movie) => {
+//             return movie.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1;
+//         })
+//     );
+// };
+var fetchAllDBMovies = function fetchAllDBMovies() {
+  return $.ajax({
+    method: 'GET',
+    url: "api/movies/"
   });
 };
 

@@ -5,9 +5,8 @@ const moviesReducer = (oldState={}, action) => {
 
     switch (action.type) {
         case GET_ALL_MOVIES:    
-            return Object.assign({}, oldState, action.original_title);
+            return action.movies;
         case SET_ALL_MOVIES:
-            // console.log(Object.assign({}, oldState, action.payload.results))
             return Object.assign({}, oldState, action.payload.results);
         case GET_MOVIE:
             return Object.assign({},oldState, {[action.payload.id]: action.payload.movie})

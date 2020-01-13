@@ -2,6 +2,7 @@ import React from 'react';
 import SigninContainer from "../session_form/signin_container"
 import SignupContainer from '../session_form/signup_container';
 import SigninStatusContainer from '../status/signin_status_container';
+import SearchBar from '../search/search_container';
 import ModalForm from '../modal';
 import { Link } from 'react-router-dom';
 
@@ -12,6 +13,7 @@ const NavBar = ({modal, hideModal}) => {
             <div className="navbar-main">
                 <div className="logo-and-search-bar-container">
                     <Link to="/"> <img className="logo" src={window.logoImage} /></Link>
+                    <SearchBar />
                     <SigninStatusContainer />   
                 </div>
                     <ModalForm 

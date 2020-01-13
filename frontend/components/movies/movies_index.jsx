@@ -21,14 +21,17 @@ class moviesIndex extends React.Component {
 
     render() {
         return (
-            <div className="movies-index">
-                <div className="photo-banner">
-                    {this.moviePoster().map((url, i) => 
-                        <img 
-                            className="photo-banner-image" 
-                            src={`https://image.tmdb.org/t/p/w342${url}`} 
-                            key={i}/>
-                    )}
+            <div>
+                <div className="movies-index">
+                    <div className="photo-banner">
+                        {
+                        this.moviePoster().map((url, i) =>
+                            <img
+                            className="photo-banner-image"
+                            src={`https://image.tmdb.org/t/p/w342${url}`}
+                            key={i} />)
+                        }
+                    </div>
                 </div>
             </div>
         )

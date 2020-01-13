@@ -1,4 +1,3 @@
-
 export const fetchAllMovies = () => (
     $.ajax({
         method: 'GET',
@@ -8,11 +7,9 @@ export const fetchAllMovies = () => (
     })
 );
 
-
-
 export const fetchMovie = (id) => (
     $.ajax({
-        method: 'get',
+        method: 'GET',
         url: `api/movies/${id}`
     })
 );
