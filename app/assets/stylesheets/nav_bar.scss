@@ -76,17 +76,25 @@
 
 .trending-text {
   color: #f2e817;
-  font-weight: lighter;
+  font-weight: bold;
   font-size: 13px;
   padding: 2px;
   margin-left: 20px;
   margin-right: 10px;
+  font-family: 'Franklin Gothic FS Book',sans-serif;
+  text-align: left;
 }
 
-.trending-icon {
+.trending-icon-mail {
   width: 18px;
   height: 18px;
-  margin-left: 475px
+  margin-left: 520px;
+}
+
+.trending-icon-github {
+  width: 18px;
+  height: 18px;
+  margin-left: 10px;
 }
 
 .trending-show {

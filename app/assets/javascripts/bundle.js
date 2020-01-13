@@ -531,21 +531,26 @@ var NavBar = function NavBar(_ref) {
     hideModal: hideModal
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "trending-bar-under-nav"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "trending-text"
   }, "TRENDING NEWS:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://editorial.rottentomatoes.com/article/awards-leaderboard-top-movies-of-2019/",
     className: "trending-show"
-  }, "AWARDS LEADERBOARD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "Awards Leaderboard"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://editorial.rottentomatoes.com/guide/the-200-best-movies-of-the-2010s/",
     className: "trending-show"
-  }, "THE 200 BEST MOVIES OF THE 2010S"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "200 Best Movies of the 2010s"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://editorial.rottentomatoes.com/article/most-anticipated-movies-of-2020/",
     className: "trending-show"
   }, "2020's Most Anticipated Movies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "mailto:johnson9710@gmail.com",
+    className: "trending-icon-mail"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: emailImage
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/KCSJW",
-    className: "trending-icon",
-    target: "_blank"
+    target: "_blank",
+    className: "trending-icon-github"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: githubImage
   }))));
@@ -1348,23 +1353,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMovie", function() { return fetchMovie; });
 var fetchAllMovies = function fetchAllMovies() {
   return $.ajax({
-    // method: 'get',
-    // url: "api/movies"
-    url: 'https://api.themoviedb.org/3/discover/movie?',
-    //using Discover Movie endpoint
     method: 'GET',
+    url: 'https://api.themoviedb.org/3/movie/popular?',
     dataType: 'json',
     data: {
-      api_key: '78cf5b4e545acdb9a5957b2546b6f081' // with_genres: genre,
-      // sort_by: 'vote_average.desc',
-      // 'primary_release_date.gte': '2014-01-01',
-      // original_language: 'en',
-      // 'vote_count.gte': 3000,
-
-    } // }).then((data) => {
-    //     // console.log(data.results);
-    //     dispatch(setAllMovies(data))
-
+      api_key: '78cf5b4e545acdb9a5957b2546b6f081'
+    }
   });
 };
 var fetchMovie = function fetchMovie(id) {
