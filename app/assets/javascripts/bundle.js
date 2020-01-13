@@ -535,23 +535,23 @@ var NavBar = function NavBar(_ref) {
     className: "trending-text"
   }, "TRENDING NEWS:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://editorial.rottentomatoes.com/article/awards-leaderboard-top-movies-of-2019/",
-    className: "trending-show"
+    className: "trending-link"
   }, "Awards Leaderboard"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://editorial.rottentomatoes.com/guide/the-200-best-movies-of-the-2010s/",
-    className: "trending-show"
+    className: "trending-link"
   }, "200 Best Movies of the 2010s"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://editorial.rottentomatoes.com/article/most-anticipated-movies-of-2020/",
-    className: "trending-show"
+    className: "trending-link"
   }, "2020's Most Anticipated Movies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "mailto:johnson9710@gmail.com",
-    className: "trending-icon-mail"
+    href: "mailto:johnson9710@gmail.com"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "trending-icon-mail",
     src: emailImage
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/KCSJW",
-    target: "_blank",
-    className: "trending-icon-github"
+    target: "_blank"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "trending-icon-github",
     src: githubImage
   }))));
 };
