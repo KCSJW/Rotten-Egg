@@ -18,9 +18,8 @@ class moviesIndex extends React.Component {
         }
         return urlArray;
     }
-    
+
     render() {
-        
         return (
             <div className="movies-index">
                 <div className="photo-banner">
