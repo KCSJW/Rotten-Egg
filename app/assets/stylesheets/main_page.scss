@@ -40,45 +40,47 @@ body {
   height: auto;
 }
 
-.main-page-show-lists {
+.main-page-movie-lists {
   display: flex;
   align-items: flex-start;
   width: auto;
 }
 
+
+.main-page-list-container {
+  display: flexbox;
+  flex-direction: column;
+  padding: 15px;
+  border-right: .5px solid #F0F0
+}
+
 .main-page-list-header{
   display: flex;
   justify-content: flex-start;
-  font-weight: 800;
-  font-family: 'Limelight', cursive;
-  padding: 20px;
-}
-
-.main-page-list-container {
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-  border-right: .5px solid #F0F0F0;
+  border-bottom: rgb(157, 164, 172) 1px solid;
+  font-family: 'Neusa Next Pro Compact',Impact,Arial,sans-serif;
 }
 
 .main-page-list-container:last-child {
   border: none;
 }
 
-.show-index-item{
+.movie-index-item{
   display: flex;
   flex-direction: row;
   padding: 5px;
+  border-bottom: rgb(157, 164, 172) 1px solid;
 }
 
-.index-critic-score-icon {
+.index-icon {
   width: auto;
   height: 25px;
   margin-right: 5px;
 }
 
-.index-critic-score {
-  margin-right: 30px;
+.index-score {
+  margin-left: 5px;
+  width: 40px;
 }
 
 .link-to-movie {

@@ -18,7 +18,7 @@ export const setMovies = () => dispatch => (
         .then(movies => dispatch(setAllMovies(movies)))
 );
 
-export const nowPlaying = () => dispatch (
+export const nowPlaying = () => dispatch => (
     APIUtil.fetchPlayingMovies()
         .then(movies => dispatch(nowPlayingMovies(movies)))
 );
