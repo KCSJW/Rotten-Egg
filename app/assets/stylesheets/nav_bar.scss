@@ -26,13 +26,22 @@
   flex-direction: row;
 }
 
+.search-bar {
+  width: 250px;
+  height: 22px;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
 .search-dropdown{
   background: white;
   position: absolute;
-  top: 81px;
+  top: 30px;
+  width: 253px;
   z-index: 5;
   color: black;
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 4px;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
   border-left: 1px solid #ccc;

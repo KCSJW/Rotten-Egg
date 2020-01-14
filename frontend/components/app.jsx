@@ -7,14 +7,15 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 const App = () => (
     <div className="main">
         <header className="app-header">
-            <Switch>
-                <Route exact path='/' component={NavBarContainer} />
-                <Route path='*'><Redirect to='/'/></Route>
-            </Switch>
+            <Route path='/' component={NavBarContainer} /> 
         </header>
 
         <main>
-            <Route exact path='/' component={MoviesIndexContainer} />
+            <Switch>
+                <Route path='/movies/:movieId' />
+                <Route path='/' component={MoviesIndexContainer} />
+                <Route path='*'><Redirect to='/'/></Route>
+            </Switch>
         </main>
 
         <footer className="app-foot">

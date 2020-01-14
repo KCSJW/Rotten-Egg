@@ -32,6 +32,7 @@ body {
 .photo-banner {
   display: flex;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .photo-banner-image{
@@ -80,17 +81,16 @@ body {
   margin-right: 30px;
 }
 
-.link-to-show {
+.link-to-movie {
   display: flex;
   flex-direction: row;
   text-decoration: none;
   color: black;
 }
 
-.link-to-show:hover {
-  color: #53bbf1;
+.link-to-movie:hover {
+  background-color: lightgray;
 }
-
 
 .app-footer{
   display: flex;

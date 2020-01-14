@@ -7,10 +7,11 @@ export const fetchAllMovies = () => (
     })
 );
 
-export const fetchMovie = (id) => (
+export const fetchPlayingMovies = () => (
     $.ajax({
         method: 'GET',
-        url: `api/movies/${id}`
+        url: 'https://api.themoviedb.org/3/movie/now_playing?',
+        dataType: 'json',
+        data: { api_key: '78cf5b4e545acdb9a5957b2546b6f081' }
     })
 );
-

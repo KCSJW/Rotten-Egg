@@ -1,15 +1,13 @@
-import { GET_ALL_MOVIES, GET_MOVIE, SET_ALL_MOVIES } from '../actions/movies_action';
+import { SET_ALL_MOVIES, NOW_PLAYING_MOVIES } from '../actions/movies_actions';
 
 const moviesReducer = (oldState={}, action) => {
     Object.freeze(oldState);
 
     switch (action.type) {
-        case GET_ALL_MOVIES:    
-            return action.movies;
         case SET_ALL_MOVIES:
             return Object.assign({}, oldState, action.payload.results);
-        case GET_MOVIE:
-            return Object.assign({},oldState, {[action.payload.id]: action.payload.movie})
+        case NOW_PLAYING_MOVIES:
+            return Object.assign({}, oldState, action.payload.results);
         default:
             return oldState;
     }

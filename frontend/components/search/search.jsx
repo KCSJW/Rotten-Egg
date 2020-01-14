@@ -1,5 +1,4 @@
 import React from 'react';
-import {searchMovies} from '../../util/search_api_util';
 import SearchResult from './search_results';
 
 class SearchBar extends React.Component {
@@ -8,6 +7,7 @@ class SearchBar extends React.Component {
         this.state = { text: "", searchResults: []};
         this.handleInput = this.handleInput.bind(this);
         this.resetSearch = this.resetSearch.bind(this);
+        this.searchMovies = this.searchMovies.bind(this);
     }
 
     componentDidMount() {
@@ -22,16 +22,24 @@ class SearchBar extends React.Component {
         this.setState({ text: "" });
     }
 
+    searchMovies (movies, text) {
+        return (
+            movies.filter((movie) => {
+                return movie.title.toLowerCase().indexOf(text.toLowerCase()) !== -1;
+        })
+    )}
+
     render(){
         let searchResults;
         if (this.state.text === '') {
             searchResults = [];
         } else {
-            searchResults = searchMovies(this.props.movies, this.state.text).map((movie, i) => {
-                return <SearchResult 
-                            resetSearch={this.resetSearch}
-                            movie={movie.movies.title} key={i}
-                            requestMovie={this.props.requestMovie}/>
+            searchResults = this.searchMovies(Object.values(this.props.dbMovies), this.state.text)
+                .map((movie, i) => {
+                    return <SearchResult 
+                                getMovie={this.props.getDBMovie}
+                                resetSearch={this.resetSearch}
+                                movie={movie} key={i}/>
             })
         };
 
