@@ -36,10 +36,12 @@ class moviesIndex extends React.Component {
                             key={i} />)
                         }
                     </div>
-                </div>
-                <NowPlayingContainer />
-                <UpComingContainer />
-                <TopRatedContainer />
+                    <div className='combin-lists'>
+                        <NowPlayingContainer />
+                        <UpComingContainer />
+                        <TopRatedContainer />
+                    </div>
+                </div>  
             </div>
         )
     }

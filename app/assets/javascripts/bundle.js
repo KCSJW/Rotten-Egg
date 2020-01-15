@@ -779,7 +779,9 @@ function (_React$Component) {
           src: "https://image.tmdb.org/t/p/w342".concat(url),
           key: i
         });
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_now_playing_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_up_coming_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_top_rated_container__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "combin-lists"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_now_playing_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_up_coming_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_top_rated_container__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
     }
   }]);
 
