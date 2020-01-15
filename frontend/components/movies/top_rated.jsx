@@ -1,16 +1,16 @@
 import React from 'react';
 
-class UpComingList extends React.Component {
+class TopRatedList extends React.Component {
     constructor(props) {
         super(props);
-        this.upComingData = this.upComingData.bind(this);
+        this.topRatedData = this.topRatedData.bind(this);
     }
 
     componentDidMount() {
-        this.props.upComing();
+        this.props.topRated();
     }
 
-    upComingData() {
+    topRatedData() {
         let pair = [];
         let temp;
         let ratingIcon;
@@ -34,11 +34,11 @@ class UpComingList extends React.Component {
 
 
     render() {
-        let array = this.upComingData()
+        let array = this.topRatedData()
         return (
             <div className="main-page-movie-lists">
                 <div className="main-page-list-container">
-                    <div className="main-page-list-header">Up Coming:</div>
+                    <div className="main-page-list-header">Top Rated:</div>
                     <ul>
                         {
                             array.map((movie) => (
@@ -56,4 +56,4 @@ class UpComingList extends React.Component {
     }
 };
 
-export default UpComingList;
+export default TopRatedList;

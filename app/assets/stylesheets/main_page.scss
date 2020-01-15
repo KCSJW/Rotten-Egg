@@ -23,7 +23,7 @@ body {
 .movies-index {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  // align-items: flex-start;
   justify-content: flex-start;
   background-color: white;
   border-bottom: .5px solid #F0F0F0	;
@@ -42,13 +42,14 @@ body {
 
 .main-page-movie-lists {
   display: flex;
-  align-items: flex-start;
   width: auto;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 
 .main-page-list-container {
-  display: flexbox;
+  display: flex;
   flex-direction: column;
   padding: 15px;
   border-right: .5px solid #F0F0

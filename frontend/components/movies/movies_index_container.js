@@ -2,9 +2,11 @@ import { connect } from 'react-redux';
 import moviesIndex from './movies_index';
 import { setMovies } from '../../actions/movies_actions';
 
-const mSTP = state => ({
-    movies: state.entities.movies
-});
+const mSTP = state => {
+    return ({
+        movies: state.entities.posters
+    })
+};
 
 const mDTP = dispatch => ({
     setMovies: () => dispatch(setMovies())

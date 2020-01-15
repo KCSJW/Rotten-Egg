@@ -4,7 +4,7 @@ import { nowPlaying } from '../../actions/movies_actions';
 
 const mSTP = state => {
     return ({
-        data: Object.values(state.entities.movies)
+        data: Object.values(state.entities.movies.nowPlaying)
     })
 };
 

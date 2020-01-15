@@ -1,18 +1,12 @@
-import { SET_ALL_MOVIES, NOW_PLAYING_MOVIES, UP_COMING_MOVIES } from '../actions/movies_actions';
+import { combineReducers } from "redux";
+import nowPlayingReducer from "./now_playing_reducer";
+import upComingReducer from './up_coming_reducer';
+import topRatedReducer from "./top_rated_reducer";
 
-const moviesReducer = (oldState={}, action) => {
-    Object.freeze(oldState);
-
-    switch (action.type) {
-        case SET_ALL_MOVIES:
-            return Object.assign({}, oldState, action.payload.results);
-        case NOW_PLAYING_MOVIES:
-            return Object.assign({}, oldState, action.payload.results);
-        case UP_COMING_MOVIES:
-            return Object.assign({}, oldState, action.payload.results);
-        default:
-            return oldState;
-    }
-};
+const moviesReducer = combineReducers({
+    nowPlaying: nowPlayingReducer,
+    upComing: upComingReducer,
+    topRated: topRatedReducer
+});
 
 export default moviesReducer;
