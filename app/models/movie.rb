@@ -1,5 +1,5 @@
 class Movie < ApplicationRecord
-    validates :title, :info, :genres, :status, presence: true
+    validates :title, :info, :genres, :status, :image_url, presence: true
     
     has_many :reviews,
         primary_key: :id,

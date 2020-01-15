@@ -31,55 +31,63 @@ movie1 = Movie.create!({
     title: "Always be my maybe",
     info: "On Netflix May 31, 2019",
     genres: "Romance",
-    status: "Released" 
+    status: "Released",
+    image_url: "https://image.tmdb.org/t/p/w300_and_h450_bestv2/3BO6pPa7qDcpPYct061Luh9fvst.jpg"
 });
 
 movie2 = Movie.create!({
     title: "Crazy Rich Asians",
     info: "On theater August 7, 2018",
     genres: "Romance",
-    status: "Released" 
+    status: "Released",
+    image_url: "https://image.tmdb.org/t/p/w1280/1XxL4LJ5WHdrcYcihEZUCgNCpAW.jpg"
 });
 
 movie3 = Movie.create!({
     title: "Cats",
     info: "On theater December 20, 2019",
     genres: "Fantasy",
-    status: "Released" 
+    status: "Released",
+    image_url: "https://image.tmdb.org/t/p/w1280/b8UiUXK7IjoMmvqQjixRTIIESAH.jpg"
 });
 
 movie4 = Movie.create!({
     title: "The Dark Knight",
     info: "On theater July 18, 2008",
     genres: "Action",
-    status: "Classic" 
+    status: "Classic",
+    image_url: "https://image.tmdb.org/t/p/w1280/qr8zCNPqEI2MrCwfofoI3GdNNH7.jpg"
 });
 
 movie5 = Movie.create!({
     title: "Pokemon Detective Pikachu",
     info: "On theater May 10, 2019",
     genres: "Action",
-    status: "Released" 
+    status: "Released" ,
+    image_url: "https://image.tmdb.org/t/p/w1280/2wsIOeYeyCqCsQKSuhKpZsWvd50.jpg"
 });
 
 movie6 = Movie.create!({
     title: "The Devil Wears Prada",
     info: "On theater June 30, 2006",
     genres: "Comedy",
-    status: "Released" 
+    status: "Released",
+    image_url: "https://image.tmdb.org/t/p/w1280/8unCRm0LeiO0fM6skWAZy3ZfXR1.jpg"
 });
 
 movie7 = Movie.create!({
     title: "Dragonball Evolution",
     info: "On theater April 8, 2009",
     genres: "Action",
-    status: "Released" 
+    image_url: "https://image.tmdb.org/t/p/w1280/yERkcVylXAcTCi8f0qrba4rmWwg.jpg",
+    status: "Released"
 });
 
 movie8 = Movie.create!({
     title: "The Godfather",
     info: "On theater March 15, 1972",
     genres: "Drama",
+    image_url: "https://image.tmdb.org/t/p/w1280/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg",
     status: "Classic" 
 });
 
@@ -87,6 +95,7 @@ movie9 = Movie.create!({
     title: "The Great Wall",
     info: "On theater February 17, 2017",
     genres: "Action",
+    image_url: "https://image.tmdb.org/t/p/w1280/p70dq1YxabemdZDm5K6Q8G10wSn.jpg",
     status: "Released" 
 });
 
@@ -94,6 +103,7 @@ movie10 = Movie.create!({
     title: "The Incredibles",
     info: "On theater November 5, 2004",
     genres: "Action",
+    image_url: "https://image.tmdb.org/t/p/w1280/2LqaLgk4Z226KkgPJuiOQ58wvrm.jpg",
     status: "Released" 
 });
 
@@ -101,6 +111,7 @@ movie11 = Movie.create!({
     title: "The Interview",
     info: "On theater December 25, 2014",
     genres: "Comedy",
+    image_url: "https://image.tmdb.org/t/p/w1280/d1r6DegpgBjqtmac3w2A0LKSChB.jpg",
     status: "Released" 
 });
 
@@ -108,6 +119,7 @@ movie12 = Movie.create!({
     title: "Joker",
     info: "On theater October 4, 2019",
     genres: "Drama",
+    image_url: "https://image.tmdb.org/t/p/w1280/tgcrYiyG75iDcyk3en9NzZis0dh.jpg",
     status: "Released" 
 });
 
@@ -115,6 +127,7 @@ movie13 = Movie.create!({
     title: "Knives Out",
     info: "On theater November 27, 2019",
     genres: "Thriller",
+    image_url: "https://image.tmdb.org/t/p/w1280/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
     status: "Released" 
 });
 
@@ -122,6 +135,7 @@ movie14 = Movie.create!({
     title: "The Last Black Man In San Francisco",
     info: "On theater June 7, 2019",
     genres: "Drama",
+    image_url: "https://image.tmdb.org/t/p/w1280/clCZr941obhp8NZYKfY3olH9ZJ8.jpg",
     status: "Released" 
 });
 
@@ -129,6 +143,7 @@ movie15 = Movie.create!({
     title: "Pan's Labyrinth",
     info: "On theater October 15, 2006",
     genres: "Fantasy",
+    image_url: "https://image.tmdb.org/t/p/w1280/9C3r6o0zUuyhgzGLShAvpu0sSvd.jpg",
     status: "Released" 
 });
 
@@ -136,6 +151,7 @@ movie16 = Movie.create!({
     title: "Ratatouille",
     info: "On theater June 22, 2007",
     genres: "Animation",
+    image_url: "https://image.tmdb.org/t/p/w1280/xVxxSYHAfrEbllyWFQG5df5nwH4.jpg",
     status: "Released" 
 });
 
@@ -143,6 +159,7 @@ movie17 = Movie.create!({
     title: "The Lord of the Rings: The Return of the King",
     info: "On theater December 17, 2003",
     genres: "Adventure",
+    image_url: "https://image.tmdb.org/t/p/w1280/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
     status: "Classic" 
 });
 
@@ -150,6 +167,7 @@ movie18 = Movie.create!({
     title: "The Revenant",
     info: "On theater January 8, 2016",
     genres: "Adventure",
+    image_url: "https://image.tmdb.org/t/p/w1280/5W794ugjRwYx6IdFp1bXJqqMWRg.jpg",
     status: "Released" 
 });
 
@@ -157,6 +175,7 @@ movie19 = Movie.create!({
     title: "Rush Hour 2",
     info: "On theater August 3, 2001",
     genres: "Comedy",
+    image_url: "https://image.tmdb.org/t/p/w1280/kFeK17ZSogSxRxuupTxZ6PGklbj.jpg",
     status: "Released" 
 });
 
@@ -164,6 +183,7 @@ movie20 = Movie.create!({
     title: "Star Wars: The Rise of Skywalker",
     info: "On theater December 20, 2019",
     genres: "Adventure",
+    image_url: "https://image.tmdb.org/t/p/w1280/6R5Re2qBxcVPjgIO3FSuZjv3E2o.jpg",
     status: "Released" 
 });
 
@@ -171,6 +191,7 @@ movie21 = Movie.create!({
     title: "Searching",
     info: "On theater August 24, 2018",
     genres: "Thriller",
+    image_url: "https://image.tmdb.org/t/p/w1280/pk9R56ZFlofbBzfwBnHlDyg5DMs.jpg",
     status: "Released" 
 });
 
@@ -178,6 +199,7 @@ movie22 = Movie.create!({
     title: "Toy Story 4",
     info: "On theater June 21, 2019",
     genres: "Animation",
+    image_url: "https://image.tmdb.org/t/p/w1280/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg",
     status: "Released" 
 });
 
@@ -185,6 +207,7 @@ movie23 = Movie.create!({
     title: "Up",
     info: "On theater May 28, 2009",
     genres: "Animation",
+    image_url: "https://image.tmdb.org/t/p/w1280/gfFqBcoFW8uczyl2ytVmVmUg82k.jpg",
     status: "Released" 
 });
 

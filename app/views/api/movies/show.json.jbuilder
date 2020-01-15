@@ -1,6 +1,5 @@
-json.movie do
-  json.extract! @movie, :id, :title, :genres, :status, :info
-end
+json.extract! @movie, :id, :title, :genres, :status, :info, :image_url
+
 
 json.reviews do
   @movie.reviews.each do |review|

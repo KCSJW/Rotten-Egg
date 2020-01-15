@@ -42,10 +42,10 @@ class NowPlayingList extends React.Component {
                     <ul>
                         {
                             array.map((movie) => (
-                                <li key={movie.id} className="movie-index-item">
-                                    <img src={movie.icon} className="index-icon"/>
-                                    <div className="index-score">{movie.rating}</div>
-                                    <div>{movie.title}</div>
+                                <li key={movie.id} className="movie-list-item">
+                                    <img src={movie.icon} className="list-icon"/>
+                                    <div className="list-score">{movie.rating}</div>
+                                    <div className="list-text">{movie.title}</div>
                                 </li>
                             ))
                         }

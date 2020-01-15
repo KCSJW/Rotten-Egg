@@ -1,4 +1,5 @@
 import React from 'react';
+import NowPlayingContainer from './now_playing_container'
 
 class moviesIndex extends React.Component {
     constructor(props) {
@@ -33,6 +34,7 @@ class moviesIndex extends React.Component {
                         }
                     </div>
                 </div>
+                <NowPlayingContainer />
             </div>
         )
     }

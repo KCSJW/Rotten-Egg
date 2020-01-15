@@ -6,7 +6,7 @@ const searchReducer = (oldState = {}, action) => {
         case GET_ALL_MOVIES:
             return action.movies;
         case GET_MOVIE:
-            return Object.assign({}, oldState, { [action.payload.id]: action.payload.movie })
+            return Object.assign({}, oldState, { [action.payload.id]: action.payload })
         default:
             return oldState;
     }

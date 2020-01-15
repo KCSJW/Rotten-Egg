@@ -2,6 +2,7 @@ import * as APIUtil from '../util/movie_data_api_util';
 
 export const SET_ALL_MOVIES = 'SET_ALL_MOVIES';
 export const NOW_PLAYING_MOVIES = 'NOW_PLAYING_MOVIES';
+export const UP_COMING_MOVIES = 'UP_COMING_MOVIES';
 
 export const setAllMovies = payload => ({
     type: SET_ALL_MOVIES,
@@ -13,6 +14,11 @@ export const nowPlayingMovies = payload => ({
     payload
 });
 
+export const upComingMovies = payload => ({
+    type: UP_COMING_MOVIES,
+    payload
+});
+
 export const setMovies = () => dispatch => (
     APIUtil.fetchAllMovies()
         .then(movies => dispatch(setAllMovies(movies)))
@@ -21,4 +27,9 @@ export const setMovies = () => dispatch => (
 export const nowPlaying = () => dispatch => (
     APIUtil.fetchPlayingMovies()
         .then(movies => dispatch(nowPlayingMovies(movies)))
+);
+
+export const upComing = () => dispatch => (
+    APIUtil.fetchPlayingMovies()
+        .then(movies => dispatch(upComingMovies(movies)))
 );

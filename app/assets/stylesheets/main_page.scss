@@ -17,7 +17,7 @@ body {
 }
 
 .main-page {
-  width: 98%
+  // width: 98%
 }
 
 .movies-index {
@@ -65,22 +65,26 @@ body {
   border: none;
 }
 
-.movie-index-item{
+.movie-list-item{
   display: flex;
   flex-direction: row;
   padding: 5px;
   border-bottom: rgb(157, 164, 172) 1px solid;
 }
 
-.index-icon {
+.list-icon {
   width: auto;
   height: 25px;
   margin-right: 5px;
 }
 
-.index-score {
+.list-score {
   margin-left: 5px;
   width: 40px;
+}
+
+.list-text {
+  font-weight: lighter;
 }
 
 .link-to-movie {
@@ -97,7 +101,7 @@ body {
 .app-footer{
   display: flex;
   flex-direction: column;
-  min-width: 98%;
+  width: 100%;
   margin: 0;
 }
 
