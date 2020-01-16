@@ -87,7 +87,7 @@ class ReviewForm extends React.Component {
                         <textarea
                             cols="100"
                             rows="5"
-                            placeholder="What did you think of the movie? (optional)"
+                            placeholder="A penny for your thoughts?"
                             className="movie-review-form-body"
                             value={this.state.body}
                             onChange={this.update("body")} />

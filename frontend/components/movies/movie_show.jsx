@@ -21,9 +21,10 @@ class MovieShowPage extends React.Component {
     }
 
     render() {
-        if (!this.props.movie) return null;
-
         console.log(this.props)
+
+        if (!this.props.movie) return null;
+        if (typeof avgRating === NaN) return null;
         
         let avgRating = ((this.getAllRating() / this.props.reviews.length))
 
@@ -37,7 +38,7 @@ class MovieShowPage extends React.Component {
         } else if (avgRating < 3.5) {
             ratingIcon = window.badImage;
         }
-
+        
         return (
 
             <div className="movie-show-page">
@@ -106,10 +107,9 @@ class MovieShowPage extends React.Component {
                                 this.props.reviews.map((review) => (
                                     <ReviewsItem 
                                         key={review.id} review={review}
-                                        body={review.body} rating={review.rating}
-                                        author_name={review.author_name}
-                                        movie_id={review.movie_id}
                                         currentUserId={this.props.currentUserId}
+                                        deleteReview={this.props.deleteReview}
+                                        getMovie={this.props.getMovie}
                                     />
                                 ))
                             }

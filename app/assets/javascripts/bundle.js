@@ -632,8 +632,9 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      if (!this.props.movie) return null;
       console.log(this.props);
+      if (!this.props.movie) return null;
+      if (_typeof(avgRating) === NaN) return null;
       var avgRating = this.getAllRating() / this.props.reviews.length;
       var ratingIcon;
 
@@ -719,11 +720,9 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_reviews_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
           key: review.id,
           review: review,
-          body: review.body,
-          rating: review.rating,
-          author_name: review.author_name,
-          movie_id: review.movie_id,
-          currentUserId: _this2.props.currentUserId
+          currentUserId: _this2.props.currentUserId,
+          deleteReview: _this2.props.deleteReview,
+          getMovie: _this2.props.getMovie
         });
       })))));
     }
@@ -1636,7 +1635,7 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         cols: "100",
         rows: "5",
-        placeholder: "What did you think of the movie? (optional)",
+        placeholder: "A penny for your thoughts?",
         className: "movie-review-form-body",
         value: this.state.body,
         onChange: this.update("body")
@@ -1716,12 +1715,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var reviewsItem = function reviewsItem(_ref) {
-  var body = _ref.body,
-      rating = _ref.rating,
-      author_id = _ref.author_id,
-      author_name = _ref.author_name,
-      movie_id = _ref.movie_id,
-      currentUserId = _ref.currentUserId;
+  var review = _ref.review,
+      currentUserId = _ref.currentUserId,
+      deleteReview = _ref.deleteReview,
+      getMovie = _ref.getMovie;
+  var body = review.body,
+      rating = review.rating,
+      author_id = review.author_id,
+      author_name = review.author_name,
+      movie_id = review.movie_id;
   var reviewIcon;
 
   if (rating >= 7.5) {
@@ -1735,18 +1737,14 @@ var reviewsItem = function reviewsItem(_ref) {
   }
 
   ;
-  var delPost; // =<div className="movie-review-delete"
-  //     onClick={() => deleteReview(review)
-  //     .then(() => getMovie(movie_id))}
-  //     >Delete this egg...
-  // </div>
+  var delPost;
 
   if (author_id === currentUserId) {
-    delPost = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    delPost = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "movie-review-delete",
       onClick: function onClick() {
         return deleteReview(review).then(function () {
-          return getMovie(review.movie_id);
+          return getMovie(movie_id);
         });
       }
     }, "Delete this egg...");
@@ -1764,7 +1762,11 @@ var reviewsItem = function reviewsItem(_ref) {
     src: reviewIcon
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "movie-review-text"
-  }, " ", body, " ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+  }, " ", body, " "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "review-score-link-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "movie-review-score"
+  }, "Rating: ", rating))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "movie-review-author-info"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "movie-review-author-name"

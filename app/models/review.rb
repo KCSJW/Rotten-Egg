@@ -6,7 +6,7 @@ class Review < ApplicationRecord
         foreign_key: :movie_id,
         class_name: :Movie
 
-    belongs_to :User,
+    belongs_to :user,
         primary_key: :id,
         foreign_key: :author_id,
         class_name: :User

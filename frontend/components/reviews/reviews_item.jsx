@@ -1,7 +1,9 @@
 import React from 'react';
 
-const reviewsItem = ({ body, rating, author_id, author_name, movie_id, currentUserId}) => {
-    
+const reviewsItem = ({ review, currentUserId, deleteReview, getMovie}) => {
+
+    const { body, rating, author_id, author_name, movie_id } = review
+
     let reviewIcon;
     if (rating >= 7.5) {
         reviewIcon = window.goodImage;
@@ -14,17 +16,12 @@ const reviewsItem = ({ body, rating, author_id, author_name, movie_id, currentUs
     };
 
     let delPost; 
-                    // =<div className="movie-review-delete"
-                    //     onClick={() => deleteReview(review)
-                    //     .then(() => getMovie(movie_id))}
-                    //     >Delete this egg...
-                    // </div>
     if ( author_id === currentUserId ) {
         delPost = 
-        <li className="movie-review-delete" 
+        <div className="movie-review-delete" 
             onClick={() => deleteReview(review)
-                .then(() => getMovie(review.movie_id))}>Delete this egg...
-        </li>
+                .then(() => getMovie(movie_id))}>Delete this egg...
+        </div>
     };
 
     return (
@@ -36,9 +33,9 @@ const reviewsItem = ({ body, rating, author_id, author_name, movie_id, currentUs
                     <li><div className="movie-review-text"> {body} </div></li>
                 </div>
 
-                {/* <div className="review-score-link-container">
-                    <div className="movie-review-score">Rating: {review.rating} </div>
-                </div> */}
+                <div className="review-score-link-container">
+                    <div className="movie-review-score">Rating: {rating}</div>
+                </div>
             </div>
 
             <ul className="movie-review-author-info">

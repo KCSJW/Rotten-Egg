@@ -36,7 +36,7 @@ class Api::ReviewsController < ApplicationController
 
     def destroy
         @review = Review.find(params[:id])
-        if current_user.id == @review.user_id
+        if current_user.id == @review.user.id
             @review.destroy
             render :show
         else
