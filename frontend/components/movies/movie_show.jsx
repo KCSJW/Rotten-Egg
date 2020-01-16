@@ -22,23 +22,23 @@ class MovieShowPage extends React.Component {
     render() {
         if (!this.props.movie) return null;
 
-        console.log(this.props.movie)
+        console.log("this.props")
+        console.log(this.props)
         
-        let avgRating = (this.getAllRating() / this.props.reviews.length)
+        let avgRating = ((this.getAllRating() / this.props.reviews.length) / 10)
 
         let ratingIcon;
-        if (avgRating >= 75) {
+        if (avgRating >= 7.5) {
             ratingIcon = window.goodImage;
-        } else if (avgRating >= 50 && avgRating < 75) {
+        } else if (avgRating >= 5.0 && avgRating < 7.5) {
             ratingIcon = window.mehImage;
-        } else if (avgRating >= 35 && avgRating < 50) {
+        } else if (avgRating >= 3.5 && avgRating < 5.0) {
             ratingIcon = window.arghImage;
-        } else if (avgRating < 35) {
+        } else if (avgRating < 3.5) {
             ratingIcon = window.badImage;
         }
 
         return (
-
 
             <div className="movie-show-page">
                 <div className="movie-information-content">
@@ -84,7 +84,7 @@ class MovieShowPage extends React.Component {
                                         <div className="movie-critic-score">N/A</div>
                                     </div>
                                 </div>
-                                <div className="movie-show-upper-right-content-header1">Other Thinks</div>
+                                <div className="movie-show-upper-right-content-header2">Other Thinks</div>
                             </div>
 
                         </div>
@@ -95,7 +95,18 @@ class MovieShowPage extends React.Component {
 
                     </div>
 
+
                 </div>
+
+                <div className="movie-reviews-lists">
+                    <div className="movie-review-list-container">
+                        <div className="movie-review-list-header">Egg Reviews:</div>
+                        <ul className="movie-review-list-critics">
+                            <div>MovieReviewFormItem</div>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         )
     }

@@ -6,7 +6,8 @@ import ReviewForm from './reviews_form';
 
 const mSTP = state => {
     return ({
-        signedIn: Boolean(state.session.currentUser),
+        signedIn: Boolean(state.session),
+        currentUser: state.entities.users,
         errors: state.errors.review
     })
 };

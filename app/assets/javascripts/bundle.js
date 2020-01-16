@@ -629,17 +629,18 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       if (!this.props.movie) return null;
-      console.log(this.props.movie);
-      var avgRating = this.getAllRating() / this.props.reviews.length;
+      console.log("this.props");
+      console.log(this.props);
+      var avgRating = this.getAllRating() / this.props.reviews.length / 10;
       var ratingIcon;
 
-      if (avgRating >= 75) {
+      if (avgRating >= 7.5) {
         ratingIcon = window.goodImage;
-      } else if (avgRating >= 50 && avgRating < 75) {
+      } else if (avgRating >= 5.0 && avgRating < 7.5) {
         ratingIcon = window.mehImage;
-      } else if (avgRating >= 35 && avgRating < 50) {
+      } else if (avgRating >= 3.5 && avgRating < 5.0) {
         ratingIcon = window.arghImage;
-      } else if (avgRating < 35) {
+      } else if (avgRating < 3.5) {
         ratingIcon = window.badImage;
       }
 
@@ -698,12 +699,20 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-critic-score"
       }, "N/A"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "movie-show-upper-right-content-header1"
+        className: "movie-show-upper-right-content-header2"
       }, "Other Thinks"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-bottom-right-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_reviews_form_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         movieId: this.props.movie.id
-      })))));
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "movie-reviews-lists"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "movie-review-list-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "movie-review-list-header"
+      }, "Egg Reviews:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "movie-review-list-critics"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "MovieReviewFormItem")))));
     }
   }]);
 
@@ -1450,6 +1459,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1458,15 +1469,57 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
+
+var range = function range(min, max) {
+  return Array(max - min + 1).fill().map(function (_, i) {
+    return min + i;
+  });
+};
+
+var RatingItem = function RatingItem(_ref) {
+  var checked = _ref.checked,
+      colored = _ref.colored,
+      _onChange = _ref.onChange,
+      value = _ref.value;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "rating-item ".concat(colored ? 'rating-item-selected' : '')
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    checked: checked,
+    className: "rating-input",
+    onChange: function onChange(e) {
+      _onChange(value * 10);
+    },
+    type: "radio",
+    value: value
+  }));
+};
+
+var Rating = function Rating(_ref2) {
+  var min = _ref2.min,
+      max = _ref2.max,
+      onChange = _ref2.onChange,
+      value = _ref2.value;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "rating"
+  }, range(min, max).map(function (item) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(RatingItem, {
+      key: item,
+      colored: value >= item,
+      checked: value === item,
+      value: item,
+      onChange: onChange
+    });
+  }));
+};
 
 var ReviewForm =
 /*#__PURE__*/
@@ -1483,20 +1536,95 @@ function (_React$Component) {
       rating: '',
       body: ''
     };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(ReviewForm, [{
-    key: "needToSignIn",
-    value: function needToSignIn() {
+    key: "requireToSignIn",
+    value: function requireToSignIn() {
       if (!this.props.signedIn) {
         this.props.signin();
       }
     }
   }, {
+    key: "handleSubmit",
+    value: function handleSubmit() {
+      var _this2 = this;
+
+      var movieId = parseInt(this.props.movieId);
+      var review = Object.assign({}, this.state, {
+        movie_id: movieId
+      });
+
+      if (this.props.signedIn) {
+        this.props.createReview(review).then(function () {
+          return _this2.props.getMovie(movieId);
+        });
+        this.setState({
+          rating: '',
+          body: ''
+        });
+      } else {
+        this.props.signin();
+      }
+    }
+  }, {
+    key: "update",
+    value: function update(field) {
+      var _this3 = this;
+
+      return function (e) {
+        return _this3.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
+  }, {
+    key: "errors",
+    value: function errors() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "review-form-errors"
+      }, this.props.errors.map(function (error, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: i,
+          className: "review-form-error-text"
+        }, error);
+      }));
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "work?");
+      var _this4 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "movie-review-form-container"
+      }, this.errors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "movie-review-form-score-and-body-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Rating, {
+        min: 1,
+        max: 10,
+        value: this.state.rating,
+        onChange: function onChange(rating) {
+          _this4.setState({
+            rating: rating
+          });
+        },
+        onClick: function onClick(e) {
+          return _this4.requireToSignIn();
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        cols: "100",
+        rows: "5",
+        placeholder: "What did you think of the movie? (optional)",
+        className: "movie-review-form-body",
+        value: this.state.body,
+        onChange: this.update("body")
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        className: "movie-review-form-button",
+        value: "Next!"
+      }))));
     }
   }]);
 
@@ -1530,7 +1658,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state) {
   return {
-    signedIn: Boolean(state.session.currentUser),
+    signedIn: Boolean(state.session),
+    currentUser: state.entities.users,
     errors: state.errors.review
   };
 };
@@ -2088,6 +2217,10 @@ var hadUser = function hadUser(currentUser, signout) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "session-list"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "signin-icon"
+  }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: window.demoImage
+  }), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "signin-status"
   }, currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " | "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "signin-status",
@@ -2389,7 +2522,7 @@ var reviewsRedcer = function reviewsRedcer() {
       return action.payload.reviews;
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_REVIEW"]:
-      return Object.assign({}, oldState, _defineProperty({}, action.review.id, review));
+      return Object.assign({}, oldState, _defineProperty({}, action.review.id, action.review));
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_1__["DELETE_REVIEW"]:
       var newState = Object.assign({}, oldState);

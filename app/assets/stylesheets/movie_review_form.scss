@@ -1,0 +1,117 @@
+
+.movie-show-bottom-right-content{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%
+}
+
+.movie-review-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.review-form-errors{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.review-form-error-text {
+  font-size: 14px;
+  color: red;
+  margin-right: 20px;
+}
+
+.movie-review-form-score-and-body-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.movie-review-form-rating {
+  display: block;
+  width: 160px;
+  height: 34px;
+  padding: 0px 10px;
+  font-size: 15px;
+  line-height: 1.25;
+  color: #555;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: lighter;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+
+.movie-review-form-body {
+  border: 1px solid #F8F9F9;
+  border-radius: 2px;
+  background-color: #F8F9F9;
+  height: 88px;
+  width: 90%;
+  max-width: 90%;
+  font-size: 14px;
+  padding: 7px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.movie-review-form-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  padding: 10px;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 200;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  font-size: 13px;
+  line-height: 1.25;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: rgb(255, 208, 0);
+  border-color: rgb(252, 206, 3);
+  color: white;
+}
+.movie-review-form-button:hover {
+  background-color: rgb(160, 189, 0);
+  border-color: #b3ff00;
+}
+
+
+// star-rating -------------
+
+.rating {
+  line-height: 1;
+  display: inline-block;
+
+  &-item {
+    display: inline;
+    font-size: 0;
+
+    &::before {
+      font-size: 18px;
+      content: "★";
+      color: lightgray;
+    }
+  }
+
+  &-input {
+    position: absolute;
+    visibility: hidden;
+  }
+}
+
+.rating:hover .rating-item::before {
+  color: gold;
+}
+
+.rating-item:hover ~ .rating-item::before {
+  color: lightgray;
+}
+
+.rating-item-selected::before {
+  color: gold;
+}

@@ -13,6 +13,7 @@ const noUser = (showModal) => {
 const hadUser = (currentUser, signout) => {
     return(
         <ul className="session-list">
+            <li className="signin-icon"> <img src={window.demoImage} /> </li>
             <li className="signin-status" >{currentUser.username}</li>
             <li> | </li>
             <li className="signin-status" onClick={signout}>Sign Out</li>
