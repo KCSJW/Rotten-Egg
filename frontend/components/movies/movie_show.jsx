@@ -1,5 +1,6 @@
 import React from 'react'
-import ReviewForm from '../reviews/reviews_form_container'
+import ReviewForm from '../reviews/reviews_form_container';
+import ReviewsItem from '../reviews/reviews_item';
 
 class MovieShowPage extends React.Component {
     constructor(props) {
@@ -22,10 +23,9 @@ class MovieShowPage extends React.Component {
     render() {
         if (!this.props.movie) return null;
 
-        console.log("this.props")
         console.log(this.props)
         
-        let avgRating = ((this.getAllRating() / this.props.reviews.length) / 10)
+        let avgRating = ((this.getAllRating() / this.props.reviews.length))
 
         let ratingIcon;
         if (avgRating >= 7.5) {
@@ -102,7 +102,17 @@ class MovieShowPage extends React.Component {
                     <div className="movie-review-list-container">
                         <div className="movie-review-list-header">Egg Reviews:</div>
                         <ul className="movie-review-list-critics">
-                            <div>MovieReviewFormItem</div>
+                            {
+                                this.props.reviews.map((review) => (
+                                    <ReviewsItem 
+                                        key={review.id} review={review}
+                                        body={review.body} rating={review.rating}
+                                        author_name={review.author_name}
+                                        movie_id={review.movie_id}
+                                        currentUserId={this.props.currentUserId}
+                                    />
+                                ))
+                            }
                         </ul>
                     </div>
                 </div>

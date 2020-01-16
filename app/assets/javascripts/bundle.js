@@ -575,6 +575,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _reviews_reviews_form_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reviews/reviews_form_container */ "./frontend/components/reviews/reviews_form_container.js");
+/* harmony import */ var _reviews_reviews_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reviews/reviews_item */ "./frontend/components/reviews/reviews_item.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -592,6 +593,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -628,10 +630,11 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       if (!this.props.movie) return null;
-      console.log("this.props");
       console.log(this.props);
-      var avgRating = this.getAllRating() / this.props.reviews.length / 10;
+      var avgRating = this.getAllRating() / this.props.reviews.length;
       var ratingIcon;
 
       if (avgRating >= 7.5) {
@@ -712,7 +715,17 @@ function (_React$Component) {
         className: "movie-review-list-header"
       }, "Egg Reviews:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "movie-review-list-critics"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "MovieReviewFormItem")))));
+      }, this.props.reviews.map(function (review) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_reviews_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          key: review.id,
+          review: review,
+          body: review.body,
+          rating: review.rating,
+          author_name: review.author_name,
+          movie_id: review.movie_id,
+          currentUserId: _this2.props.currentUserId
+        });
+      })))));
     }
   }]);
 
@@ -744,9 +757,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
+  var currentUserId;
+
+  if (state.session) {
+    currentUserId = state.session.id;
+  }
+
   return {
     movie: state.entities.search[ownProps.match.params.movieId],
-    reviews: Object.values(state.entities.reviews)
+    reviews: Object.values(state.entities.reviews),
+    currentUserId: currentUserId
   };
 };
 
@@ -1496,7 +1516,7 @@ var RatingItem = function RatingItem(_ref) {
     checked: checked,
     className: "rating-input",
     onChange: function onChange(e) {
-      _onChange(value * 10);
+      _onChange(value);
     },
     type: "radio",
     value: value
@@ -1679,6 +1699,81 @@ var mDTP = function mDTP(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_reviews_form__WEBPACK_IMPORTED_MODULE_4__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/reviews/reviews_item.jsx":
+/*!******************************************************!*\
+  !*** ./frontend/components/reviews/reviews_item.jsx ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var reviewsItem = function reviewsItem(_ref) {
+  var body = _ref.body,
+      rating = _ref.rating,
+      author_id = _ref.author_id,
+      author_name = _ref.author_name,
+      movie_id = _ref.movie_id,
+      currentUserId = _ref.currentUserId;
+  var reviewIcon;
+
+  if (rating >= 7.5) {
+    reviewIcon = window.goodImage;
+  } else if (rating >= 5 && rating < 7.5) {
+    reviewIcon = window.mehImage;
+  } else if (rating >= 3.5 && rating < 5) {
+    reviewIcon = window.arghImage;
+  } else if (rating < 3.5) {
+    reviewIcon = window.badImage;
+  }
+
+  ;
+  var delPost; // =<div className="movie-review-delete"
+  //     onClick={() => deleteReview(review)
+  //     .then(() => getMovie(movie_id))}
+  //     >Delete this egg...
+  // </div>
+
+  if (author_id === currentUserId) {
+    delPost = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "movie-review-delete",
+      onClick: function onClick() {
+        return deleteReview(review).then(function () {
+          return getMovie(review.movie_id);
+        });
+      }
+    }, "Delete this egg...");
+  }
+
+  ;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "movie-review-item"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "movie-review-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "review-score-icon-text-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "movie-review-score-icon",
+    src: reviewIcon
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "movie-review-text"
+  }, " ", body, " ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "movie-review-author-info"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "movie-review-author-name"
+  }, author_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "movie-review-author-name"
+  }, delPost)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (reviewsItem);
 
 /***/ }),
 

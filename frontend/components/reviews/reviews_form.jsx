@@ -8,7 +8,7 @@ const RatingItem = ({ checked, colored, onChange, value }) => (
             checked={checked}
             className='rating-input'
             onChange={(e) => {
-                onChange(value * 10)
+                onChange(value)
             }}
             type="radio"
             value={value} />

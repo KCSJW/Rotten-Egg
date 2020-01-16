@@ -5,9 +5,14 @@ import { getDBMovie } from '../../actions/search_actions';
 import { deleteReview } from '../../actions/review_actions';
 
 const mSTP = (state, ownProps) => {
+
+    let currentUserId;
+    if (state.session) {currentUserId = state.session.id;}
+
     return ({
         movie: state.entities.search[ownProps.match.params.movieId],
-        reviews: Object.values(state.entities.reviews)
+        reviews: Object.values(state.entities.reviews),
+        currentUserId: currentUserId
     })
 }
 
