@@ -31,12 +31,14 @@
 .movie-container-upper-content {
   display: flex;
   flex-direction: row;
+  font-size: 14px;
 }
 
 .movie-show-bottom-right-content {
   display: flex;
   align-items: flex-end;
   width: 100%;
+  box-shadow: gray;
 }
 
 
@@ -47,8 +49,8 @@
 }
 
 .movie-show-image {
-  width: 175;
-  height: 235px;
+  width: 190px;
+  height: auto;
 }
 
 .movie-container-for-image {
@@ -61,22 +63,21 @@
 }
 
 .movie-show-title {
-  font-weight: 800;
-  font-family: 'Limelight', cursive;
+  font-family: 'Neusa Next Pro Compact',Impact,Arial,sans-serif;
   max-width: 100%;
   font-size: 25px;
 }
 
 .movie-show-info {
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   padding-top: 10px;
 }
 
 .movie-show-right-side-content {
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
+  justify-content: space-between;
   align-items: flex-start;
   margin: 20px;
   width: 100%;
@@ -84,6 +85,7 @@
 
 .movie-show-upper-right-content-container{
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: center;
 }
@@ -91,33 +93,33 @@
 .movie-show-upper-right-content1-container{
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #e0d594;
-  background-color: #fff7cd;
+  border-bottom: 5px solid black;
+  background-color: #EFEFEF;
+  padding-top: 20px;
 }
 
 .movie-show-upper-right-content1 {
   display: flex;
   flex-direction: row;
-  background-color: #fff7cd;
 }
 
 .movie-upper-content-headers {
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: space-around;
 }
 
 .movie-show-upper-right-content-header1{
   display: flex;
-  align-items: center;
-  margin: 5px 0 0 50px;
-  color: #7d7d7b;
+  justify-content: center;
+  margin: 5px 0 0 15px;
+  color: black;
 }
 .movie-show-upper-right-content-header2{
   display: flex;
-  align-items: center;
-  margin: 5px 0 0 35px;
-  color: #7d7d7b;
+  justify-content: center;
+  margin: 15px 0 0 5px;
+  color: black;
 }
 
 .movie-container-for-critic-score{
@@ -132,7 +134,7 @@
 }
 
 .movie-critic-score {
-  font-weight: bold;
+  text-align: center;
   font-size: 50px;
 }
 
@@ -162,13 +164,15 @@
 .movie-show-upper-right-content2-container{
   display: flex;
   flex-direction: column;
-  background-color: #fff7cd;
+  border-bottom: 5px solid black;
+  background-color: #EFEFEF;
+  padding-top: 20px;
+  padding-right: 10px;
 }
 
 .movie-show-upper-right-content2 {
   display: flex;
   flex-direction: row;
-  background-color: #fff7cd;
 }
 
 .movie-container-for-user-score{
@@ -178,11 +182,27 @@
 
 .movie-user-score-icon {
   width: 65px;
-  height: 60px;
+  height: 55px;
   padding: 10px;
 }
 
 .movie-user-score {
-  font-weight: bold;
+  text-align: center;
   font-size: 50px;
+}
+
+.rating-box-wrap {
+  position: absolute;
+  border-bottom: 2px solid black;
+  height: 10px;
+  width: 90%;
+}
+
+.rating-box-wrap-title {
+  margin: 0;
+  z-index: 3;
+  position: absolute;
+  padding: 0px 2px 0px 2px;
+  font-family: 'Neusa Next Pro Compact Medium',Impact,Arial,sans-serif;
+  background-color: #EFEFEF;
 }

@@ -25,8 +25,6 @@ export const topRatedMovies = payload => ({
     payload
 });
 
-
-
 export const setMovies = () => dispatch => (
     APIUtil.fetchAllMovies()
         .then(movies => dispatch(setAllMovies(movies)))
