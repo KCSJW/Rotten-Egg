@@ -429,4 +429,19 @@ review27 = Review.create!({
     movie_id: movie13.id
 });
 
+review28 = Review.create!({
+    body: 'It is the worst Star War movie ever made! The pacing of the movie is so frantic that it feels like three movies have been jammed into one. There are more plot holes in this movie than the pimples on a teenager\'s face. The resurrection of Palpatine renders the sacrifice (and redemption) of Darth Vader in Episode VI utterly meaningless. Both Ryan Johnson and J. J. Abrams are responsible for the mess of the new trilogy. But ultimately, the blame should be put on Kathleen Kennedy. Kennedy has to go before there is any hope for Disney\'s future Star Wars movies. Do yourself a favor and skip this movie!',
+    rating: 3,
+    author_name: user12.username,
+    author_id: user12.id,
+    movie_id: movie20.id
+});
+
+review29 = Review.create!({
+    body: 'Joker (2019) is a fresh take on the mythology of one of the most beloved DC characters ever. Spoiler alert: there is no acid bath involved in the formation of this version of the Joker. ‎Joaquin Phoenix\'s Joker is a product of mental illness and social apathy. The story is not particularly strong. However, the movie is saved by Phoenix\'s award-worthy performance and the felicitous soundtracks. The social commentary on the class struggle is particularly apt for the tumultuous year of 2019. You might need to watch this movie a couple of times to know which scene is real and which scene is Arthur Fleck\'s imagination. The dance scene on the stairs will go down as one of the most iconic movie scenes in the last decade. I cannot recommend this movie highly enough!',
+    rating: 3,
+    author_name: user12.username,
+    author_id: user12.id,
+    movie_id: movie12.id
+
 end
