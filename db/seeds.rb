@@ -443,5 +443,6 @@ review29 = Review.create!({
     author_name: user12.username,
     author_id: user12.id,
     movie_id: movie12.id
+});
 
 end
