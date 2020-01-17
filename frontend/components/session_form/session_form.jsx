@@ -10,6 +10,7 @@ class sessionForm extends React.Component {
         };
         this.handleDemo = this.handleDemo.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.ghostType = this.ghostType.bind(this);
     }
 
     update(field) {
@@ -20,12 +21,33 @@ class sessionForm extends React.Component {
         this.props.action(this.state);
     }
 
-    handleDemo() {
-        this.setState({
-            username: 'RottenEgg',
-            password: 'iamrotten'
-        }, () => this.props.action(this.state));
+    // handleDemo() {
+    //     this.setState({
+    //         username: 'RottenEgg',
+    //         password: 'iamrotten'
+    //     }, () => this.props.action(this.state));
+    // }
+
+    handleDemo(e) {
+        e.preventDefault();
+        this.ghostType('username', 'RottenEgg');
+            setTimeout(() => {
+                this.ghostType('password', 'iamrotten');
+                setTimeout(() =>{
+                    this.props.action(this.state);
+                }, 800)
+            }, 600)
     }
+
+    ghostType(input, string, n = 1) {
+        setTimeout(() => {
+            if (n < string.length) {
+                this.ghostType(input, string, n+1);
+            };
+            this.setState({ [input]: string.slice(0, n)})
+        }, 50)
+    }
+    
 
     componentWillUnmount() {
         this.props.getErrors([]);

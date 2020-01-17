@@ -2063,6 +2063,7 @@ function (_React$Component) {
     };
     _this.handleDemo = _this.handleDemo.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.ghostType = _this.ghostType.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2079,18 +2080,43 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit() {
       this.props.action(this.state);
-    }
+    } // handleDemo() {
+    //     this.setState({
+    //         username: 'RottenEgg',
+    //         password: 'iamrotten'
+    //     }, () => this.props.action(this.state));
+    // }
+
   }, {
     key: "handleDemo",
-    value: function handleDemo() {
+    value: function handleDemo(e) {
       var _this3 = this;
 
-      this.setState({
-        username: 'RottenEgg',
-        password: 'iamrotten'
-      }, function () {
-        return _this3.props.action(_this3.state);
-      });
+      e.preventDefault();
+      this.ghostType('username', 'RottenEgg');
+      setTimeout(function () {
+        _this3.ghostType('password', 'iamrotten');
+
+        setTimeout(function () {
+          _this3.props.action(_this3.state);
+        }, 800);
+      }, 600);
+    }
+  }, {
+    key: "ghostType",
+    value: function ghostType(input, string) {
+      var _this4 = this;
+
+      var n = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+      setTimeout(function () {
+        if (n < string.length) {
+          _this4.ghostType(input, string, n + 1);
+        }
+
+        ;
+
+        _this4.setState(_defineProperty({}, input, string.slice(0, n)));
+      }, 50);
     }
   }, {
     key: "componentWillUnmount",
@@ -2100,7 +2126,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
       var footerText, formSwitch, demoButton;
 
@@ -2117,14 +2143,14 @@ function (_React$Component) {
         formSwitch = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "session-form-modal-switch",
           onClick: function onClick() {
-            return _this4.props.switchModal();
+            return _this5.props.switchModal();
           }
         }, "Become one!");
       } else if (this.props.formType === "Sign Up") {
         demoButton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "session-demo-button",
           onClick: function onClick() {
-            return _this4.props.switchModal();
+            return _this5.props.switchModal();
           }
         }, "Go use a Demo Egg", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "demo-button-icon"
@@ -2135,7 +2161,7 @@ function (_React$Component) {
         formSwitch = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "session-form-modal-switch",
           onClick: function onClick() {
-            return _this4.props.switchModal();
+            return _this5.props.switchModal();
           }
         }, "Sign In!");
       }
@@ -2150,7 +2176,7 @@ function (_React$Component) {
       }, this.props.formType, " Here!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "modal-close-x",
         onClick: function onClick(e) {
-          return _this4.props.hideModal();
+          return _this5.props.hideModal();
         }
       }, "x")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "session-form-errors"
