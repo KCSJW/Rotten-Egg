@@ -652,14 +652,6 @@ review44 = Review.create!({
 });
 
 review45 = Review.create!({
-    body: 'If you have it, will you abuse that ability...especially in San Francisco',
-    rating: 10,
-    author_name: user0.username,
-    author_id: user0.id,
-    movie_id: movie26.id
-});
-
-review46 = Review.create!({
     body: 'Khal Drogo dressed up like a corn who can swim and talk fish',
     rating: 3,
     author_name: user0.username,
@@ -667,7 +659,7 @@ review46 = Review.create!({
     movie_id: movie28.id
 });
 
-review47 = Review.create!({
+review46 = Review.create!({
     body: 'One of the well done manga adaptation movie, strong start for the sequel yet to come. You will feel for Alita\'s pain and things she have to go through and learn to build her up as a strong female character. Very enjoy this movie',
     rating: 8.5,
     author_name: user0.username,
@@ -675,7 +667,7 @@ review47 = Review.create!({
     movie_id: movie29.id
 });
 
-review48 = Review.create!({
+review47 = Review.create!({
     body: 'Everyone Star War fans will remember December 20 2019, the day that Disney finally killed Star War',
     rating: 0,
     author_name: user0.username,
@@ -683,7 +675,7 @@ review48 = Review.create!({
     movie_id: movie20.id
 });
 
-review49 = Review.create!({
+review48 = Review.create!({
     body: '‎Joaquin Phoenix totally brings out how any noraml average human can become with mental illness, social apathy and unsympathetic from others. The three different tone of laughter he had in the movie showed as he live in this society he have to adapt and evolve. As an audience you saw the last straw which broke the camel\'s back, and the personality Arthur finally die consumed by the Joker. As we all understand the only way to survive in this world is to adapt and evolve, Arthur evolved to be Joker in order to adapt this unsympathetic and heartless world.',
     rating: 8,
     author_name: user0.username,
@@ -691,7 +683,7 @@ review49 = Review.create!({
     movie_id: movie12.id
 });
 
-review50 = Review.create!({
+review49 = Review.create!({
     body: 'One of the best realistic animation artwork plus an interesting plot, very enjoyable.',
     rating: 7,
     author_name: user0.username,
@@ -699,7 +691,7 @@ review50 = Review.create!({
     movie_id: movie30.id
 });
 
-review51 = Review.create!({
+review50 = Review.create!({
     body: 'The first rule of Fight Club is: You do not talk about Fight Club. The reason why I do not use soap bar is because this movie',
     rating: 8,
     author_name: user0.username,
@@ -707,7 +699,7 @@ review51 = Review.create!({
     movie_id: movie31.id
 });
 
-review52 = Review.create!({
+review51 = Review.create!({
     body: 'One of the my personal favorite movie of all time, the legendary era of America immigration and the start of the golden age. This movie brings out most immigrants\' idea of new hope with all the fear that comes with it. As the main character said in the movie "keys begin, keys end. You know there are 88 of them. Nobody can tell you any different. They are not infinite. You are infinite... And on those keys, the music that you can make... is infinite. I like that. That I can live by."',
     rating: 10,
     author_name: user0.username,
@@ -715,7 +707,7 @@ review52 = Review.create!({
     movie_id: movie32.id
 });
 
-review53 = Review.create!({
+review52 = Review.create!({
     body: 'This movie show how relationship between old friends, generations, father and daughter. It is a very good ending for Logan and Professor X as their job of passing down their believe to the next generation of mutants.',
     rating: 9,
     author_name: user0.username,
