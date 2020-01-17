@@ -1,4 +1,7 @@
 <script type="text/javascript">
+// API
+  window.tmdbAPIKey = '<%= Rails.application.credentials.tmdb[:api_key] %>'
+
 // website img
   window.logoImage = '<%= image_url('rotten_egg.png')%>';
   window.demoImage = "<%= image_url('demo_egg.png') %>";

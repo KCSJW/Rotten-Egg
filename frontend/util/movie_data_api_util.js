@@ -3,7 +3,7 @@ export const fetchAllMovies = () => (
         method: 'GET',
         url: 'https://api.themoviedb.org/3/movie/popular?',
         dataType: 'json',
-        data: {api_key: '78cf5b4e545acdb9a5957b2546b6f081'}
+        data: { api_key: window.tmdbAPIKey }
     })
 );
 
@@ -12,7 +12,7 @@ export const fetchPlayingMovies = () => (
         method: 'GET',
         url: 'https://api.themoviedb.org/3/movie/now_playing?',
         dataType: 'json',
-        data: { api_key: '78cf5b4e545acdb9a5957b2546b6f081' }
+        data: { api_key: window.tmdbAPIKey }
     })
 );
 
@@ -21,9 +21,7 @@ export const fetchUpComingMovies = () => (
         method: 'GET',
         url: 'https://api.themoviedb.org/3/movie/upcoming?',
         dataType: 'json',
-        data: { 
-            api_key: '78cf5b4e545acdb9a5957b2546b6f081',
-        }
+        data: { api_key: window.tmdbAPIKey }
     })
 );
 
@@ -32,6 +30,6 @@ export const fetchTopRatedMovies = () => (
         method: 'GET',
         url: 'https://api.themoviedb.org/3/movie/top_rated?',
         dataType: 'json',
-        data: { api_key: '78cf5b4e545acdb9a5957b2546b6f081' }
+        data: { api_key: window.tmdbAPIKey }
     })
 );

@@ -520,7 +520,6 @@ var Main = function Main() {
     path: "/",
     component: _movies_movies_index_container__WEBPACK_IMPORTED_MODULE_2__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    exact: true,
     path: "*"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
     to: "/"
@@ -2989,7 +2988,7 @@ var fetchAllMovies = function fetchAllMovies() {
     url: 'https://api.themoviedb.org/3/movie/popular?',
     dataType: 'json',
     data: {
-      api_key: '78cf5b4e545acdb9a5957b2546b6f081'
+      api_key: window.tmdbAPIKey
     }
   });
 };
@@ -2999,7 +2998,7 @@ var fetchPlayingMovies = function fetchPlayingMovies() {
     url: 'https://api.themoviedb.org/3/movie/now_playing?',
     dataType: 'json',
     data: {
-      api_key: '78cf5b4e545acdb9a5957b2546b6f081'
+      api_key: window.tmdbAPIKey
     }
   });
 };
@@ -3009,7 +3008,7 @@ var fetchUpComingMovies = function fetchUpComingMovies() {
     url: 'https://api.themoviedb.org/3/movie/upcoming?',
     dataType: 'json',
     data: {
-      api_key: '78cf5b4e545acdb9a5957b2546b6f081'
+      api_key: window.tmdbAPIKey
     }
   });
 };
@@ -3019,7 +3018,7 @@ var fetchTopRatedMovies = function fetchTopRatedMovies() {
     url: 'https://api.themoviedb.org/3/movie/top_rated?',
     dataType: 'json',
     data: {
-      api_key: '78cf5b4e545acdb9a5957b2546b6f081'
+      api_key: window.tmdbAPIKey
     }
   });
 };
