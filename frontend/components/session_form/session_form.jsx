@@ -23,7 +23,7 @@ class sessionForm extends React.Component {
     handleDemo() {
         this.setState({
             username: 'RottenEgg',
-            password: 'iamarotten'
+            password: 'iamrotten'
         }, () => this.props.action(this.state));
     }
 

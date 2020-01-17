@@ -2088,7 +2088,7 @@ function (_React$Component) {
 
       this.setState({
         username: 'RottenEgg',
-        password: 'iamarotten'
+        password: 'iamrotten'
       }, function () {
         return _this3.props.action(_this3.state);
       });
