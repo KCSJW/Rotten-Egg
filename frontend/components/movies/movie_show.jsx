@@ -25,7 +25,7 @@ class MovieShowPage extends React.Component {
 
         if (!this.props.movie) return null;
         if (typeof avgRating === NaN) return null;
-        
+        debugger
         let avgRating = ((this.getAllRating() / this.props.reviews.length))
 
         let ratingIcon;
@@ -43,6 +43,7 @@ class MovieShowPage extends React.Component {
 
             <div className="movie-show-page">
                 <div className="movie-information-content">
+                
 
                     <div className="movie-show-left-side-content">
                         <div className="movie-container-for-title-image">
@@ -115,8 +116,7 @@ class MovieShowPage extends React.Component {
                             }
                         </ul>
                     </div>
-                </div>
-
+                </div>           
             </div>
         )
     }

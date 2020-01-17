@@ -477,7 +477,12 @@ var Footer = function Footer() {
   }, "GitHub"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: githubImage,
     className: "footer-icon"
-  })));
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "footer-disclaimer"
+  }, "Disclaimer: This is a personal project, reviews do not represent creator's opinion and creator do not own any actworks used in this project."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: nqImage,
+    className: "footer-icon-end"
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -635,6 +640,7 @@ function (_React$Component) {
       console.log(this.props);
       if (!this.props.movie) return null;
       if (_typeof(avgRating) === NaN) return null;
+      debugger;
       var avgRating = this.getAllRating() / this.props.reviews.length;
       var ratingIcon;
 
@@ -868,7 +874,9 @@ function (_React$Component) {
         });
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "combin-lists"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_now_playing_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_up_coming_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_top_rated_container__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bg"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_now_playing_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_up_coming_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_top_rated_container__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
     }
   }]);
 
@@ -1642,7 +1650,7 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         className: "movie-review-form-button",
-        value: "Next!"
+        value: "Submit!"
       }))));
     }
   }]);

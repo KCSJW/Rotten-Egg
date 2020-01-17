@@ -37,6 +37,7 @@ class moviesIndex extends React.Component {
                         }
                     </div>
                     <div className='combin-lists'>
+                        <div className="bg"></div>
                         <NowPlayingContainer />
                         <UpComingContainer />
                         <TopRatedContainer />

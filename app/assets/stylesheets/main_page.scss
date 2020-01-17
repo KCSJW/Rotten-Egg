@@ -15,9 +15,9 @@ body {
   margin: 0;
 }
 
-.main-page {
-  // background-color: rgb(255, 233, 187);
-}
+// .main-page {
+//   background-image: url(https://i.giphy.com/media/sPuDbEFCsoN32/giphy.gif);
+// }
 
 .movies-index {
   display: flex;
@@ -48,7 +48,23 @@ body {
 
 .combin-lists {
   display: flex;
-  background-color: rgb(255, 233, 187);
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.bg {
+  background-image: url('https://i.giphy.com/media/sPuDbEFCsoN32/giphy.gif');
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12;
 }
 
 .main-page-list-container {
@@ -88,7 +104,8 @@ body {
 }
 
 .list-text {
-  font-weight: lighter;
+  font-weight: bolder;
+
 }
 
 .link-to-movie {
@@ -114,8 +131,9 @@ body {
   flex-direction: row;
   background-color: black;
   justify-content: space-between;
-  align-items: flex-end;
+  // align-items: flex-end;
   margin-bottom: 20px;
+  height: 50px;
 }
 
 .footer-link {
@@ -129,18 +147,29 @@ body {
 .footer-text, .conntact-info{
   color: white;
   font-weight: blod;
-  font-size: 13px;
+  font-size: 20px;
   text-decoration: none;
   margin: 5px;
 }
 
 .conntact-info:hover {
-  color: #4472CA;
+  color: rgb(72, 128, 202);
   cursor: pointer;
 }
 
 .footer-icon {
-  width: 18px;
-  height: 18px;
-  margin-top: 5px;
+  width: 25px;
+  height: 25px;
+  margin-top: 10px;
+}
+
+.footer-disclaimer {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: red;
+}
+
+.footer-icon-end {
+  width: 45px;
+  height: 40px;
+  margin-top: 10px;
 }

@@ -8,6 +8,12 @@ const Footer = () => (
             <a href="https://github.com/KCSJW" className="conntact-info" target="_blank">GitHub</a>
             <img src={githubImage} className='footer-icon' />
         </ul>
+        <p className="footer-disclaimer">
+            Disclaimer: This is a personal project, 
+            reviews do not represent creator's opinion 
+            and creator do not own any actworks used in this project.
+        </p>
+        <img src={nqImage} className='footer-icon-end'/>
     </div>
 );
 

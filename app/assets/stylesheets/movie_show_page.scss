@@ -1,9 +1,15 @@
 .movie-show-page {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(255, 233, 187);
+  // background-color: rgb(255, 233, 187);
+  // opacity: 0.1;
+  background-image: url('https://i.giphy.com/media/d47IiTGlqdZlb6yk/giphy.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .movie-information-content {

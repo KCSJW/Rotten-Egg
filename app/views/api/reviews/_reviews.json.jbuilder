@@ -1,4 +1,4 @@
-json.extract! reviews, :id, :body
+json.extract! reviews, :id, :body, :rating
 json.authorId reviews.author_id 
 json.movieId reviews.movie_id
 author = User.find(reviews.author_id)

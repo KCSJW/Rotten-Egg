@@ -95,7 +95,7 @@ class ReviewForm extends React.Component {
                         <input
                             type="submit"
                             className="movie-review-form-button"
-                            value="Next!" />
+                            value="Submit!" />
                     </form>
                 </div>
             </div>

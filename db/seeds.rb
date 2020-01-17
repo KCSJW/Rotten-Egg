@@ -12,19 +12,23 @@ Movie.destroy_all
 Review.destroy_all
 
 # User seeds
-demo = User.create!({username:"RottenEgg", password:"iamarotten"});
-user1 = User.create!({username:"Helen Yu", password:"iamarotten", top_critic:"true"});
-user2 = User.create!({username:"David Chin", password:"iamarotten", top_critic:"true"});
-user3 = User.create!({username:"___ Walker", password:"iamarotten", top_critic:"true"});
-user4 = User.create!({username:"Tatiana F", password:"iamarotten", top_critic:"true"});
-user5 = User.create!({username:"Helen Cheung", password:"iamarotten", top_critic:"true"});
-user6 = User.create!({username:"Jen Kennedy", password:"iamarotten", top_critic:"true"});
-user7 = User.create!({username:"Julius Wu", password:"iamarotten", top_critic:"true"});
-user8 = User.create!({username:"Linda L", password:"iamarotten", top_critic:"true"});
-user9 = User.create!({username:"Sarah J", password:"iamarotten", top_critic:"true"});
-user10 = User.create!({username:"Ben Lee", password:"iamarotten", top_critic:"true"});
-user11 = User.create!({username:"Dan Li", password:"iamarotten", top_critic:"true"});
-user12 = User.create!({username:"Dennis C", password:"iamarotten", top_critic:"true"});
+demo = User.create!({username:"RottenEgg", password:"iamrotten"});
+user0 = User.create!({username:"dude", password:"iamrotten", top_critic:"true"});
+user1 = User.create!({username:"Helen Yu", password:"iamrotten", top_critic:"true"});
+user2 = User.create!({username:"David Chin", password:"iamrotten", top_critic:"true"});
+user3 = User.create!({username:"___ Walker", password:"iamrotten", top_critic:"true"});
+user4 = User.create!({username:"Tatiana F", password:"iamrotten", top_critic:"true"});
+user5 = User.create!({username:"Helen Cheung", password:"iamrotten", top_critic:"true"});
+user6 = User.create!({username:"Jen Kennedy", password:"iamrotten", top_critic:"true"});
+user7 = User.create!({username:"Julius Wu", password:"iamrotten", top_critic:"true"});
+user8 = User.create!({username:"Linda L", password:"iamrotten", top_critic:"true"});
+user9 = User.create!({username:"Sarah J", password:"iamrotten", top_critic:"true"});
+user10 = User.create!({username:"Forgot Return", password:"iamrotten", top_critic:"true"});
+user11 = User.create!({username:"Dan Li", password:"iamrotten", top_critic:"true"});
+user12 = User.create!({username:"Dennis C", password:"iamrotten", top_critic:"true"});
+user13 = User.create!({username:"Brian Tran", password:"iamrotten", top_critic:"true"});
+user14 = User.create!({username:"Mike Madsen", password:"iamrotten", top_critic:"true"});
+user15 = User.create!({username:"Elson Li", password:"iamrotten", top_critic:"true"});
 
 
 # Movie seeds
@@ -209,6 +213,86 @@ movie23 = Movie.create!({
     info: "On theater May 28, 2009",
     genres: "Animation",
     image_url: "https://image.tmdb.org/t/p/w1280/gfFqBcoFW8uczyl2ytVmVmUg82k.jpg",
+    status: "Released" 
+});
+
+movie24 = Movie.create!({
+    title: "Argo",
+    info: "On theater October 12, 2012",
+    genres: "Drama",
+    image_url: "https://image.tmdb.org/t/p/w1280/zXvJCQybGUPwoI4nxxUiji3fMPj.jpg",
+    status: "Released" 
+});
+
+movie25 = Movie.create!({
+    title: "Ex machina",
+    info: "On theater April 24, 2015",
+    genres: "Science Fiction",
+    image_url: "https://image.tmdb.org/t/p/w1280/iXWt1prw5xbpjf3hmOm8Fo3dFa.jpg",
+    status: "Released" 
+});
+
+movie26 = Movie.create!({
+    title: "Weathering with You | 天気の子",
+    info: "On theater January 17, 2020",
+    genres: "Animation",
+    image_url: "https://image.tmdb.org/t/p/w1280/pVlNK3knUXatpxvSTioll7DgyQh.jpg",
+    status: "Released" 
+});
+
+movie27 = Movie.create!({
+    title: "Parasite | 기생충",
+    info: "On theater October 11, 2019",
+    genres: "Thriller",
+    image_url: "https://image.tmdb.org/t/p/w1280/dwkDeJXXaHVuIhcyCxUdb3YctxY.jpg",
+    status: "Released" 
+});
+
+movie28 = Movie.create!({
+    title: "Aquaman",
+    info: "On theater December 21, 2018",
+    genres: "Action",
+    image_url: "https://image.tmdb.org/t/p/w1280/xLPffWMhMj1l50ND3KchMjYoKmE.jpg",
+    status: "Released" 
+});
+
+movie29 = Movie.create!({
+    title: "Alita: Battle Angel",
+    info: "On theater February 14, 2019",
+    genres: "Action",
+    image_url: "https://image.tmdb.org/t/p/w1280/5OD9W0twXHGx9O9BYgJti3ItRBF.jpg",
+    status: "Released" 
+});
+
+movie30 = Movie.create!({
+    title: "You Name. | 君の名は。",
+    info: "On theater April 7, 2017",
+    genres: "Romance",
+    image_url: "https://image.tmdb.org/t/p/w1280/xq1Ugd62d23K2knRUx6xxuALTZB.jpg",
+    status: "Released" 
+});
+
+movie31 = Movie.create!({
+    title: "Fight Club",
+    info: "On theater October 15, 1999",
+    genres: "Drama",
+    image_url: "https://image.tmdb.org/t/p/w1280/adw6Lq9FiC9zjYEpOqfq03ituwp.jpg",
+    status: "Released" 
+});
+
+movie32 = Movie.create!({
+    title: "The Legend of 1990",
+    info: "On theater October 28, 1998",
+    genres: "Drama",
+    image_url: "https://image.tmdb.org/t/p/w1280/5eqMnFLAep9jkn1rDAg7M2WiuHQ.jpg",
+    status: "Released" 
+});
+
+movie33 = Movie.create!({
+    title: "Logan",
+    info: "On theater March 3, 2017",
+    genres: "Drama",
+    image_url: "https://image.tmdb.org/t/p/w1280/45Y1G5FEgttPAwjTYic6czC9xCn.jpg",
     status: "Released" 
 });
 
@@ -439,10 +523,204 @@ review28 = Review.create!({
 
 review29 = Review.create!({
     body: 'Joker (2019) is a fresh take on the mythology of one of the most beloved DC characters ever. Spoiler alert: there is no acid bath involved in the formation of this version of the Joker. ‎Joaquin Phoenix\'s Joker is a product of mental illness and social apathy. The story is not particularly strong. However, the movie is saved by Phoenix\'s award-worthy performance and the felicitous soundtracks. The social commentary on the class struggle is particularly apt for the tumultuous year of 2019. You might need to watch this movie a couple of times to know which scene is real and which scene is Arthur Fleck\'s imagination. The dance scene on the stairs will go down as one of the most iconic movie scenes in the last decade. I cannot recommend this movie highly enough!',
-    rating: 3,
+    rating: 9,
     author_name: user12.username,
     author_id: user12.id,
     movie_id: movie12.id
+});
+
+review30 = Review.create!({
+    body: 'I like the part with the explosions.',
+    rating: 10,
+    author_name: user14.username,
+    author_id: user14.id,
+    movie_id: movie4.id
+});
+
+review31 = Review.create!({
+    body: 'I saw this with my real godfather and it was very unsettling. He loved the movie but I was very weirded out, and then he pranked me by putting a horse head in my bed when I was sleeping. NOT FUNNY. Brando and Pacino did portray their roles convincingly, however.',
+    rating: 3,
+    author_name: user14.username,
+    author_id: user14.id,
+    movie_id: movie8.id
+});
+
+
+review32 = Review.create!({
+    body: 'Sons of Gondor, of Rohan, my brothers... I see in your eyes, the same fear that would take the heart of me. A day may come, when the courage of Men fails, when we forsake our friends and break all bonds of fellowship, but it is not this day. An hour of wolves and shattered shields when the age of men comes crashing down. But it IS NOT THIS DAY. This day WE FIGHT! By all that you hold dear... on this good earth... I bid you STAND! MEN of the WEST!',
+    rating: 10,
+    author_name: user14.username,
+    author_id: user14.id,
+    movie_id: movie17.id
+});
+
+
+review33 = Review.create!({
+    body: 'Chris Tucker plays the role of his lifetime, while Jackie Chan crystallizes his status as the all time MVP of martial arts in comedy movies. This movie not only showcases the Hong Kong style of action/fighting movies, but delivers side splitting laughs and gaffs throughout. A very enjoyable and funny film.',
+    rating: 10,
+    author_name: user14.username,
+    author_id: user14.id,
+    movie_id: movie19.id
+});
+
+review34 = Review.create!({
+    body: 'On the surface a look at how independent AI may work, but underneath is an interesting look at how human psychology does work, but maybe there is a difference between the two.',
+    rating: 8,
+    author_name: user10.username,
+    author_id: user10.id,
+    movie_id: movie25.id
+});
+
+review35 = Review.create!({
+    body: 'Good story into a lesser known part of modern history. Seems unreal but did happen. Learned to say Toronto correctly, the way Tom Clark would. Ben Affleck doesn\'t play a brown person very well, however.',
+    rating: 8,
+    author_name: user10.username,
+    author_id: user10.id,
+    movie_id: movie24.id
+});
+
+review36 = Review.create!({
+    body: '"Adventure is out there". A great movie, one of my favorites. A family movie with plenty of character development and a cute/goofy bunch of characters. Maybe not the happiest/brightest Disney movie out there but it does have a happy ending!',
+    rating: 10,
+    author_name: user13.username,
+    author_id: user13.id,
+    movie_id: movie23.id
+});
+
+review37 = Review.create!({
+    body: 'PIKA PIKA',
+    rating: 10,
+    author_name: user3.username,
+    author_id: user3.id,
+    movie_id: movie5.id
+});
+
+review38 = Review.create!({
+    body: 'I think this movie was too long. I fell asleep and woke up with a horse head in my bed. I\'m not sure where it came from, but it really weirded me out. I was lucky though, cause I didn\'t have to go shopping for meat for that night\'s stew. Anyways, Brando and Pacino portrayed their roles convincingly.',
+    rating: 7,
+    author_name: user3.username,
+    author_id: user3.id,
+    movie_id: movie8.id
+});
+
+review39 = Review.create!({
+    body: 'While DiCaprio and Hardy give a performance, I think the real star of this show is the bear. Needs more bear.',
+    rating: 3,
+    author_name: user3.username,
+    author_id: user3.id,
+    movie_id: movie18.id
+});
+
+review40 = Review.create!({
+    body: 'Needs more Kylo. 10 out of 10. Would *fwoosh* again.',
+    rating: 10,
+    author_name: user3.username,
+    author_id: user3.id,
+    movie_id: movie20.id
+});
+
+review41 = Review.create!({
+    body: 'This Helen reviewer gives this movie 8 stars, but says it has mastered Pixar perfection. I don\'t know what it would take for them to give a movie a 10 out of 10. 10 out of 10, would rat again.',
+    rating: 10,
+    author_name: user3.username,
+    author_id: user3.id,
+    movie_id: movie16.id
+});
+
+review42 = Review.create!({
+    body: '10/10',
+    rating: 10,
+    author_name: user15.username,
+    author_id: user15.id,
+    movie_id: movie26.id
+});
+
+review43 = Review.create!({
+    body: 'Bong Joon-ho director did a very good job on bring the hierarchy of the rich and the poor in South Korea. The relationship of how the poor use their ways to live off from the rich. What are the mental difference from two families comes from completely opposite background of the society.',
+    rating: 9,
+    author_name: user0.username,
+    author_id: user0.id,
+    movie_id: movie27.id
+});
+
+review44 = Review.create!({
+    body: 'If you have it, will you abuse that ability...especially in San Francisco',
+    rating: 10,
+    author_name: user0.username,
+    author_id: user0.id,
+    movie_id: movie26.id
+});
+
+review44 = Review.create!({
+    body: 'If you have it, will you abuse that ability...especially in San Francisco',
+    rating: 10,
+    author_name: user0.username,
+    author_id: user0.id,
+    movie_id: movie26.id
+});
+
+review45 = Review.create!({
+    body: 'Khal Drogo dressed up like a corn who can swim and talk fish',
+    rating: 3,
+    author_name: user0.username,
+    author_id: user0.id,
+    movie_id: movie28.id
+});
+
+review46 = Review.create!({
+    body: 'One of the well done manga adaptation movie, strong start for the sequel yet to come. You will feel for Alita\'s pain and things she have to go through and learn to build her up as a strong female character. Very enjoy this movie',
+    rating: 8.5,
+    author_name: user0.username,
+    author_id: user0.id,
+    movie_id: movie29.id
+});
+
+review47 = Review.create!({
+    body: 'Everyone Star War fans will remember December 20 2019, the day that Disney finally killed Star War',
+    rating: 0,
+    author_name: user0.username,
+    author_id: user0.id,
+    movie_id: movie20.id
+});
+
+review48 = Review.create!({
+    body: '‎Joaquin Phoenix totally brings out how any noraml average human can become with mental illness, social apathy and unsympathetic from others. The three different tone of laughter he had in the movie showed as he live in this society he have to adapt and evolve. As an audience you saw the last straw which broke the camel\'s back, and the personality Arthur finally die consumed by the Joker. As we all understand the only way to survive in this world is to adapt and evolve, Arthur evolved to be Joker in order to adapt this unsympathetic and heartless world.',
+    rating: 8,
+    author_name: user0.username,
+    author_id: user0.id,
+    movie_id: movie12.id
+});
+
+review49 = Review.create!({
+    body: 'One of the best realistic animation artwork plus an interesting plot, very enjoyable.',
+    rating: 7,
+    author_name: user0.username,
+    author_id: user0.id,
+    movie_id: movie30.id
+});
+
+review50 = Review.create!({
+    body: 'The first rule of Fight Club is: You do not talk about Fight Club. The reason why I do not use soap bar is because this movie',
+    rating: 8,
+    author_name: user0.username,
+    author_id: user0.id,
+    movie_id: movie31.id
+});
+
+review51 = Review.create!({
+    body: 'One of the my personal favorite movie of all time, the legendary era of America immigration and the start of the golden age. This movie brings out most immigrants\' idea of new hope with all the fear that comes with it. As the main character said in the movie "keys begin, keys end. You know there are 88 of them. Nobody can tell you any different. They are not infinite. You are infinite... And on those keys, the music that you can make... is infinite. I like that. That I can live by."',
+    rating: 10,
+    author_name: user0.username,
+    author_id: user0.id,
+    movie_id: movie32.id
+});
+
+review52 = Review.create!({
+    body: 'This movie show how relationship between old friends, generations, father and daughter. It is a very good ending for Logan and Professor X as their job of passing down their believe to the next generation of mutants.',
+    rating: 9,
+    author_name: user0.username,
+    author_id: user0.id,
+    movie_id: movie33.id
 });
 
 end
