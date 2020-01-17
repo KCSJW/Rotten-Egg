@@ -1,4 +1,6 @@
 # Rotten Egg
 
-(live site!)[https://rottenegg.herokuapp.com/#/]
+[live site!](https://rottenegg.herokuapp.com/#/)
+
+
 
