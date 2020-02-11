@@ -638,8 +638,7 @@ function (_React$Component) {
 
       if (!this.props.movie) return null;
       if (_typeof(avgRating) === NaN) return null;
-      debugger;
-      var avgRating = this.getAllRating() / this.props.reviews.length;
+      var avgRating = Math.round(this.getAllRating() / this.props.reviews.length * 100) / 100;
       var ratingIcon;
 
       if (avgRating >= 7.5) {
@@ -2169,17 +2168,18 @@ function (_React$Component) {
         className: "session-form-title"
       }, this.props.formType, " Here!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "modal-close-x",
-        onClick: function onClick(e) {
+        onClick: function onClick() {
           return _this5.props.hideModal();
         }
-      }, "x")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, "X")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "session-form-errors"
       }, this.props.errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: i
         }, error);
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "modal-form-box"
+        className: "modal-form-box",
+        onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, demoButton), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-modal-divider"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

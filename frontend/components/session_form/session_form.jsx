@@ -71,46 +71,45 @@ class sessionForm extends React.Component {
 
         return (
             <div className='modal-component session-form-container'>
- 
-                    <div className='session-form-header'>
-                        <p className="session-form-title">{this.props.formType} Here!</p>
-                        <p className="modal-close-x" onClick={(e) => this.props.hideModal()}>x</p>
-                    </div>
-
-                    <ul className="session-form-errors">
-                        {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
-                    </ul>
-
-                    <form className="modal-form-box">
-                        <div>{demoButton}</div>
-                        <br/>
-                        <div className="session-modal-divider">
-                            <div className="session-modal-divider-text">OR</div>
-                        </div>
-                        <div className="session-form-label">
-                            <label >Username</label>
-                            <input
-                                type="text"
-                                className="session-form-input"
-                                value={this.state.username}
-                                onChange={this.update('username')}/>
-                        </div>
-                        <div className="session-form-label">
-                            <label>Password</label>
-                            <input
-                                type="password"
-                                className="session-form-input"
-                                value={this.state.password}
-                                onChange={this.update('password')}/>
-                        </div>
-                        <input type="submit" className="session-form-button" value={this.props.formType} />
-                        <br/>
-                        <div className="session-form-footer">
-                            {footerText}
-                            {formSwitch}
-                        </div>
-                    </form>
+                <div className='session-form-header'>
+                    <p className="session-form-title">{this.props.formType} Here!</p>
+                    <p className="modal-close-x" onClick={() => this.props.hideModal()}>X</p>
                 </div>
+
+                <ul className="session-form-errors">
+                    {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
+                </ul>
+
+                <form className="modal-form-box" onSubmit={this.handleSubmit}>
+                    <div>{demoButton}</div>
+                    <br/>
+                    <div className="session-modal-divider">
+                        <div className="session-modal-divider-text">OR</div>
+                    </div>
+                    <div className="session-form-label">
+                        <label >Username</label>
+                        <input
+                            type="text"
+                            className="session-form-input"
+                            value={this.state.username}
+                            onChange={this.update('username')}/>
+                    </div>
+                    <div className="session-form-label">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            className="session-form-input"
+                            value={this.state.password}
+                            onChange={this.update('password')}/>
+                    </div>
+                    <input type="submit" className="session-form-button" value={this.props.formType} />
+                    <br/>
+                    <div className="session-form-footer">
+                        {footerText}
+                        {formSwitch}
+                    </div>
+                </form>
+            </div>
         );
     };
         
