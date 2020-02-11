@@ -31,7 +31,7 @@ body {
 .photo-banner {
   display: flex;
   margin: 0 auto;
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 
 .photo-banner-image{
@@ -132,14 +132,14 @@ body {
   background-color: black;
   justify-content: space-between;
   // align-items: flex-end;
-  margin-bottom: 20px;
-  height: 50px;
+  // margin-bottom: 20px;
+  // height: 50px;
 }
 
 .footer-link {
   display: flex;
-  flex-direction: column;
-  height: 90px;
+  // flex-direction: column;
+  height: 60px;
   margin: 5px;
 
 }
@@ -166,10 +166,13 @@ body {
 .footer-disclaimer {
   font-family: 'Source Sans Pro', sans-serif;
   color: red;
+  font-size: 15px;
+  align-self: center;
+  // margin-bottom: 20px;
 }
 
 .footer-icon-end {
-  width: 45px;
-  height: 40px;
+  width: 65px;
+  height: 60px;
   margin-top: 10px;
 }

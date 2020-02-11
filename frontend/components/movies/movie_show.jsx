@@ -21,8 +21,6 @@ class MovieShowPage extends React.Component {
     }
 
     render() {
-        console.log(this.props)
-
         if (!this.props.movie) return null;
         if (typeof avgRating === NaN) return null;
         debugger
@@ -67,8 +65,6 @@ class MovieShowPage extends React.Component {
 
                             <div className="rating-box-wrap-title">{this.props.movie.title}</div>
                             <div className="rating-box-wrap"></div>
-                           
-
                             <div className="movie-show-upper-right-content1-container">
                                 <div className="movie-show-upper-right-content1">
                                     <div className="movie-container-for-critic-score">

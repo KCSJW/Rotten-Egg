@@ -636,7 +636,6 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log(this.props);
       if (!this.props.movie) return null;
       if (_typeof(avgRating) === NaN) return null;
       debugger;
@@ -2078,15 +2077,10 @@ function (_React$Component) {
     }
   }, {
     key: "handleSubmit",
-    value: function handleSubmit() {
+    value: function handleSubmit(e) {
+      e.preventDefault();
       this.props.action(this.state);
-    } // handleDemo() {
-    //     this.setState({
-    //         username: 'RottenEgg',
-    //         password: 'iamrotten'
-    //     }, () => this.props.action(this.state));
-    // }
-
+    }
   }, {
     key: "handleDemo",
     value: function handleDemo(e) {
@@ -2185,9 +2179,8 @@ function (_React$Component) {
           key: i
         }, error);
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "modal-form-box",
-        onSubmit: this.handleSubmit
-      }, demoButton, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "modal-form-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, demoButton), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-modal-divider"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-modal-divider-text"
@@ -2218,6 +2211,7 @@ function (_React$Component) {
   return sessionForm;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
+;
 /* harmony default export */ __webpack_exports__["default"] = (sessionForm);
 
 /***/ }),

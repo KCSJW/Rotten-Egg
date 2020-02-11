@@ -17,16 +17,10 @@ class sessionForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     };
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
         this.props.action(this.state);
     }
-
-    // handleDemo() {
-    //     this.setState({
-    //         username: 'RottenEgg',
-    //         password: 'iamrotten'
-    //     }, () => this.props.action(this.state));
-    // }
 
     handleDemo(e) {
         e.preventDefault();
@@ -77,7 +71,7 @@ class sessionForm extends React.Component {
 
         return (
             <div className='modal-component session-form-container'>
-
+ 
                     <div className='session-form-header'>
                         <p className="session-form-title">{this.props.formType} Here!</p>
                         <p className="modal-close-x" onClick={(e) => this.props.hideModal()}>x</p>
@@ -87,8 +81,8 @@ class sessionForm extends React.Component {
                         {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
                     </ul>
 
-                    <form className="modal-form-box" onSubmit={this.handleSubmit}>
-                        {demoButton}
+                    <form className="modal-form-box">
+                        <div>{demoButton}</div>
                         <br/>
                         <div className="session-modal-divider">
                             <div className="session-modal-divider-text">OR</div>
@@ -109,7 +103,7 @@ class sessionForm extends React.Component {
                                 value={this.state.password}
                                 onChange={this.update('password')}/>
                         </div>
-                        <input type="submit" className="session-form-button" value={this.props.formType}/>
+                        <input type="submit" className="session-form-button" value={this.props.formType} />
                         <br/>
                         <div className="session-form-footer">
                             {footerText}
@@ -118,8 +112,8 @@ class sessionForm extends React.Component {
                     </form>
                 </div>
         );
-    }
+    };
         
-}
+};
         
 export default sessionForm;
