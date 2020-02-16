@@ -12,11 +12,11 @@ Rotten Egg is a single-page app; all content is delivered on one static page. Th
 
 ### Movie Ranking Lists and Poster
 
-On Home page of Rotten Egg on the top will show the popular movie poster from [The Movie DB](https://www.themoviedb.org/). Under the posters there are also three lists from the same datebase of the now playing, up coming and top rated movies. The whole index page will update with [The Movie DB](https://www.themoviedb.org/) itself.
+On Home page of Rotten Egg on the top will show the popular movie poster from [The Movie DB](https://www.themoviedb.org/). Under the posters there are also three lists from the same datebase of the now playing, up coming and top rated movies. The whole index page will update with [The Movie DB](https://www.themoviedb.org/) itself showing the newest movies!
 
 ### Rating for all movies
 
-There is a rating score system builded in within the app, there are four different rating icons for all movie will change base on the current rating. All ratings is given by a interactive star rating bar on each individual movie show page and system will calculate all the rating from each reviews than give an average rating score to movie and icons will updates with it.
+There is a rating score system builded in within the app, there are four different rating icons for all movie will change base on the current rating. All ratings is given by a interactive star rating bar on each individual movie show page and system will calculate all the rating from each reviews than give an average rating score to movie and rating icons will updates with the new review.
 
 ### Movie show page
 
