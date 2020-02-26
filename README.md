@@ -8,7 +8,7 @@ A clone web application of [Rotten Tomatoes](https://www.rottentomatoes.com/). H
 
 ### Single-Page App
  
-Rotten Egg is a single-page app; all content is delivered on one static page. The root page listens to a SessionStore and renders content based on a call to SessionStore.currentUser(). Sensitive information is kept out of the frontend of the app. 
+Rotten Egg is a single-page app; all content is delivered on one static page. The root page listens to a SessionStore and renders content based on a call to SessionStore.currentUser(). Sensitive information is kept out of the frontend of the app.
 
 ### Movie Ranking Lists and Poster
 
@@ -16,7 +16,7 @@ On Home page of Rotten Egg on the top will show the popular movie poster from [T
 
 ### Rating for all movies
 
-There is a rating score system builded in within the app, there are four different rating icons for all movie will change base on the current rating. All ratings is given by a interactive star rating bar on each individual movie show page and system will calculate all the rating from each reviews than give an average rating score to movie and rating icons will updates with the new review.
+There is a rating score system builded in within the app, there are four different rating icons for all movie will change base on the current rating. All ratings is given by a interactive star rating bar on each individual movie show page and system will calculate all the rating from each reviews than give an average rating score to movie and rating icons will updates with the new review. Also allow user to leave reviews and delete their review later.
 
 ### Movie show page
 
