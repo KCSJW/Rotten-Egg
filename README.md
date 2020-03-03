@@ -1,6 +1,6 @@
 # [Rotten Egg](https://rottenegg.herokuapp.com/#/)
 
-A clone web application of Rotten Tomatoes. Handle by React and Redux from the front end of the app and Ruby on Rails for the backend with PostgreSQL database and API from [The Movie DB](https://www.themoviedb.org/). Allowing user to left reviews with ratings for movies on the site as well as read other's reviews.
+A clone web application of the website Rotten Tomatoes. Handle by React and Redux from the front end of the app and Ruby on Rails for the backend with PostgreSQL database and API from [The Movie DB](https://www.themoviedb.org/). Allowing user to left reviews with ratings for movies on the site as well as read other's reviews.
 
 # Features
 
