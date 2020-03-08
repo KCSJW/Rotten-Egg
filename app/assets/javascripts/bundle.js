@@ -2235,6 +2235,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
+  console.log(state.errors.session);
   return {
     errors: state.errors.session,
     formType: 'Sign In'
@@ -2748,6 +2749,7 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
       return [];
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ERRORS"]:
+      console.log(action.errors);
       return action.errors;
 
     default:

@@ -3,10 +3,12 @@ import { signin, getErrors } from '../../actions/session_actions';
 import { showModal, hideModal } from '../../actions/modal_actions';
 import sessionForm from './session_form';
 
-const mSTP = state => ({
-    errors: state.errors.session,
-    formType: 'Sign In'
-});
+const mSTP = state => {
+    return {
+        errors: state.errors.session,
+        formType: 'Sign In'
+    };
+};
 
 const mDTP = dispatch => ({
     action: user => dispatch(signin(user)),
