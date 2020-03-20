@@ -467,7 +467,7 @@ var Footer = function Footer() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "mailto:johnson9710@gmail.com",
     className: "conntact-info"
-  }, "Contact"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, "Email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: emailImage,
     className: "footer-icon"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -476,6 +476,13 @@ var Footer = function Footer() {
     target: "_blank"
   }, "GitHub"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: githubImage,
+    className: "footer-icon"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://www.linkedin.com/in/chong-shun-wai-0640271a1/",
+    className: "conntact-info",
+    target: "_blank"
+  }, "LinkIn"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: linkinImage,
     className: "footer-icon"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "footer-disclaimer"
@@ -1406,30 +1413,23 @@ var NavBar = function NavBar(_ref) {
     className: "trending-bar-under-nav"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "trending-text"
-  }, "TRENDING NEWS:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://editorial.rottentomatoes.com/article/awards-leaderboard-top-movies-of-2019/",
+  }, "TRENDING MOVIES:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
+    to: "movies/328",
     target: "_blank",
     className: "trending-link"
-  }, "Awards Leaderboard"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://editorial.rottentomatoes.com/guide/the-200-best-movies-of-the-2010s/",
+  }, "Star Wars: The Rise of Skywalker"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
+    to: "movies/312",
     target: "_blank",
     className: "trending-link"
-  }, "200 Best Movies of the 2010s"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://editorial.rottentomatoes.com/article/most-anticipated-movies-of-2020/",
+  }, "The Dark Knight"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
+    to: "movies/320",
     target: "_blank",
     className: "trending-link"
-  }, "2020's Most Anticipated Movies"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "mailto:johnson9710@gmail.com"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "trending-icon-mail",
-    src: emailImage
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://github.com/KCSJW",
-    target: "_blank"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "trending-icon-github",
-    src: githubImage
-  }))));
+  }, "Joker"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
+    to: "movies/311",
+    target: "_blank",
+    className: "trending-link"
+  }, "Cats")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -2235,7 +2235,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
-  console.log(state.errors.session);
   return {
     errors: state.errors.session,
     formType: 'Sign In'
@@ -2749,7 +2748,6 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
       return [];
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ERRORS"]:
-      console.log(action.errors);
       return action.errors;
 
     default:
