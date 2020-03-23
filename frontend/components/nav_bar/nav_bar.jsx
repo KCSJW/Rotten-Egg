@@ -24,10 +24,10 @@ const NavBar = ({modal, hideModal}) => {
 
             <div className="trending-bar-under-nav">
                 <span className="trending-text">TRENDING MOVIES:</span>
-                <Link to='movies/328' target="_blank" className="trending-link">Star Wars: The Rise of Skywalker</Link>
-                <Link to='movies/312' target="_blank" className="trending-link">The Dark Knight</Link>
-                <Link to='movies/320' target="_blank" className="trending-link">Joker</Link>
-                <Link to='movies/311' target="_blank" className="trending-link">Cats</Link>
+                <Link to='movies/210' className="trending-link">Star Wars: The Rise of Skywalker</Link>
+                <Link to='movies/194' className="trending-link">The Dark Knight</Link>
+                <Link to='movies/202' className="trending-link">Joker</Link>
+                <Link to='movies/193' className="trending-link">Cats</Link>
             </div>
 
         </div>

@@ -1414,20 +1414,16 @@ var NavBar = function NavBar(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "trending-text"
   }, "TRENDING MOVIES:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-    to: "movies/328",
-    target: "_blank",
+    to: "movies/210",
     className: "trending-link"
   }, "Star Wars: The Rise of Skywalker"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-    to: "movies/312",
-    target: "_blank",
+    to: "movies/194",
     className: "trending-link"
   }, "The Dark Knight"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-    to: "movies/320",
-    target: "_blank",
+    to: "movies/202",
     className: "trending-link"
   }, "Joker"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-    to: "movies/311",
-    target: "_blank",
+    to: "movies/193",
     className: "trending-link"
   }, "Cats")));
 };

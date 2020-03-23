@@ -15,14 +15,9 @@ body {
   margin: 0;
 }
 
-// .main-page {
-//   background-image: url(https://i.giphy.com/media/sPuDbEFCsoN32/giphy.gif);
-// }
-
 .movies-index {
   display: flex;
   flex-direction: column;
-  // align-items: flex-start;
   justify-content: flex-start;
   background-color: white;
   border-bottom: .5px solid #F0F0F0	;
@@ -41,9 +36,10 @@ body {
 
 .main-page-movie-lists {
   display: flex;
-  width: auto;
+  width: 30%;
   align-items: flex-start;
   flex-direction: column;
+
 }
 
 .combin-lists {
@@ -51,6 +47,8 @@ body {
   position: relative;
   width: 100%;
   height: auto;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .bg {
@@ -131,17 +129,12 @@ body {
   flex-direction: row;
   background-color: black;
   justify-content: space-between;
-  // align-items: flex-end;
-  // margin-bottom: 20px;
-  // height: 50px;
 }
 
 .footer-link {
   display: flex;
-  // flex-direction: column;
   height: 60px;
   margin: 5px;
-
 }
 
 .footer-text, .conntact-info{
