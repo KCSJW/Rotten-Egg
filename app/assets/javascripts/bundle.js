@@ -724,9 +724,9 @@ function (_React$Component) {
         className: "movie-review-list-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-review-list-header"
-      }, "Egg Reviews:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, "Egg Reviews:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "movie-review-list-critics"
-      }, this.props.reviews.map(function (review) {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, this.props.reviews.map(function (review) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_reviews_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
           key: review.id,
           review: review,
@@ -734,7 +734,7 @@ function (_React$Component) {
           deleteReview: _this2.props.deleteReview,
           getMovie: _this2.props.getMovie
         });
-      })))));
+      }))))));
     }
   }]);
 

@@ -97,17 +97,20 @@ class MovieShowPage extends React.Component {
                 <div className="movie-reviews-lists">
                     <div className="movie-review-list-container">
                         <div className="movie-review-list-header">Egg Reviews:</div>
+                        <br/>
                         <ul className="movie-review-list-critics">
-                            {
-                                this.props.reviews.map((review) => (
-                                    <ReviewsItem 
-                                        key={review.id} review={review}
-                                        currentUserId={this.props.currentUserId}
-                                        deleteReview={this.props.deleteReview}
-                                        getMovie={this.props.getMovie}
-                                    />
-                                ))
-                            }
+                            <li>
+                                {
+                                    this.props.reviews.map((review) => (
+                                        <ReviewsItem
+                                            key={review.id} review={review}
+                                            currentUserId={this.props.currentUserId}
+                                            deleteReview={this.props.deleteReview}
+                                            getMovie={this.props.getMovie}
+                                        />
+                                    ))
+                                }
+                            </li>
                         </ul>
                     </div>
                 </div>           
