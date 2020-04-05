@@ -8,8 +8,8 @@ const Main = () => (
     <div className='main-page'>
         <Switch>
             <Route exact path="/movies/:movieId" component={MovieShowPageContainer} />
-            <Route path="/" component={MoviesIndexContainer} />
-            <Route exact path="*"><Redirect to='/'/></Route>
+            <Route exact path="/" component={MoviesIndexContainer} />
+            <Route exact path="/"><Redirect to='/'/></Route>
         </Switch>
     </div>
 );
