@@ -26,7 +26,7 @@ const signinStatus = ({ currentUser, signout, showModal, signin }) => {
         return (hadUser(currentUser, signout))
     } else {
         return noUser(showModal, signin)
-    }
-}
+    };
+};
 
 export default signinStatus;

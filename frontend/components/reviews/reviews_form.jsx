@@ -34,13 +34,13 @@ class ReviewForm extends React.Component {
         super(props);
         this.state = { rating: '', body: ''};
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    };
 
     requireToSignIn() {
         if (!this.props.signedIn) {
             this.props.signin();
-        }
-    }
+        };
+    };
 
     handleSubmit() {
         const movieId = parseInt(this.props.movieId);
@@ -50,30 +50,22 @@ class ReviewForm extends React.Component {
             this.setState({ rating: '', body: ''});
         } else {
             this.props.signin();
-        }
-    }
+        };
+    };
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
     };
 
-    errors() {
-        return (
-            <ul className="review-form-errors">
-                {this.props.errors.map((error, i) => (
-                    <li key={i} className="review-form-error-text">
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
-
     render() {
 
         return (
             <div className="movie-review-form-container">
-                {this.errors()}
+
+                <ul className="review-form-errors">
+                    {this.props.errors.map((error, i) => <li key={i} className="review-form-error-text">{error}</li>)}
+                </ul>
+
                 <div className="movie-review-form-score-and-body-container">
                     <form onSubmit={this.handleSubmit}>
                         
@@ -99,8 +91,8 @@ class ReviewForm extends React.Component {
                     </form>
                 </div>
             </div>
-        )
-    }
+        );
+    };
 
 };
 

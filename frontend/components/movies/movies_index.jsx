@@ -29,11 +29,12 @@ class moviesIndex extends React.Component {
                 <div className="movies-index">
                     <div className="photo-banner">
                         {
-                        this.moviePoster().map((url, i) =>
-                            <img
+                            this.moviePoster().map((url, i) =>
+                            <img 
                             className="photo-banner-image"
                             src={`https://image.tmdb.org/t/p/w342${url}`}
-                            key={i} />)
+                            key={i} 
+                            />)
                         }
                     </div>
                     <div className='combin-lists'>
