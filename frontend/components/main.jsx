@@ -9,7 +9,7 @@ const Main = () => (
         <Switch>
             <Route exact path="/movies/:movieId" component={MovieShowPageContainer} />
             <Route exact path="/" component={MoviesIndexContainer} />
-            <Route exact path="/"><Redirect to='/'/></Route>
+            <Route path="*"><Redirect to='/'/></Route>
         </Switch>
     </div>
 );
