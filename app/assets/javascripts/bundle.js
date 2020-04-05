@@ -525,9 +525,14 @@ var Main = function Main() {
     path: "/movies/:movieId",
     component: _movies_movie_show_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
     path: "/",
     component: _movies_movies_index_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  })));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "*"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+    to: "/"
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Main);
@@ -1419,10 +1424,10 @@ var NavBar = function NavBar(_ref) {
   }, "The Dark Knight"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
     to: "movies/202",
     className: "trending-link"
-  }, "Joker"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
+  }, "Joker "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
     to: "movies/193",
     className: "trending-link"
-  }, "Cats")));
+  }, "Cats ")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
