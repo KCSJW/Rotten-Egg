@@ -521,7 +521,6 @@ var Main = function Main() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main-page"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    exact: true,
     path: "/movies/:movieId",
     component: _movies_movie_show_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
@@ -672,17 +671,7 @@ function (_React$Component) {
         className: "movie-show-image"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.props.movie.image_url
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "movie-container-upper-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "movie-show-title"
-      }, this.props.movie.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "movie-show-info"
-      }, this.props.movie.info), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "movie-show-info"
-      }, "Status: ", this.props.movie.status), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "movie-show-info"
-      }, "Genres: ", this.props.movie.genres)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-right-side-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-upper-right-content-container"
@@ -705,18 +694,13 @@ function (_React$Component) {
         className: "movie-show-upper-right-content-header1"
       }, "Egg Status")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-upper-right-content2-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "movie-show-upper-right-content1"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "movie-container-for-critic-score"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "movie-user-score-icon",
-        src: window.NAImage
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "movie-critic-score"
-      }, "N/A"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "movie-show-upper-right-content-header2"
-      }, "Other Thinks"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "movie-show-info"
+      }, this.props.movie.info), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "movie-show-info"
+      }, "Status: ", this.props.movie.status), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "movie-show-info"
+      }, "Genres: ", this.props.movie.genres)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-bottom-right-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_reviews_form_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         movieId: this.props.movie.id
