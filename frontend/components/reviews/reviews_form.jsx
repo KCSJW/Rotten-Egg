@@ -80,8 +80,8 @@ class ReviewForm extends React.Component {
                             cols="100"
                             rows="5"
                             placeholder="A penny for your thoughts?"
-                            className="movie-review-form-body"
                             value={this.state.body}
+                            className="movie-review-form-body"
                             onChange={this.update("body")} />
 
                         <input

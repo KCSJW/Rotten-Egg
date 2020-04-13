@@ -34,7 +34,7 @@ class MovieShowPage extends React.Component {
             ratingIcon = window.arghImage;
         } else if (avgRating < 3.5) {
             ratingIcon = window.badImage;
-        }
+        };
         
         return (
 
@@ -42,23 +42,11 @@ class MovieShowPage extends React.Component {
                 <div className="movie-information-content">
                 
                     <div className="movie-show-left-side-content">
-                        <div className="movie-container-for-title-image">
-                            <div className="movie-show-image">
-                                <img src={this.props.movie.image_url} />
-                            </div>
-                        </div>
-                        {/* <div className="movie-container-upper-content">
-                            <ul>
-                                <li className="movie-show-title">{this.props.movie.title}</li>
-                                <li className="movie-show-info">{this.props.movie.info}</li>
-                                <li className="movie-show-info">Status: {this.props.movie.status}</li>
-                                <li className="movie-show-info">Genres: {this.props.movie.genres}</li>
-                            </ul>
-                        </div> */}
+                        <img src={this.props.movie.image_url} className="movie-show-image"/>
                     </div>
                     
                     <div className="movie-show-right-side-content">
-
+                        
                         <div className="movie-show-upper-right-content-container">
 
                             <div className="rating-box-wrap-title">{this.props.movie.title}</div>
@@ -73,24 +61,13 @@ class MovieShowPage extends React.Component {
                                 <div className="movie-show-upper-right-content-header1">Egg Status</div>
                             </div>
 
-                        {/* <div className="movie-container-upper-content"> */}
-                        <div className="movie-show-upper-right-content2-container">
-                            <ul>
-                                <li className="movie-show-info">{this.props.movie.info}</li>
-                                <li className="movie-show-info">Status: {this.props.movie.status}</li>
-                                <li className="movie-show-info">Genres: {this.props.movie.genres}</li>
-                            </ul>
-                        </div>
-
-                            {/* <div className="movie-show-upper-right-content2-container">
-                                <div className="movie-show-upper-right-content1">
-                                    <div className="movie-container-for-critic-score">
-                                        <img className="movie-user-score-icon" src={window.NAImage} />
-                                        <div className="movie-critic-score">N/A</div>
-                                    </div>
-                                </div>
-                                <div className="movie-show-upper-right-content-header2">Other Thinks</div>
-                            </div> */}
+                            <div className="movie-show-upper-right-content2-container">
+                                <ul>
+                                    <li className="movie-show-info">{this.props.movie.info}</li>
+                                    <li className="movie-show-info">Status: {this.props.movie.status}</li>
+                                    <li className="movie-show-info">Genres: {this.props.movie.genres}</li>
+                                </ul>
+                            </div>
 
                         </div>
 
@@ -99,8 +76,6 @@ class MovieShowPage extends React.Component {
                         </div>
 
                     </div>
-
-
                 </div>
 
                 <div className="movie-reviews-lists">
@@ -125,8 +100,7 @@ class MovieShowPage extends React.Component {
                 </div>           
             </div>
         )
-    }
-
-}
+    };
+};
 
 export default MovieShowPage;

@@ -659,19 +659,17 @@ function (_React$Component) {
         ratingIcon = window.badImage;
       }
 
+      ;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-information-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-left-side-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "movie-container-for-title-image"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "movie-show-image"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.props.movie.image_url
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        src: this.props.movie.image_url,
+        className: "movie-show-image"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-right-side-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-upper-right-content-container"
@@ -727,6 +725,7 @@ function (_React$Component) {
   return MovieShowPage;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
+;
 /* harmony default export */ __webpack_exports__["default"] = (MovieShowPage);
 
 /***/ }),
@@ -1622,8 +1621,8 @@ function (_React$Component) {
         cols: "100",
         rows: "5",
         placeholder: "A penny for your thoughts?",
-        className: "movie-review-form-body",
         value: this.state.body,
+        className: "movie-review-form-body",
         onChange: this.update("body")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",

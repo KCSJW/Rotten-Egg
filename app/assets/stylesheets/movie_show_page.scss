@@ -12,22 +12,15 @@
 
 .movie-information-content {
   display: flex;
-  width: 100%
+  width: 100%;
+  flex-direction: row;
 }
 
 .movie-show-left-side-content{
   display: flex;
-  flex-direction: row;
-  margin: 20px;
+  justify-content: center;
+  margin: 5% 0 0 5%;
   width: 100%;
-}
-
-.movie-container-for-title-image {
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .movie-container-upper-content {
@@ -51,7 +44,7 @@
 }
 
 .movie-show-image {
-  width: 100%;
+  width: 70%;
   height: auto;
 }
 
@@ -79,9 +72,7 @@
 .movie-show-right-side-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 20px;
+  margin: 5% 5% 0 0;
   width: 100%;
 }
 
