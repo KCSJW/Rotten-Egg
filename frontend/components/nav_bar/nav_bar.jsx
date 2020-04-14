@@ -12,7 +12,7 @@ const NavBar = ({modal, hideModal}) => {
         <div className="nav-bar-container">
             <div className="navbar-main">
                 <div className="logo-and-search-bar-container">
-                    <Link to="/"> <img className="logo" src={window.logoImage} /></Link>
+                    <Link to="/"><img className="logo" src={window.logoImage} /></Link>
                     <SearchBar className='search-bar' />
                     <SigninStatusContainer />   
                 </div>
