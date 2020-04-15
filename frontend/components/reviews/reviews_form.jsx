@@ -71,9 +71,7 @@ class ReviewForm extends React.Component {
                         
                         <Rating min={1} max={10}
                             value={this.state.rating}
-                            onChange={(rating) => {
-                                this.setState({rating})
-                            }} 
+                            onChange={(rating) => {this.setState({rating})}} 
                             onClick={(e) => this.requireToSignIn()}/>
 
                         <textarea

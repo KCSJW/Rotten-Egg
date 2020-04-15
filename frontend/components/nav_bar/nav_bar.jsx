@@ -12,7 +12,10 @@ const NavBar = ({modal, hideModal}) => {
         <div className="nav-bar-container">
             <div className="navbar-main">
                 <div className="logo-and-search-bar-container">
-                    <Link to="/"><img className="logo" src={window.logoImage} /></Link>
+                    <div className="logo-and-text">
+                        <Link to="/"><img className="logo" src={window.logoImage} /></Link>
+                        <div className="home-text">Rotten Egg</div>
+                    </div>
                     <SearchBar className='search-bar' />
                     <SigninStatusContainer />   
                 </div>
