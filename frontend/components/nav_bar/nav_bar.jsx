@@ -4,7 +4,7 @@ import SignupContainer from '../session_form/signup_container';
 import SigninStatusContainer from '../status/signin_status_container';
 import SearchBar from '../search/search_container';
 import ModalForm from '../modal';
-import { Link, Redirect } from 'react-router-dom';
+import Link from 'react-router-dom';
 
 const NavBar = ({modal, hideModal}) => {
 
