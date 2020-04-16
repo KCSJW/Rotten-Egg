@@ -4,7 +4,7 @@ import SignupContainer from '../session_form/signup_container';
 import SigninStatusContainer from '../status/signin_status_container';
 import SearchBar from '../search/search_container';
 import ModalForm from '../modal';
-import Link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const NavBar = ({modal, hideModal}) => {
 
@@ -26,7 +26,7 @@ const NavBar = ({modal, hideModal}) => {
             </div>
 
             <div className="trending-bar-under-nav">
-                <span className="trending-text">TRENDING MOVIES:</span>
+                <div className="trending-text">TRENDING MOVIES:</div>
                 <Link to='movies/210' className="trending-link">Star Wars: The Rise of Skywalker</Link>
                 <Link to='movies/194' className="trending-link">The Dark Knight</Link>
                 <Link to='movies/202' className="trending-link">Joker </Link>
