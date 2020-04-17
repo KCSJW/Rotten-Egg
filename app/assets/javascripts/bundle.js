@@ -1394,12 +1394,12 @@ var NavBar = function NavBar(_ref) {
   }, "Rotten Egg")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "search-bar"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_status_signin_status_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    component: modal === 'signin' ? _session_form_signin_container__WEBPACK_IMPORTED_MODULE_1__["default"] : _session_form_signup_container__WEBPACK_IMPORTED_MODULE_2__["default"],
     modal: modal,
-    hideModal: hideModal
+    hideModal: hideModal,
+    component: modal === 'signin' ? _session_form_signin_container__WEBPACK_IMPORTED_MODULE_1__["default"] : _session_form_signup_container__WEBPACK_IMPORTED_MODULE_2__["default"]
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "trending-bar-under-nav"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "trending-text"
   }, "TRENDING MOVIES:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
     to: "movies/210",

@@ -10,6 +10,7 @@ const NavBar = ({modal, hideModal}) => {
 
     return (
         <div className="nav-bar-container">
+
             <div className="navbar-main">
                 <div className="logo-and-search-bar-container">
                     <div className="logo-and-text">
@@ -19,14 +20,12 @@ const NavBar = ({modal, hideModal}) => {
                     <SearchBar className='search-bar' />
                     <SigninStatusContainer />   
                 </div>
-                    <ModalForm 
-                        component={ modal === 'signin' ? SigninContainer : SignupContainer}
-                        modal={modal}
-                        hideModal={hideModal}/>
+                    <ModalForm modal={modal} hideModal={hideModal}
+                        component={modal === 'signin' ? SigninContainer : SignupContainer} />
             </div>
 
             <div className="trending-bar-under-nav">
-                <div className="trending-text">TRENDING MOVIES:</div>
+                <span className="trending-text">TRENDING MOVIES:</span>
                 <Link to='movies/210' className="trending-link">Star Wars: The Rise of Skywalker</Link>
                 <Link to='movies/194' className="trending-link">The Dark Knight</Link>
                 <Link to='movies/202' className="trending-link">Joker </Link>
