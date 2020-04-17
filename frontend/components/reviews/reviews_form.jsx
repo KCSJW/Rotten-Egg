@@ -32,7 +32,10 @@ class ReviewForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { rating: '', body: ''};
+        this.state = { 
+            rating: '', 
+            body: ''
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
@@ -44,10 +47,13 @@ class ReviewForm extends React.Component {
 
     handleSubmit() {
         const movieId = parseInt(this.props.movieId);
-        const review = Object.assign({}, this.state, {movie_id: movieId});
+        const review = Object.assign({}, this.state, { movie_id: movieId });
         if (this.props.signedIn) {
             this.props.createReview(review).then(() => { return (this.props.getMovie(movieId))});
-            this.setState({ rating: '', body: ''});
+            this.setState({ 
+                rating: '', 
+                body: ''
+            });
         } else {
             this.props.signin();
         };
@@ -72,19 +78,19 @@ class ReviewForm extends React.Component {
                         <Rating min={1} max={10}
                             value={this.state.rating}
                             onChange={(rating) => {this.setState({rating})}} 
-                            onClick={(e) => this.requireToSignIn()}/>
+                            onClick={(e) => this.requireToSignIn() }/>
 
                         <textarea
                             cols="100"
                             rows="5"
                             placeholder="A penny for your thoughts?"
-                            value={this.state.body}
                             className="movie-review-form-body"
+                            value={this.state.body}
                             onChange={this.update("body")} />
 
                         <input
-                            type="submit"
                             className="movie-review-form-button"
+                            type="submit"
                             value="Submit!" />
                     </form>
                 </div>

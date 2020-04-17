@@ -49,6 +49,10 @@
   font-size: 15px;
 }
 
+.fa-search {
+    content: "\f002";
+}
+
 .search-dropdown{
   background: white;
   position: absolute;
@@ -136,4 +140,9 @@
   width: 18px;
   height: 18px;
   margin-left: 10px;
+}
+
+.search-list-item {
+  padding: 10px;
+  border-bottom: 1px solid #F5F5F5;
 }

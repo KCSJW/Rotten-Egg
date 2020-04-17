@@ -15,8 +15,8 @@ const mSTP = state => {
 const mDTP = dispatch => {
     return({
         createReview: (review) => dispatch(createReview(review)),
-        signin: () => dispatch(showModal('signin')),
-        getMovie: (id) => dispatch(getDBMovie(id))
+        signin: () => dispatch(showModal(modal)),
+        getMovie: (id) => dispatch(getDBMovie(id)),
     })
 }
 

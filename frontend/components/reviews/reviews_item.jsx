@@ -24,8 +24,11 @@ const reviewsItem = ({ review, currentUserId, deleteReview, getMovie}) => {
         </div>
     };
 
+
+
     return (
         <ul className="movie-review-item">
+
             <div className="movie-review-content">
 
                 <div className="review-score-icon-text-container">
@@ -36,6 +39,7 @@ const reviewsItem = ({ review, currentUserId, deleteReview, getMovie}) => {
                 <div className="review-score-link-container">
                     <div className="movie-review-score">Rating: {rating}</div>
                 </div>
+                
             </div>
 
             <ul className="movie-review-author-info">

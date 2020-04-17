@@ -1624,12 +1624,12 @@ function (_React$Component) {
         cols: "100",
         rows: "5",
         placeholder: "A penny for your thoughts?",
-        value: this.state.body,
         className: "movie-review-form-body",
+        value: this.state.body,
         onChange: this.update("body")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
         className: "movie-review-form-button",
+        type: "submit",
         value: "Submit!"
       }))));
     }
@@ -1677,7 +1677,7 @@ var mDTP = function mDTP(dispatch) {
       return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_1__["createReview"])(review));
     },
     signin: function signin() {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["showModal"])('signin'));
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["showModal"])(modal));
     },
     getMovie: function getMovie(id) {
       return dispatch(Object(_actions_search_actions__WEBPACK_IMPORTED_MODULE_3__["getDBMovie"])(id));
@@ -1865,7 +1865,7 @@ function (_React$Component) {
     }
   }, {
     key: "resetSearch",
-    value: function resetSearch(e) {
+    value: function resetSearch() {
       this.setState({
         text: ""
       });

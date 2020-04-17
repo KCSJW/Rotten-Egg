@@ -18,7 +18,7 @@ class SearchBar extends React.Component {
         this.setState({ text: e.currentTarget.value });
     }
 
-    resetSearch(e) {
+    resetSearch() {
         this.setState({ text: "" });
     }
 
@@ -45,6 +45,7 @@ class SearchBar extends React.Component {
 
         return (
             <div className="search-bar-container">
+
                 <input
                     type="text"
                     placeholder="Search for Movies"
