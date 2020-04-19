@@ -26,12 +26,14 @@ body {
 .dbMovie-banner {
   display: flex;
   overflow-x: scroll;
-  cursor: pointer;
+  background-color:black;
 }
 
-.dbMovie-banner-image{
-  width: 100%;
-  height: auto;
+.dbMovie-banner-link{
+  padding: 5px 2px 0 2px;
+  justify-content: center;
+  min-width: 18.5%;
+  cursor: pointer;
 }
 
 .photo-banner {

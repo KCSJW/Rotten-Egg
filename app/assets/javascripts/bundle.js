@@ -830,8 +830,8 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(moviesIndex).call(this, props));
     _this.moviePoster = _this.moviePoster.bind(_assertThisInitialized(_this));
     _this.dbMoviePosters = _this.dbMoviePosters.bind(_assertThisInitialized(_this));
-    _this.dbMovieIDs = _this.dbMovieIDs.bind(_assertThisInitialized(_this));
-    _this.combinInfo = _this.combinInfo.bind(_assertThisInitialized(_this));
+    _this.dbMovieIDs = _this.dbMovieIDs.bind(_assertThisInitialized(_this)); // this.combinInfo = this.combinInfo.bind(this);
+
     return _this;
   }
 
@@ -879,38 +879,33 @@ function (_React$Component) {
   }, {
     key: "combinInfo",
     value: function combinInfo() {
-      var DBposters = this.dbMoviePosters();
-      var DBIds = this.dbMovieIDs();
-      var res = [];
+      var dbPosters = this.dbMoviePosters();
+      var dbIds = this.dbMovieIDs();
+      var res = {};
 
-      for (var i = 0; i < DBIds.length; i++) {
-        res.push(DBIds[i]);
-        res.push(DBposters[i]);
+      for (var i = 0; i < dbIds.length; i++) {
+        res[dbIds[i]] = dbPosters[i];
       }
 
+      ;
       return res;
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      // console.log(this.combinInfo());
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var dbInfo = this.combinInfo();
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movies-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dbMovie-banner"
-      }, this.dbMovieIDs().map(function (id) {
-        return _this2.dbMoviePosters().map(function (url, i) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            key: i
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
-            to: "/movies/".concat(id)
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            className: "dbMovie-banner-image",
-            src: "".concat(url)
-          })));
-        });
+      }, Object.keys(dbInfo).map(function (id, i) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+          key: i,
+          to: "/movies/".concat(id),
+          className: "dbMovie-banner-link"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "".concat(Object.values(dbInfo)[i])
+        }));
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "combin-lists"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -927,7 +922,7 @@ function (_React$Component) {
           src: "https://image.tmdb.org/t/p/w342".concat(url),
           key: i
         });
-      })))));
+      }))));
     }
   }]);
 

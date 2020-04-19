@@ -11,7 +11,7 @@ class moviesIndex extends React.Component {
         this.moviePoster = this.moviePoster.bind(this);
         this.dbMoviePosters = this.dbMoviePosters.bind(this);
         this.dbMovieIDs = this.dbMovieIDs.bind(this);
-        this.combinInfo = this.combinInfo.bind(this);
+        // this.combinInfo = this.combinInfo.bind(this);
     }
 
     componentDidMount() {
@@ -46,58 +46,49 @@ class moviesIndex extends React.Component {
     }
 
     combinInfo(){
-        const DBposters = this.dbMoviePosters();
-        const DBIds = this.dbMovieIDs();
-        const res = [];
-        for (let i = 0; i < DBIds.length; i++) {
-            res.push(DBIds[i]);
-            res.push(DBposters[i]);
-        }
+        const dbPosters = this.dbMoviePosters();
+        const dbIds = this.dbMovieIDs();
+        const res = {};
+        for (let i = 0; i < dbIds.length; i++) {
+            res[dbIds[i]] = dbPosters[i];
+        };
         return res;
-    };
+    }
 
     render() {
-        // console.log(this.combinInfo());
+        const dbInfo = this.combinInfo();
         return (
-            <div>
-                <div className="movies-index">
-                    <div className="dbMovie-banner">
+            <div className="movies-index">
+                <div className="dbMovie-banner">
+                    {
+                        Object.keys(dbInfo).map((id, i) => 
+                            <Link key={i} to={`/movies/${id}`} className="dbMovie-banner-link">
+                                <img src={`${Object.values(dbInfo)[i]}`} />
+                            </Link>
+                        )
+                    }
+                </div>
+
+                <div className='combin-lists'>
+                    <div className="bg"></div>
+                    <NowPlayingContainer />
+                    <UpComingContainer />
+                    <TopRatedContainer />
+                </div>
+                <div className="trending-bar-under-nav">
+                    <span className="trending-text">OTHER TRENDING MOVIES:</span>
+                    <div className="photo-banner">
                         {
-                            this.dbMovieIDs().map((id) =>
-                                this.dbMoviePosters().map((url, i) =>
-                                    <div key={i}>
-                                        <Link to={`/movies/${id}`}>
-                                            <img
-                                                className="dbMovie-banner-image"
-                                                src={`${url}`}
-                                            />
-                                        </Link>
-                                    </div>
-                                )
+                            this.moviePoster().map((url, i) =>
+                                <img 
+                                className="photo-banner-image"
+                                src={`https://image.tmdb.org/t/p/w342${url}`}
+                                key={i} 
+                                />
                             )
                         }
                     </div>
-                    <div className='combin-lists'>
-                        <div className="bg"></div>
-                        <NowPlayingContainer />
-                        <UpComingContainer />
-                        <TopRatedContainer />
-                    </div>
-                    <div className="trending-bar-under-nav">
-                        <span className="trending-text">OTHER TRENDING MOVIES:</span>
-                        <div className="photo-banner">
-                            {
-                                this.moviePoster().map((url, i) =>
-                                    <img 
-                                    className="photo-banner-image"
-                                    src={`https://image.tmdb.org/t/p/w342${url}`}
-                                    key={i} 
-                                    />
-                                )
-                            }
-                        </div>
-                    </div>
-                </div>  
+                </div>
             </div>
         )
     }
