@@ -23,6 +23,17 @@ body {
   border-bottom: .5px solid #F0F0F0	;
 }
 
+.dbMovie-banner {
+  display: flex;
+  overflow-x: scroll;
+  cursor: pointer;
+}
+
+.dbMovie-banner-image{
+  width: 100%;
+  height: auto;
+}
+
 .photo-banner {
   display: flex;
   margin: 0 auto;

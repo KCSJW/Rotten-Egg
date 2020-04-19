@@ -64,7 +64,6 @@ class ReviewForm extends React.Component {
     };
 
     render() {
-
         return (
             <div className="movie-review-form-container">
 

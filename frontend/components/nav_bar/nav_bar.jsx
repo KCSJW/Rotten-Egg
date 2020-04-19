@@ -14,8 +14,9 @@ const NavBar = ({modal, hideModal}) => {
             <div className="navbar-main">
                 <div className="logo-and-search-bar-container">
                     <div className="logo-and-text">
-                        <Link to="/"><img className="logo" src={window.logoImage} /></Link>
-                        <div className="home-text">Rotten Egg</div>
+                        <Link to="/"><img className="logo" src={window.logoImage} />
+                            <div className="home-text">Rotten Egg</div>
+                        </Link>
                     </div>
                     <SearchBar className='search-bar' />
                     <SigninStatusContainer />   
@@ -25,7 +26,7 @@ const NavBar = ({modal, hideModal}) => {
             </div>
 
             <div className="trending-bar-under-nav">
-                <span className="trending-text">TRENDING MOVIES:</span>
+                <span className="trending-text">TRENDING MOVIES ON ROTTEN EGG:</span>
                 <Link to='movies/210' className="trending-link">Star Wars: The Rise of Skywalker</Link>
                 <Link to='movies/194' className="trending-link">The Dark Knight</Link>
                 <Link to='movies/202' className="trending-link">Joker </Link>

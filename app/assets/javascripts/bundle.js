@@ -792,6 +792,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _now_playing_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./now_playing_container */ "./frontend/components/movies/now_playing_container.js");
 /* harmony import */ var _up_coming_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./up_coming_container */ "./frontend/components/movies/up_coming_container.js");
 /* harmony import */ var _top_rated_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./top_rated_container */ "./frontend/components/movies/top_rated_container.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -815,6 +816,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var moviesIndex =
 /*#__PURE__*/
 function (_React$Component) {
@@ -827,6 +829,9 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(moviesIndex).call(this, props));
     _this.moviePoster = _this.moviePoster.bind(_assertThisInitialized(_this));
+    _this.dbMoviePosters = _this.dbMoviePosters.bind(_assertThisInitialized(_this));
+    _this.dbMovieIDs = _this.dbMovieIDs.bind(_assertThisInitialized(_this));
+    _this.combinInfo = _this.combinInfo.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -840,19 +845,81 @@ function (_React$Component) {
     value: function moviePoster() {
       var urlArray = [];
 
-      for (var property in this.props.movies) {
-        var posterUrl = this.props.movies[property].poster_path;
+      for (var url in this.props.movies) {
+        var posterUrl = this.props.movies[url].poster_path;
         urlArray.push(posterUrl);
       }
 
       return urlArray;
     }
   }, {
+    key: "dbMoviePosters",
+    value: function dbMoviePosters() {
+      var dbMoviePostersArray = [];
+
+      for (var url in this.props.dbMovies) {
+        var posterUrl = this.props.dbMovies[url].image_url;
+        dbMoviePostersArray.push(posterUrl);
+      }
+
+      return dbMoviePostersArray;
+    }
+  }, {
+    key: "dbMovieIDs",
+    value: function dbMovieIDs() {
+      var dbMovieIDsArray = [];
+
+      for (var id in this.props.dbMovies) {
+        var ids = this.props.dbMovies[id].id;
+        dbMovieIDsArray.push(ids);
+      }
+
+      return dbMovieIDsArray;
+    }
+  }, {
+    key: "combinInfo",
+    value: function combinInfo() {
+      var DBposters = this.dbMoviePosters();
+      var DBIds = this.dbMovieIDs();
+      var res = [];
+
+      for (var i = 0; i < DBIds.length; i++) {
+        res.push(DBIds[i]);
+        res.push(DBposters[i]);
+      }
+
+      return res;
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
+      // console.log(this.combinInfo());
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movies-index"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dbMovie-banner"
+      }, this.dbMovieIDs().map(function (id) {
+        return _this2.dbMoviePosters().map(function (url, i) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            key: i
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+            to: "/movies/".concat(id)
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+            className: "dbMovie-banner-image",
+            src: "".concat(url)
+          })));
+        });
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "combin-lists"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bg"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_now_playing_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_up_coming_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_top_rated_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "trending-bar-under-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "trending-text"
+      }, "OTHER TRENDING MOVIES:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "photo-banner"
       }, this.moviePoster().map(function (url, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -860,11 +927,7 @@ function (_React$Component) {
           src: "https://image.tmdb.org/t/p/w342".concat(url),
           key: i
         });
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "combin-lists"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "bg"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_now_playing_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_up_coming_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_top_rated_container__WEBPACK_IMPORTED_MODULE_3__["default"], null))));
+      })))));
     }
   }]);
 
@@ -894,7 +957,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state) {
   return {
-    movies: state.entities.posters
+    movies: state.entities.posters,
+    dbMovies: state.entities.search.movies
   };
 };
 
@@ -1389,9 +1453,9 @@ var NavBar = function NavBar(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "logo",
     src: window.logoImage
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "home-text"
-  }, "Rotten Egg")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "Rotten Egg"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "search-bar"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_status_signin_status_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal__WEBPACK_IMPORTED_MODULE_5__["default"], {
     modal: modal,
@@ -1401,7 +1465,7 @@ var NavBar = function NavBar(_ref) {
     className: "trending-bar-under-nav"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "trending-text"
-  }, "TRENDING MOVIES:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
+  }, "TRENDING MOVIES ON ROTTEN EGG:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
     to: "movies/210",
     className: "trending-link"
   }, "Star Wars: The Rise of Skywalker"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {

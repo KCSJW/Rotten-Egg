@@ -39,7 +39,8 @@ class SearchBar extends React.Component {
                     return <SearchResult 
                                 getMovie={this.props.getDBMovie}
                                 resetSearch={this.resetSearch}
-                                movie={movie} key={i}/>
+                                movie={movie} key={i}
+                            />
             })
         };
 
@@ -51,10 +52,13 @@ class SearchBar extends React.Component {
                     placeholder="Search for Movies"
                     className="search-bar"
                     onChange={this.handleInput}
-                    value={this.state.text} />
+                    value={this.state.text} 
+                />
+
                 <ul className="search-dropdown">
                     {searchResults}
                 </ul>
+
             </div>
         )
     }

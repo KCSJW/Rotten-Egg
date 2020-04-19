@@ -11,15 +11,26 @@
   height: 40px;
 }
 
-.logo-and-text{
+
+.logo-and-text {
   flex-direction: row;
-  width: 200px;
+  width: 160px;
+}
+
+.logo-and-text :hover {
+  cursor: pointer;
+  background-color: rgb(160, 189, 0);
+}
+
+.logo-and-text :link {
+  text-decoration: none;
 }
 
 .logo {
   height: 40px;
   width: auto;
   float: left;
+  text-decoration: none;
 }
 
 .home-text {
@@ -31,6 +42,10 @@
   font-weight: bolder;
 }
 
+.home-text:hover {
+  color: rgb(255, 208, 0);
+}
+
 .nav-bar-main {
   display: flex;
   justify-content: center;
@@ -38,7 +53,6 @@
   justify-content: space-between;
   height: 85px;
   margin-top: 20px;
-  // flex-direction: row;
 }
 
 .search-bar {
@@ -47,10 +61,6 @@
   margin-top: 5px;
   border-radius: 5px;
   font-size: 15px;
-}
-
-.fa-search {
-    content: "\f002";
 }
 
 .search-dropdown{
