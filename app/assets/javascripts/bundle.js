@@ -1453,19 +1453,7 @@ var NavBar = function NavBar(_ref) {
     className: "trending-bar-under-nav"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "trending-text"
-  }, "TRENDING MOVIES ON ROTTEN EGG:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-    to: "/movies/210",
-    className: "trending-link"
-  }, "Star Wars: The Rise of Skywalker"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-    to: "/movies/194",
-    className: "trending-link"
-  }, "The Dark Knight"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-    to: "/movies/202",
-    className: "trending-link"
-  }, "Joker "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Link"], {
-    to: "/movies/193",
-    className: "trending-link"
-  }, "Cats ")));
+  }, "TRENDING MOVIES ON ROTTEN EGG:")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);

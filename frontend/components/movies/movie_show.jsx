@@ -27,7 +27,7 @@ class MovieShowPage extends React.Component {
         if (typeof avgRating === NaN) return null;
 
         let avgRating = (Math.round((this.getAllRating() / this.props.reviews.length) * 100) / 100);
-        
+
         let ratingIcon;
         if (avgRating >= 7.5) {
             ratingIcon = window.goodImage;
