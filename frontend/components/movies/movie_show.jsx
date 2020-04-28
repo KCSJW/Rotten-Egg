@@ -21,6 +21,7 @@ class MovieShowPage extends React.Component {
     }
 
     render() {
+
         if (!this.props.movie) return null;
         if (typeof avgRating === NaN) return null;
         let avgRating = (Math.round((this.getAllRating() / this.props.reviews.length) * 100) / 100);
@@ -87,10 +88,11 @@ class MovieShowPage extends React.Component {
                                 {
                                     this.props.reviews.map((review) => (
                                         <ReviewsItem
-                                            key={review.id} review={review}
-                                            currentUserId={this.props.currentUserId}
-                                            deleteReview={this.props.deleteReview}
+                                            key={review.id} 
+                                            review={review}
                                             getMovie={this.props.getMovie}
+                                            deleteReview={this.props.deleteReview}
+                                            currentUserId={this.props.currentUserId}
                                         />
                                     ))
                                 }

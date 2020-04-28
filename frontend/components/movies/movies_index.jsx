@@ -11,7 +11,6 @@ class moviesIndex extends React.Component {
         this.moviePoster = this.moviePoster.bind(this);
         this.dbMoviePosters = this.dbMoviePosters.bind(this);
         this.dbMovieIDs = this.dbMovieIDs.bind(this);
-        // this.combinInfo = this.combinInfo.bind(this);
     }
 
     componentDidMount() {
