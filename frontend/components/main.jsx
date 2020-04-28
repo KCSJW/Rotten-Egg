@@ -6,8 +6,8 @@ import MovieShowPageContainer from './movies/movie_show_container';
 const Main = () => (
     <div className='main-page'>
         <Switch>
-            <Route exact path="/movies/:movieId" component={MovieShowPageContainer} />
-            <Route exact path="/" component={MoviesIndexContainer} />
+            <Route path="/movies/:movieId" component={MovieShowPageContainer} />
+            <Route path="/" component={MoviesIndexContainer} />
         </Switch>
     </div>
 );

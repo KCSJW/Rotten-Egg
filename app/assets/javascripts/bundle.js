@@ -519,11 +519,9 @@ var Main = function Main() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main-page"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    exact: true,
     path: "/movies/:movieId",
     component: _movies_movie_show_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    exact: true,
     path: "/",
     component: _movies_movies_index_container__WEBPACK_IMPORTED_MODULE_2__["default"]
   })));
