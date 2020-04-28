@@ -45,7 +45,8 @@ class ReviewForm extends React.Component {
         };
     };
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
         const movieId = parseInt(this.props.movieId);
         const review = Object.assign({}, this.state, { movie_id: movieId });
         if (this.props.signedIn) {

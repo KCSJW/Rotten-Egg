@@ -1,56 +1,87 @@
 .modal-backdrop {
-   position: fixed;
-   z-index: 10;
-   top: 0px;
-   bottom: 0px;
-   right: 0px;
-   left: 0px;
-   background: rgba(0,0,0,0.5);
- }
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  background: rgba(0,0,0,0.5);
+}
 
- .modal-component {
-   display: flex;
-   flex-direction: column;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   z-index: 11;
-   transform: translate(-50%, -50%);
-   background: white;
-   border-radius: 5px 5px 0 0 ;
-   font-family: 'Source Sans Pro', sans-serif;
+.modal-component {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 11;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 5px 5px 0 0 ;
+  font-family: 'Source Sans Pro', sans-serif;
 
-    .session-form-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 50px;
+  .session-demo-button {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 10px;
+    font-family: 'Franklin Gothic FS Book',sans-serif;
+    font-weight: 800;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    font-size: 18px;
+    line-height: 1.25;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(255, 208, 0);
+    border-color: rgb(252, 206, 3);
+    color: white;
+    padding-bottom: 5px;
+    
+    .demo-button-icon {
+      width: 30px;
+      height: 30px;
     }
-   .session-form-header {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: .2px solid #E0E0E0;
-      background-color:  rgb(255, 208, 0);
-      
-      .session-form-title {
-        display: flex;
-        margin:0 5px;
-        padding:  15px 0 15px 10px;
-        color: white;
-        font-weight: 600;
-      }
-      
-      .modal-close-x {
-        display: flex;
-        color: rgb(167, 119, 0);
-        cursor: pointer;
-        font-weight: 400;
-        font-size: 17px;
-        font-family: 'Varela Round', sans-serif;
-        margin:0 5px;
-        padding: 7px;
-      }
 
+  }
+
+  .session-demo-button:hover{
+    background-color: rgb(160, 189, 0);
+    border-color: #b3ff00;
+  }
+
+  .session-form-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .session-form-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: .2px solid #E0E0E0;
+    background-color:  rgb(255, 208, 0);
+      
+    .session-form-title {
+      display: flex;
+      margin:0 5px;
+      padding:  15px 0 15px 10px;
+      color: white;
+      font-weight: 600;
     }
+      
+    .modal-close-x {
+      display: flex;
+      color: rgb(167, 119, 0);
+      cursor: pointer;
+      font-weight: 400;
+      font-size: 17px;
+      font-family: 'Varela Round', sans-serif;
+      margin:0 5px;
+      padding: 7px;
+    }
+
+  }
 
     .session-form-errors{
       font-size: 14px;
@@ -61,36 +92,6 @@
     .modal-form-box {
       padding: 10px 20px 20px 20px;
       width: 250px;
-
-      .session-demo-button {
-        display: flex;
-        margin: 0 auto;
-        margin-top: 15px;
-        padding: 10px;
-        font-family: 'Franklin Gothic FS Book',sans-serif;
-        font-weight: 800;
-        border: 1px solid transparent;
-        white-space: nowrap;
-        font-size: 18px;
-        line-height: 1.25;
-        border-radius: 10px;
-        cursor: pointer;
-        background-color: rgb(255, 208, 0);
-        border-color: rgb(252, 206, 3);
-        color: white;
-        padding-bottom: 5px;
-        
-        .demo-button-icon {
-          width: 30px;
-          height: 30px;
-        }
-
-      }
-
-      .session-demo-button:hover{
-        background-color: rgb(160, 189, 0);
-        border-color: #b3ff00;
-      }
 
       .session-modal-divider {
         border-bottom: 1px solid gray;
@@ -152,6 +153,7 @@
       }
 
     }
+    
     .session-form-footer{
       display: flex;
       align-items: center;

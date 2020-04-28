@@ -80,8 +80,8 @@ class sessionForm extends React.Component {
                     {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
                 </ul>
 
+                <div>{demoButton}</div>
                 <form className="modal-form-box" onSubmit={this.handleSubmit}>
-                    <div>{demoButton}</div>
                     <br/>
                     <div className="session-modal-divider">
                         <div className="session-modal-divider-text">OR</div>
