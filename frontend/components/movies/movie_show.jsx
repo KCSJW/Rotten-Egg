@@ -23,11 +23,8 @@ class MovieShowPage extends React.Component {
     render() {
 
         if (!this.props.movie) return null;
-
         if (typeof avgRating === NaN) return null;
-
         let avgRating = (Math.round((this.getAllRating() / this.props.reviews.length) * 100) / 100);
-
         let ratingIcon;
         if (avgRating >= 7.5) {
             ratingIcon = window.goodImage;
@@ -49,7 +46,6 @@ class MovieShowPage extends React.Component {
                     </div>
                     
                     <div className="movie-show-right-side-content">
-                        
                         <div className="movie-show-upper-right-content-container">
 
                             <div className="rating-box-wrap-title">{this.props.movie.title}</div>
@@ -77,7 +73,6 @@ class MovieShowPage extends React.Component {
                         <div className="movie-show-bottom-right-content">
                             <ReviewForm movieId={this.props.movie.id} />
                         </div>
-
                     </div>
                 </div>
 
