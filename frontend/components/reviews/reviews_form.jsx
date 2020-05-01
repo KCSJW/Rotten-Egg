@@ -39,12 +39,6 @@ class ReviewForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    requireToSignIn() {
-        if (!this.props.signedIn) {
-            this.props.signin();
-        };
-    };
-
     handleSubmit(e) {
         e.preventDefault();
         const movieId = parseInt(this.props.movieId);
@@ -55,17 +49,24 @@ class ReviewForm extends React.Component {
                 rating: '', 
                 body: ''
             });
-        }
-        // } else {
-        //     this.props.signin();
-        // };
+        } else {
+            this.props.signin();
+        };
     };
+
+    requireToSignIn() {
+        if (!this.props.signedIn) {
+            this.props.signin();
+        };
+    };
+
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
     };
 
     render() {
+
         return (
             <div className="movie-review-form-container">
 
@@ -78,8 +79,9 @@ class ReviewForm extends React.Component {
                         
                         <Rating min={1} max={10}
                             value={this.state.rating}
-                            onChange={(rating) => {this.setState({rating})}} 
-                            onClick={(e) => this.requireToSignIn() }/>
+                            onClick={(e) => this.requireToSignIn()}
+                            onChange={(rating) => {this.setState({rating})}}
+                        />
 
                         <textarea
                             cols="100"
@@ -87,12 +89,16 @@ class ReviewForm extends React.Component {
                             placeholder="A penny for your thoughts?"
                             className="movie-review-form-body"
                             value={this.state.body}
-                            onChange={this.update("body")} />
+                            onChange={this.update("body")}
+                        />
 
                         <input
+                            onClick={(e) => this.requireToSignIn()}
                             className="movie-review-form-button"
                             type="submit"
-                            value="Submit!" />
+                            value="Submit!"
+                        />
+
                     </form>
                 </div>
             </div>

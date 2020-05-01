@@ -1589,15 +1589,6 @@ function (_React$Component) {
   }
 
   _createClass(ReviewForm, [{
-    key: "requireToSignIn",
-    value: function requireToSignIn() {
-      if (!this.props.signedIn) {
-        this.props.signin();
-      }
-
-      ;
-    }
-  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       var _this2 = this;
@@ -1617,6 +1608,15 @@ function (_React$Component) {
           body: ''
         });
       } else {
+        this.props.signin();
+      }
+
+      ;
+    }
+  }, {
+    key: "requireToSignIn",
+    value: function requireToSignIn() {
+      if (!this.props.signedIn) {
         this.props.signin();
       }
 
@@ -1653,13 +1653,13 @@ function (_React$Component) {
         min: 1,
         max: 10,
         value: this.state.rating,
+        onClick: function onClick(e) {
+          return _this4.requireToSignIn();
+        },
         onChange: function onChange(rating) {
           _this4.setState({
             rating: rating
           });
-        },
-        onClick: function onClick(e) {
-          return _this4.requireToSignIn();
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         cols: "100",
@@ -1669,6 +1669,9 @@ function (_React$Component) {
         value: this.state.body,
         onChange: this.update("body")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: function onClick(e) {
+          return _this4.requireToSignIn();
+        },
         className: "movie-review-form-button",
         type: "submit",
         value: "Submit!"
