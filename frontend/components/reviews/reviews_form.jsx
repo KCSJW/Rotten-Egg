@@ -55,9 +55,10 @@ class ReviewForm extends React.Component {
                 rating: '', 
                 body: ''
             });
-        } else {
-            this.props.signin();
-        };
+        }
+        // } else {
+        //     this.props.signin();
+        // };
     };
 
     update(field) {
