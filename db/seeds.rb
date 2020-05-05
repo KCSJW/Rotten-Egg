@@ -29,6 +29,10 @@ user12 = User.create!({username:"Dennis C", password:"iamrotten", top_critic:"tr
 user13 = User.create!({username:"Brian Tran", password:"iamrotten", top_critic:"true"});
 user14 = User.create!({username:"Mike Madsen", password:"iamrotten", top_critic:"true"});
 user15 = User.create!({username:"Elson Li", password:"iamrotten", top_critic:"true"});
+user16 = User.create!({username:"Julius Wu", password:"iamrotten", top_critic:"true"});
+user17 = User.create!({username:"Jason Wu", password:"iamrotten", top_critic:"true"});
+user18 = User.create!({username:"Joe Bumbaca", password:"iamrotten", top_critic:"true"});
+user19 = User.create!({username:"abc", password:"iamrotten", top_critic:"true"});
 
 
 # Movie seeds
@@ -668,7 +672,7 @@ review46 = Review.create!({
 });
 
 review47 = Review.create!({
-    body: 'Everyone Star War fans will remember December 20 2019, the day that Disney finally killed Star War',
+    body: 'Every Star War fans will remember December 20 2019, the day that Disney finally killed Star War',
     rating: 0,
     author_name: user0.username,
     author_id: user0.id,
@@ -713,6 +717,86 @@ review52 = Review.create!({
     author_name: user0.username,
     author_id: user0.id,
     movie_id: movie33.id
+});
+
+review53 = Review.create!({
+    body: 'There are no dogs in it!',
+    rating: 0,
+    author_name: user16.username,
+    author_id: user16.id,
+    movie_id: movie3.id
+});
+
+review54 = Review.create!({
+    body: 'One of the best movies everrrrrrrr',
+    rating: 10,
+    author_name: user17.username,
+    author_id: user17.id,
+    movie_id: movie3.id
+});
+
+review55 = Review.create!({
+    body: 'A movie no one ask for.......',
+    rating: 0,
+    author_name: user0.username,
+    author_id: user0.id,
+    movie_id: movie3.id
+});
+
+review56 = Review.create!({
+    body: 'Still the best Joker performance to date . . . .',
+    rating: 10,
+    author_name: user18.username,
+    author_id: user18.id,
+    movie_id: movie4.id
+});
+
+review57 = Review.create!({
+    body: 'PIKA PIKA',
+    rating: 10,
+    author_name: user3.username,
+    author_id: user3.id,
+    movie_id: movie5.id
+});
+
+review58 = Review.create!({
+    body: 'I\'ve seen it so many times!',
+    rating: 10,
+    author_name: user18.username,
+    author_id: user18.id,
+    movie_id: movie10.id
+});
+
+review59 = Review.create!({
+    body: 'I laughed, I cried, I cooked! Such a great family film!',
+    rating: 9,
+    author_name: user18.username,
+    author_id: user18.id,
+    movie_id: movie16.id
+});
+
+review60 = Review.create!({
+    body: 'Oh Rejean!!! Duke Kaboon steals the show. . . .Definitely a great movie to watch if you are a fan of the original!',
+    rating: 10,
+    author_name: user18.username,
+    author_id: user18.id,
+    movie_id: movie22.id
+});
+
+review61 = Review.create!({
+    body: 'Best movie of the year. Thought it was going to be a scary movie but turned out to be more funny than scary. Well done. Makes me reconsider when I eat free food during happy hours.',
+    rating: 10,
+    author_name: user19.username,
+    author_id: user19.id,
+    movie_id: movie27.id
+});
+
+review62 = Review.create!({
+    body: 'Very disturbing, but a great movie that is hard to enjoy.',
+    rating: 8,
+    author_name: user17.username,
+    author_id: user17.id,
+    movie_id: movie27.id
 });
 
 end
