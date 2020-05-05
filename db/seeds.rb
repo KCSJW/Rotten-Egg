@@ -40,264 +40,264 @@ movie1 = Movie.create!({
     title: "Always be my maybe",
     info: "On Netflix May 31, 2019",
     genres: "Romance",
-    status: "Released",
-    image_url: "https://image.tmdb.org/t/p/w300_and_h450_bestv2/3BO6pPa7qDcpPYct061Luh9fvst.jpg"
+    status: "Reunited after 15 years, famous chef Sasha and hometown musician Marcus feel the old sparks of attraction but struggle to adapt to each other's worlds.",
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/always_be_my_maybe.jpg"
 });
 
 movie2 = Movie.create!({
     title: "Crazy Rich Asians",
     info: "On theater August 7, 2018",
     genres: "Romance",
-    status: "Released",
-    image_url: "https://image.tmdb.org/t/p/w1280/1XxL4LJ5WHdrcYcihEZUCgNCpAW.jpg"
+    status: "An American-born Chinese economics professor accompanies her boyfriend to Singapore for his best friend's wedding, only to get thrust into the lives of Asia's rich and famous.",
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/cra.jpg"
 });
 
 movie3 = Movie.create!({
     title: "Cats",
     info: "On theater December 20, 2019",
     genres: "Fantasy",
-    status: "Released",
-    image_url: "https://image.tmdb.org/t/p/w1280/b8UiUXK7IjoMmvqQjixRTIIESAH.jpg"
+    status: "A tribe of cats called the Jellicles must decide yearly which one will ascend to the Heaviside Layer and come back to a new Jellicle life.",
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/cat.jpg"
 });
 
 movie4 = Movie.create!({
     title: "The Dark Knight",
     info: "On theater July 18, 2008",
     genres: "Action",
-    status: "Classic",
-    image_url: "https://image.tmdb.org/t/p/w1280/qr8zCNPqEI2MrCwfofoI3GdNNH7.jpg"
+    status: "With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. They soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known as the Joker.",
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/dark_knight.jpg"
 });
 
 movie5 = Movie.create!({
     title: "Pokemon Detective Pikachu",
     info: "On theater May 10, 2019",
     genres: "Action",
-    status: "Released" ,
-    image_url: "https://image.tmdb.org/t/p/w1280/2wsIOeYeyCqCsQKSuhKpZsWvd50.jpg"
+    status: "In a world where people collect pocket-size monsters (Pokémon) to do battle, a boy comes across an intelligent monster who seeks to be a detective." ,
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/detective_pikachu.jpg"
 });
 
 movie6 = Movie.create!({
     title: "The Devil Wears Prada",
     info: "On theater June 30, 2006",
     genres: "Comedy",
-    status: "Released",
-    image_url: "https://image.tmdb.org/t/p/w1280/8unCRm0LeiO0fM6skWAZy3ZfXR1.jpg"
+    status: "Andy moves to New York to work in the fashion industry. Her boss is extremely demanding, cruel and won't let her succeed if she doesn't fit into the high class elegant look of their magazine.",
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/devil_wears_prada.jpg"
 });
 
 movie7 = Movie.create!({
     title: "Dragonball Evolution",
     info: "On theater April 8, 2009",
     genres: "Action",
-    image_url: "https://image.tmdb.org/t/p/w1280/yERkcVylXAcTCi8f0qrba4rmWwg.jpg",
-    status: "Released"
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/dragonball.jpg",
+    status: "The young warrior Son Goku sets out on a quest, racing against time and the vengeful King Piccolo, to collect a set of seven magical orbs that will grant their wielder unlimited power."
 });
 
 movie8 = Movie.create!({
     title: "The Godfather",
     info: "On theater March 15, 1972",
     genres: "Drama",
-    image_url: "https://image.tmdb.org/t/p/w1280/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg",
-    status: "Classic" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/godfather.jpg",
+    status: "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge." 
 });
 
 movie9 = Movie.create!({
     title: "The Great Wall",
     info: "On theater February 17, 2017",
     genres: "Action",
-    image_url: "https://image.tmdb.org/t/p/w1280/p70dq1YxabemdZDm5K6Q8G10wSn.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/great_wall.jpg",
+    status: "European mercenaries searching for black powder become embroiled in the defense of the Great Wall of China against a horde of monstrous creatures." 
 });
 
 movie10 = Movie.create!({
     title: "The Incredibles",
     info: "On theater November 5, 2004",
     genres: "Action",
-    image_url: "https://image.tmdb.org/t/p/w1280/2LqaLgk4Z226KkgPJuiOQ58wvrm.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/incredibles.jpg",
+    status: "Bob Parr has given up his superhero days to log in time as an insurance adjuster and raise his three children with his formerly heroic wife in suburbia. But when he receives a mysterious assignment, it's time to get back into costume." 
 });
 
 movie11 = Movie.create!({
     title: "The Interview",
     info: "On theater December 25, 2014",
     genres: "Comedy",
-    image_url: "https://image.tmdb.org/t/p/w1280/d1r6DegpgBjqtmac3w2A0LKSChB.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/interview.jpg",
+    status: "Dave Skylark and his producer Aaron Rapaport run the celebrity tabloid show \"Skylark Tonight\". When they land an interview with a surprise fan, North Korean dictator Kim Jong-un, they are recruited by the CIA to turn their trip to Pyongyang into an assassination mission." 
 });
 
 movie12 = Movie.create!({
     title: "Joker",
     info: "On theater October 4, 2019",
     genres: "Drama",
-    image_url: "https://image.tmdb.org/t/p/w1280/tgcrYiyG75iDcyk3en9NzZis0dh.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/joker.jpg",
+    status: "During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure." 
 });
 
 movie13 = Movie.create!({
     title: "Knives Out",
     info: "On theater November 27, 2019",
     genres: "Thriller",
-    image_url: "https://image.tmdb.org/t/p/w1280/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/knives_out.jpg",
+    status: "When renowned crime novelist Harlan Thrombey is found dead at his estate, the inquisitive and debonair Detective Benoit Blanc is mysteriously enlisted to investigate. Blanc sifts through a web of red herrings and self-serving lies to uncover the truth behind Harlan's untimely death." 
 });
 
 movie14 = Movie.create!({
     title: "The Last Black Man In San Francisco",
     info: "On theater June 7, 2019",
     genres: "Drama",
-    image_url: "https://image.tmdb.org/t/p/w1280/clCZr941obhp8NZYKfY3olH9ZJ8.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/last_blackman.jpg",
+    status: "Jimmie Fails dreams of reclaiming the Victorian home his grandfather built in the heart of San Francisco. Joined on his quest by his best friend Mont, Jimmie searches for belonging in a rapidly changing city that seems to have left them behind." 
 });
 
 movie15 = Movie.create!({
     title: "Pan's Labyrinth",
     info: "On theater October 15, 2006",
     genres: "Fantasy",
-    image_url: "https://image.tmdb.org/t/p/w1280/9C3r6o0zUuyhgzGLShAvpu0sSvd.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/pan_labyrinth.jpg",
+    status: "Living with her tyrannical stepfather in a new home with her pregnant mother, 10-year-old Ofelia feels alone until she explores a decaying labyrinth guarded by a mysterious faun who claims to know her destiny. If she wishes to return to her real father, Ofelia must complete three terrifying tasks." 
 });
 
 movie16 = Movie.create!({
     title: "Ratatouille",
     info: "On theater June 22, 2007",
     genres: "Animation",
-    image_url: "https://image.tmdb.org/t/p/w1280/xVxxSYHAfrEbllyWFQG5df5nwH4.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/ratatouille.jpg",
+    status: "A rat named Remy dreams of becoming a great French chef despite his family's wishes and the obvious problem of being a rat in a decidedly rodent-phobic profession. Remy's passion for cooking soon sets into motion a hilarious and exciting rat race that turns the culinary world of Paris upside down." 
 });
 
 movie17 = Movie.create!({
     title: "The Lord of the Rings: The Return of the King",
     info: "On theater December 17, 2003",
     genres: "Adventure",
-    image_url: "https://image.tmdb.org/t/p/w1280/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
-    status: "Classic" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/return_of_king.jpg",
+    status: "Aragorn is revealed as the heir to the ancient kings as he, Gandalf and the other members of the broken fellowship struggle to save Gondor from Sauron's forces. Meanwhile, Frodo and Sam take the ring closer to the heart of Mordor, the dark lord's realm." 
 });
 
 movie18 = Movie.create!({
     title: "The Revenant",
     info: "On theater January 8, 2016",
     genres: "Adventure",
-    image_url: "https://image.tmdb.org/t/p/w1280/5W794ugjRwYx6IdFp1bXJqqMWRg.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/revenant.jpg",
+    status: "In the 1820s, a frontiersman, Hugh Glass, sets out on a path of vengeance against those who left him for dead after a bear mauling." 
 });
 
 movie19 = Movie.create!({
     title: "Rush Hour 2",
     info: "On theater August 3, 2001",
     genres: "Comedy",
-    image_url: "https://image.tmdb.org/t/p/w1280/kFeK17ZSogSxRxuupTxZ6PGklbj.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/rh2.jpg",
+    status: "It's vacation time for Carter as he finds himself alongside Lee in Hong Kong wishing for more excitement. Lee is out to track down a Triad gang lord who may be responsible for killing two men at the American Embassy. The boys are soon up to their necks in fist fights and life-threatening situations." 
 });
 
 movie20 = Movie.create!({
     title: "Star Wars: The Rise of Skywalker",
     info: "On theater December 20, 2019",
     genres: "Adventure",
-    image_url: "https://image.tmdb.org/t/p/w1280/6R5Re2qBxcVPjgIO3FSuZjv3E2o.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/rise_of_sky_walker.jpg",
+    status: "The surviving Resistance faces the First Order once again as the journey of Rey, Finn and Poe Dameron continues. With the power and knowledge of generations behind them, the final battle begins." 
 });
 
 movie21 = Movie.create!({
     title: "Searching",
     info: "On theater August 24, 2018",
     genres: "Thriller",
-    image_url: "https://image.tmdb.org/t/p/w1280/pk9R56ZFlofbBzfwBnHlDyg5DMs.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/searching.jpg",
+    status: "After David Kim's 16-year-old daughter goes missing, a local investigation is opened and a detective is assigned to the case. But 37 hours later and without a single lead, David decides to search the one place no one has looked yet, where all secrets are kept today: his daughter's laptop." 
 });
 
 movie22 = Movie.create!({
     title: "Toy Story 4",
     info: "On theater June 21, 2019",
     genres: "Animation",
-    image_url: "https://image.tmdb.org/t/p/w1280/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/toy_story.jpg",
+    status: "Woody has always been confident about his place in the world and that his priority is taking care of his kid, whether that's Andy or Bonnie. But when Bonnie adds a reluctant new toy called \"Forky\" to her room, a road trip adventure alongside old and new friends will show Woody how big the world can be for a toy." 
 });
 
 movie23 = Movie.create!({
     title: "Up",
     info: "On theater May 28, 2009",
     genres: "Animation",
-    image_url: "https://image.tmdb.org/t/p/w1280/gfFqBcoFW8uczyl2ytVmVmUg82k.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/up.jpg",
+    status: "Carl Fredricksen spent his entire life dreaming of exploring the globe and experiencing life to its fullest. But at age 78, life seems to have passed him by, until a twist of fate (and a persistent 8-year old Wilderness Explorer named Russell) gives him a new lease on life." 
 });
 
 movie24 = Movie.create!({
     title: "Argo",
     info: "On theater October 12, 2012",
     genres: "Drama",
-    image_url: "https://image.tmdb.org/t/p/w1280/zXvJCQybGUPwoI4nxxUiji3fMPj.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/Argo.jpg",
+    status: "As the Iranian revolution reaches a boiling point, a CIA 'exfiltration' specialist concocts a risky plan to free six Americans who have found shelter at the home of the Canadian ambassador." 
 });
 
 movie25 = Movie.create!({
     title: "Ex machina",
     info: "On theater April 24, 2015",
     genres: "Science Fiction",
-    image_url: "https://image.tmdb.org/t/p/w1280/iXWt1prw5xbpjf3hmOm8Fo3dFa.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/ex_machina.jpg",
+    status: "Caleb, coder at the world's largest internet company, wins a competition to spend a week at a private mountain retreat belonging to Nathan, the reclusive CEO of the company. But when Caleb arrives he finds out he will participate in an experiment which he must interact with the world's first true AI robot girl." 
 });
 
 movie26 = Movie.create!({
     title: "Weathering with You | 天気の子",
     info: "On theater January 17, 2020",
     genres: "Animation",
-    image_url: "https://image.tmdb.org/t/p/w1280/pVlNK3knUXatpxvSTioll7DgyQh.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/wwy.jpg",
+    status: "Tokyo is currently experiencing rain showers that seem to disrupt the usual pace of everyone living there to no end." 
 });
 
 movie27 = Movie.create!({
     title: "Parasite | 기생충",
     info: "On theater October 11, 2019",
     genres: "Thriller",
-    image_url: "https://image.tmdb.org/t/p/w1280/dwkDeJXXaHVuIhcyCxUdb3YctxY.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/parasite.jpg",
+    status: "All unemployed, Ki-taek's family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident." 
 });
 
 movie28 = Movie.create!({
     title: "Aquaman",
     info: "On theater December 21, 2018",
     genres: "Action",
-    image_url: "https://image.tmdb.org/t/p/w1280/xLPffWMhMj1l50ND3KchMjYoKmE.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/aquaman.jpg",
+    status: "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne." 
 });
 
 movie29 = Movie.create!({
     title: "Alita: Battle Angel",
     info: "On theater February 14, 2019",
     genres: "Action",
-    image_url: "https://image.tmdb.org/t/p/w1280/5OD9W0twXHGx9O9BYgJti3ItRBF.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/aba.jpg",
+    status: "When Alita awakens with no memory of who she is in a future world she does not recognize, she is taken in by Ido, a compassionate doctor who realizes that somewhere in this abandoned cyborg shell is the heart and soul of a young woman with an extraordinary past." 
 });
 
 movie30 = Movie.create!({
     title: "You Name. | 君の名は。",
     info: "On theater April 7, 2017",
     genres: "Romance",
-    image_url: "https://image.tmdb.org/t/p/w1280/xq1Ugd62d23K2knRUx6xxuALTZB.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/your_name.jpg",
+    status: "High schoolers Mitsuha and Taki are complete strangers living separate lives. But one night, they suddenly switch places. Mitsuha wakes up in Taki’s body, and he in hers. This bizarre occurrence continues to happen randomly, and the two must adjust their lives around each other." 
 });
 
 movie31 = Movie.create!({
     title: "Fight Club",
     info: "On theater October 15, 1999",
     genres: "Drama",
-    image_url: "https://image.tmdb.org/t/p/w1280/adw6Lq9FiC9zjYEpOqfq03ituwp.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/fight_club.jpg",
+    status: "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion." 
 });
 
 movie32 = Movie.create!({
-    title: "The Legend of 1990",
+    title: "The Legend of 1900",
     info: "On theater October 28, 1998",
     genres: "Drama",
-    image_url: "https://image.tmdb.org/t/p/w1280/5eqMnFLAep9jkn1rDAg7M2WiuHQ.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/1900.jpg",
+    status: "The story of a virtuoso piano player who lives his entire life aboard an ocean liner. Born and raised on the ship, 1900 (Tim Roth) learned about the outside world through interactions with passengers, never setting foot on land. Years later, the ship may be destroyed, and a former band member fears that 1900 may go down with the ship." 
 });
 
 movie33 = Movie.create!({
     title: "Logan",
     info: "On theater March 3, 2017",
     genres: "Drama",
-    image_url: "https://image.tmdb.org/t/p/w1280/45Y1G5FEgttPAwjTYic6czC9xCn.jpg",
-    status: "Released" 
+    image_url: "https://active-storage-rotten-egg-dev.s3-us-west-1.amazonaws.com/logan.jpg",
+    status: "In the near future, a weary Logan cares for an ailing Professor X in a hideout on the Mexican border. But Logan's attempts to hide from the world and his legacy are upended when a young mutant arrives, pursued by dark forces." 
 });
 
 #reviews seed
