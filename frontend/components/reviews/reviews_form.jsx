@@ -76,28 +76,34 @@ class ReviewForm extends React.Component {
 
                 <div className="movie-review-form-score-and-body-container">
                     <form onSubmit={this.handleSubmit}>
-                        
-                        <Rating min={1} max={10}
-                            value={this.state.rating}
-                            onChange={(rating) => {this.setState({rating})}}
-                        />
+                        <ul>
+                            <li className="star-rating-bar">
+                                <Rating min={1} max={10}
+                                    value={this.state.rating}
+                                    onChange={(rating) => { this.setState({ rating }) }}
+                                />
+                            </li>
 
-                        <textarea
-                            cols="100"
-                            rows="5"
-                            placeholder="A penny for your thoughts?"
-                            className="movie-review-form-body"
-                            value={this.state.body}
-                            onChange={this.update("body")}
-                        />
+                            <li>
+                                <textarea
+                                    cols="100"
+                                    rows="5"
+                                    placeholder="A penny for your thoughts?"
+                                    className="movie-review-form-body"
+                                    value={this.state.body}
+                                    onChange={this.update("body")}
+                                />
+                            </li>
 
-                        <input
-                            onClick={(e) => this.requireToSignIn()}
-                            className="movie-review-form-button"
-                            type="submit"
-                            value="Submit!"
-                        />
-
+                            <li>
+                                <input
+                                    onClick={(e) => this.requireToSignIn()}
+                                    className="movie-review-form-button"
+                                    type="submit"
+                                    value="Submit!"
+                                />
+                            </li>
+                        </ul>
                     </form>
                 </div>
             </div>

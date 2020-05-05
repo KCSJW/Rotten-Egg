@@ -1649,6 +1649,8 @@ function (_React$Component) {
         className: "movie-review-form-score-and-body-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "star-rating-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Rating, {
         min: 1,
         max: 10,
@@ -1658,21 +1660,21 @@ function (_React$Component) {
             rating: rating
           });
         }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         cols: "100",
         rows: "5",
         placeholder: "A penny for your thoughts?",
         className: "movie-review-form-body",
         value: this.state.body,
         onChange: this.update("body")
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onClick: function onClick(e) {
           return _this4.requireToSignIn();
         },
         className: "movie-review-form-button",
         type: "submit",
         value: "Submit!"
-      }))));
+      }))))));
     }
   }]);
 
