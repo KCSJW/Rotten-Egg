@@ -1653,9 +1653,6 @@ function (_React$Component) {
         min: 1,
         max: 10,
         value: this.state.rating,
-        onClick: function onClick(e) {
-          return _this4.requireToSignIn();
-        },
         onChange: function onChange(rating) {
           _this4.setState({
             rating: rating
