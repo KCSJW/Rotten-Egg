@@ -689,9 +689,9 @@ function (_React$Component) {
         className: "movie-show-info"
       }, this.props.movie.info), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "movie-show-info"
-      }, "Status: ", this.props.movie.status), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "movie-show-info"
-      }, "Genres: ", this.props.movie.genres)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Genres: ", this.props.movie.genres), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "movie-show-overview"
+      }, this.props.movie.status)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-bottom-right-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_reviews_reviews_form_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         movieId: this.props.movie.id

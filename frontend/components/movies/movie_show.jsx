@@ -63,8 +63,8 @@ class MovieShowPage extends React.Component {
                             <div className="movie-show-upper-right-content2-container">
                                 <ul>
                                     <li className="movie-show-info">{this.props.movie.info}</li>
-                                    <li className="movie-show-info">Status: {this.props.movie.status}</li>
                                     <li className="movie-show-info">Genres: {this.props.movie.genres}</li>
+                                    <li className="movie-show-overview">{this.props.movie.status}</li>
                                 </ul>
                             </div>
 

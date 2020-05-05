@@ -38,9 +38,11 @@
 
 .movie-show-image {
   max-width: 400px;
-  min-width: 200px;
+  min-width: 300px;
+  max-height: 600px;
+  min-height: 380px;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .movie-show-title {
@@ -53,6 +55,12 @@
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
   padding-top: 10px;
+}
+
+.movie-show-overview {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  padding: 10px;
 }
 
 .movie-show-right-side-content {
@@ -168,8 +176,8 @@
 .rating-box-wrap {
   position: absolute;
   border-bottom: 2px solid black;
-  height: 10px;
-  width: 90%;
+  height: 15px;
+  width: 95%;
 }
 
 .rating-box-wrap-title {
@@ -179,5 +187,5 @@
   padding: 0px 2px 0px 2px;
   font-family: 'Neusa Next Pro Compact Medium',Impact,Arial,sans-serif;
   background-color: #EFEFEF;
-  font-size: 20px;
+  font-size: 22px;
 }
