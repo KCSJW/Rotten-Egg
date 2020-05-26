@@ -7,7 +7,7 @@ const Footer = () => (
             <img src={emailImage} className='footer-icon'/>
             <a href="https://github.com/KCSJW" className="conntact-info" target="_blank">GitHub</a>
             <img src={githubImage} className='footer-icon' />
-            <a href="https://www.linkedin.com/in/chong-shun-wai-0640271a1/" className="conntact-info" target="_blank">LinkIn</a>
+            <a href="https://www.linkedin.com/in/chong-shun-wai-0640271a1/" className="conntact-info" target="_blank">LinkedIn</a>
             <img src={linkinImage} className='footer-icon' />
         </ul>
         <p className="footer-disclaimer">
