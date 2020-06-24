@@ -3,8 +3,8 @@ import React from "react";
 const Footer = () => (
     <div className="footer-box">
         <ul className="footser-link">
-            <a href="mailto:johnson9710@gmail.com" className="conntact-info">Email</a>
-            <img src={emailImage} className='footer-icon'/>
+            {/* <a href="mailto:johnson9710@gmail.com" className="conntact-info">Email</a>
+            <img src={emailImage} className='footer-icon'/> */}
             <a href="https://github.com/KCSJW" className="conntact-info" target="_blank">GitHub</a>
             <img src={githubImage} className='footer-icon' />
             <a href="https://www.linkedin.com/in/chong-shun-wai-0640271a1/" className="conntact-info" target="_blank">LinkedIn</a>
