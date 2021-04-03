@@ -465,12 +465,6 @@ var Footer = function Footer() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "footser-link"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "mailto:johnson9710@gmail.com",
-    className: "conntact-info"
-  }, "Email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: emailImage,
-    className: "footer-icon"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://github.com/KCSJW",
     className: "conntact-info",
     target: "_blank"
@@ -481,7 +475,7 @@ var Footer = function Footer() {
     href: "https://www.linkedin.com/in/chong-shun-wai-0640271a1/",
     className: "conntact-info",
     target: "_blank"
-  }, "LinkIn"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, "LinkedIn"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: linkinImage,
     className: "footer-icon"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -1034,7 +1028,8 @@ function (_React$Component) {
           icon: ratingIcon,
           rating: movie.vote_average,
           title: movie.title,
-          id: movie.id
+          id: movie.id,
+          poster: movie.poster_path
         };
         pair.push(temp);
       });
@@ -1053,6 +1048,10 @@ function (_React$Component) {
       }, "Now Playing:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, array.map(function (movie) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: movie.id,
+          className: "movie-list-outeritem"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-list-item"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: movie.icon,
@@ -1061,7 +1060,7 @@ function (_React$Component) {
           className: "list-score"
         }, movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "list-text"
-        }, movie.title));
+        }, movie.title)));
       }))));
     }
   }]);
@@ -1176,11 +1175,13 @@ function (_React$Component) {
           ratingIcon = window.badImage;
         }
 
+        ;
         var temp = {
           icon: ratingIcon,
           rating: movie.vote_average,
           title: movie.title,
-          id: movie.id
+          id: movie.id,
+          poster: movie.poster_path
         };
         pair.push(temp);
       });
@@ -1199,6 +1200,10 @@ function (_React$Component) {
       }, "Top Rated:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, array.map(function (movie) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: movie.id,
+          className: "movie-list-outeritem"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-list-item"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: movie.icon,
@@ -1207,7 +1212,7 @@ function (_React$Component) {
           className: "list-score"
         }, movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "list-text"
-        }, movie.title));
+        }, movie.title)));
       }))));
     }
   }]);
@@ -1326,7 +1331,8 @@ function (_React$Component) {
           icon: ratingIcon,
           rating: movie.vote_average,
           title: movie.title,
-          id: movie.id
+          id: movie.id,
+          poster: movie.poster_path
         };
         pair.push(temp);
       });
@@ -1345,6 +1351,10 @@ function (_React$Component) {
       }, "Up Coming:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, array.map(function (movie) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: movie.id,
+          className: "movie-list-outeritem"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-list-item"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: movie.icon,
@@ -1353,7 +1363,7 @@ function (_React$Component) {
           className: "list-score"
         }, movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "list-text"
-        }, movie.title));
+        }, movie.title)));
       }))));
     }
   }]);
@@ -1453,7 +1463,7 @@ var NavBar = function NavBar(_ref) {
     className: "trending-bar-under-nav"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "trending-text"
-  }, "TRENDING MOVIES ON ROTTEN EGG:")));
+  }, "TRENDING MOVIES ON ROTTEN EGG! TRY CLICK ON POSTERS BELOW!")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);

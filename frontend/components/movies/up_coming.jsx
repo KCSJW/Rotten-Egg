@@ -26,7 +26,14 @@ class UpComingList extends React.Component {
                 ratingIcon = window.badImage;
             }
 
-            let temp = { icon: ratingIcon, rating: movie.vote_average, title: movie.title, id: movie.id };
+            let temp = { 
+                icon: ratingIcon, 
+                rating: movie.vote_average, 
+                title: movie.title, 
+                id: movie.id, 
+                poster: movie.poster_path 
+            };
+
             pair.push(temp);
         })
         return pair;
@@ -42,10 +49,13 @@ class UpComingList extends React.Component {
                     <ul>
                         {
                             array.map((movie) => (
-                                <li key={movie.id} className="movie-list-item">
-                                    <img src={movie.icon} className="list-icon" />
-                                    <div className="list-score">{movie.rating}</div>
-                                    <div className="list-text">{movie.title}</div>
+                                <li key={movie.id} className="movie-list-outeritem">
+                                    <img src={`https://image.tmdb.org/t/p/original${movie.poster}`}/>
+                                    <div className="movie-list-item">
+                                        <img src={movie.icon} className="list-icon" />
+                                        <div className="list-score">{movie.rating}</div>
+                                        <div className="list-text">{movie.title}</div>
+                                    </div>
                                 </li>
                             ))
                         }
