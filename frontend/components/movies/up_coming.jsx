@@ -50,12 +50,12 @@ class UpComingList extends React.Component {
                         {
                             array.map((movie) => (
                                 <li key={movie.id} className="movie-list-outeritem">
-                                    <img src={`https://image.tmdb.org/t/p/original${movie.poster}`}/>
                                     <div className="movie-list-item">
                                         <img src={movie.icon} className="list-icon" />
                                         <div className="list-score">{movie.rating}</div>
                                         <div className="list-text">{movie.title}</div>
                                     </div>
+                                    <img src={`https://image.tmdb.org/t/p/original${movie.poster}`}/>
                                 </li>
                             ))
                         }

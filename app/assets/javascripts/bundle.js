@@ -1049,9 +1049,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: movie.id,
           className: "movie-list-outeritem"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-list-item"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: movie.icon,
@@ -1060,7 +1058,9 @@ function (_React$Component) {
           className: "list-score"
         }, movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "list-text"
-        }, movie.title)));
+        }, movie.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
+        }));
       }))));
     }
   }]);
@@ -1201,9 +1201,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: movie.id,
           className: "movie-list-outeritem"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-list-item"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: movie.icon,
@@ -1212,7 +1210,9 @@ function (_React$Component) {
           className: "list-score"
         }, movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "list-text"
-        }, movie.title)));
+        }, movie.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
+        }));
       }))));
     }
   }]);
@@ -1352,9 +1352,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: movie.id,
           className: "movie-list-outeritem"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-list-item"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: movie.icon,
@@ -1363,7 +1361,9 @@ function (_React$Component) {
           className: "list-score"
         }, movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "list-text"
-        }, movie.title)));
+        }, movie.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
+        }));
       }))));
     }
   }]);
