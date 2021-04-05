@@ -562,6 +562,67 @@ var modalForm = function modalForm(_ref) {
 
 /***/ }),
 
+/***/ "./frontend/components/movies/movie_item.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/movies/movie_item.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+function MovieItem(_ref) {
+  var icon = _ref.icon,
+      rating = _ref.rating,
+      title = _ref.title,
+      poster = _ref.poster;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      hidden = _useState2[0],
+      setHidden = _useState2[1];
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "movie-list-outeritem"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "movie-list-item",
+    onClick: function onClick(e) {
+      return setHidden(false);
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: icon,
+    className: "list-icon"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "list-score"
+  }, rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "list-text"
+  }, title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "poster",
+    onClick: function onClick(e) {
+      return setHidden(true);
+    }
+  }, !hidden && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://image.tmdb.org/t/p/original".concat(poster)
+  })));
+}
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (MovieItem);
+
+/***/ }),
+
 /***/ "./frontend/components/movies/movie_show.jsx":
 /*!***************************************************!*\
   !*** ./frontend/components/movies/movie_show.jsx ***!
@@ -967,6 +1028,7 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _movie_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./movie_item */ "./frontend/components/movies/movie_item.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -987,6 +1049,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var NowPlayingList =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1002,7 +1065,6 @@ function (_React$Component) {
       isHidden: true
     };
     _this.nowPlayingData = _this.nowPlayingData.bind(_assertThisInitialized(_this));
-    _this.toggleHidden = _this.toggleHidden.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1040,19 +1102,8 @@ function (_React$Component) {
       return pair;
     }
   }, {
-    key: "toggleHidden",
-    value: function toggleHidden() {
-      this.setState(function (prevState) {
-        return {
-          isHidden: !prevState.isHidden
-        };
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var array = this.nowPlayingData();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-movie-lists"
@@ -1061,26 +1112,13 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-list-header"
       }, "Now Playing:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, array.map(function (movie) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_movie_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: movie.id,
-          onClick: function onClick(e) {
-            return _this2.toggleHidden();
-          },
-          className: "movie-list-outeritem"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "movie-list-item"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: movie.icon,
-          className: "list-icon"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "list-score"
-        }, movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "list-text"
-        }, movie.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "poster"
-        }, !_this2.state.isHidden && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
-        })));
+          icon: movie.icon,
+          rating: movie.rating,
+          title: movie.title,
+          poster: movie.poster
+        });
       }))));
     }
   }]);
@@ -1138,6 +1176,7 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _movie_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./movie_item */ "./frontend/components/movies/movie_item.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1158,6 +1197,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var TopRatedList =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1169,11 +1209,7 @@ function (_React$Component) {
     _classCallCheck(this, TopRatedList);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TopRatedList).call(this, props));
-    _this.state = {
-      isHidden: true
-    };
     _this.topRatedData = _this.topRatedData.bind(_assertThisInitialized(_this));
-    _this.toggleHidden = _this.toggleHidden.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1212,19 +1248,8 @@ function (_React$Component) {
       return pair;
     }
   }, {
-    key: "toggleHidden",
-    value: function toggleHidden() {
-      this.setState(function (prevState) {
-        return {
-          isHidden: !prevState.isHidden
-        };
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var array = this.topRatedData();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-movie-lists"
@@ -1233,26 +1258,13 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-list-header"
       }, "Top Rated:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, array.map(function (movie) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_movie_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: movie.id,
-          onClick: function onClick(e) {
-            return _this2.toggleHidden();
-          },
-          className: "movie-list-outeritem"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "movie-list-item"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: movie.icon,
-          className: "list-icon"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "list-score"
-        }, movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "list-text"
-        }, movie.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "poster"
-        }, !_this2.state.isHidden && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
-        })));
+          icon: movie.icon,
+          rating: movie.rating,
+          title: movie.title,
+          poster: movie.poster
+        });
       }))));
     }
   }]);
@@ -1310,6 +1322,7 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _movie_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./movie_item */ "./frontend/components/movies/movie_item.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1330,6 +1343,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var UpComingList =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1341,11 +1355,7 @@ function (_React$Component) {
     _classCallCheck(this, UpComingList);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(UpComingList).call(this, props));
-    _this.state = {
-      isHidden: true
-    };
     _this.upComingData = _this.upComingData.bind(_assertThisInitialized(_this));
-    _this.toggleHidden = _this.toggleHidden.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1383,19 +1393,8 @@ function (_React$Component) {
       return pair;
     }
   }, {
-    key: "toggleHidden",
-    value: function toggleHidden() {
-      this.setState(function (prevState) {
-        return {
-          isHidden: !prevState.isHidden
-        };
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var array = this.upComingData();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-movie-lists"
@@ -1404,26 +1403,13 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-list-header"
       }, "Up Coming:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, array.map(function (movie) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_movie_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: movie.id,
-          onClick: function onClick(e) {
-            return _this2.toggleHidden();
-          },
-          className: "movie-list-outeritem"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "movie-list-item"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: movie.icon,
-          className: "list-icon"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "list-score"
-        }, movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "list-text"
-        }, movie.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "poster"
-        }, !_this2.state.isHidden && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
-        })));
+          icon: movie.icon,
+          rating: movie.rating,
+          title: movie.title,
+          poster: movie.poster
+        });
       }))));
     }
   }]);

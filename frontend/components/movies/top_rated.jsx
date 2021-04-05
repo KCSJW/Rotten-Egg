@@ -1,11 +1,10 @@
 import React from 'react';
+import MovieItem from "./movie_item";
 
 class TopRatedList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {isHidden: true};
         this.topRatedData = this.topRatedData.bind(this);
-        this.toggleHidden = this.toggleHidden.bind(this);
     }
 
     componentDidMount() {
@@ -42,12 +41,9 @@ class TopRatedList extends React.Component {
         return pair;
     };
 
-    toggleHidden() {
-        this.setState((prevState)=>({isHidden: !prevState.isHidden}))
-    };
-
     render() {
         let array = this.topRatedData();
+
         return (
             <div className="main-page-movie-lists">
                 <div className="main-page-list-container">
@@ -55,19 +51,13 @@ class TopRatedList extends React.Component {
                     <ul>
                         {
                             array.map((movie) => (
-                                <li key={movie.id} onClick={(e) =>this.toggleHidden()} className="movie-list-outeritem">
-
-                                    <div className="movie-list-item">
-                                        <img src={movie.icon} className="list-icon" />
-                                        <div className="list-score">{movie.rating}</div>
-                                        <div className="list-text">{movie.title}</div>
-                                    </div>
-
-                                    <div className="poster">
-                                        {!this.state.isHidden && <img src={`https://image.tmdb.org/t/p/original${movie.poster}`}/>}
-                                    </div>
-
-                                </li>
+                                <MovieItem 
+                                    key={movie.id} 
+                                    icon={movie.icon} 
+                                    rating={movie.rating} 
+                                    title={movie.title} 
+                                    poster={movie.poster}
+                                />
                             ))
                         }
                     </ul>
