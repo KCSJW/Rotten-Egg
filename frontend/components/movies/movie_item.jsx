@@ -16,7 +16,7 @@ function MovieItem({icon, rating, title, poster}) {
             <div className="poster" onClick={(e) => setHidden(true)}>
                 {!hidden && <img src={`https://image.tmdb.org/t/p/original${poster}`} />}
             </div>
-
+            
         </li>
     );
 };
