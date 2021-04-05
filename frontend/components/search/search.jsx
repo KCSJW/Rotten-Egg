@@ -49,7 +49,7 @@ class SearchBar extends React.Component {
 
                 <input
                     type="text"
-                    placeholder="Search for Movies"
+                    placeholder=" Type a letter here..."
                     className="search-bar"
                     onChange={this.handleInput}
                     value={this.state.text} 

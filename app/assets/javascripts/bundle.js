@@ -998,7 +998,11 @@ function (_React$Component) {
     _classCallCheck(this, NowPlayingList);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NowPlayingList).call(this, props));
+    _this.state = {
+      isHidden: true
+    };
     _this.nowPlayingData = _this.nowPlayingData.bind(_assertThisInitialized(_this));
+    _this.toggleHidden = _this.toggleHidden.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1024,7 +1028,7 @@ function (_React$Component) {
           ratingIcon = window.badImage;
         }
 
-        var temp = {
+        temp = {
           icon: ratingIcon,
           rating: movie.vote_average,
           title: movie.title,
@@ -1036,8 +1040,19 @@ function (_React$Component) {
       return pair;
     }
   }, {
+    key: "toggleHidden",
+    value: function toggleHidden() {
+      this.setState(function (prevState) {
+        return {
+          isHidden: !prevState.isHidden
+        };
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var array = this.nowPlayingData();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-movie-lists"
@@ -1048,6 +1063,9 @@ function (_React$Component) {
       }, "Now Playing:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, array.map(function (movie) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: movie.id,
+          onClick: function onClick(e) {
+            return _this2.toggleHidden();
+          },
           className: "movie-list-outeritem"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-list-item"
@@ -1058,9 +1076,11 @@ function (_React$Component) {
           className: "list-score"
         }, movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "list-text"
-        }, movie.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        }, movie.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "poster"
+        }, !_this2.state.isHidden && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
-        }));
+        })));
       }))));
     }
   }]);
@@ -1149,7 +1169,11 @@ function (_React$Component) {
     _classCallCheck(this, TopRatedList);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TopRatedList).call(this, props));
+    _this.state = {
+      isHidden: true
+    };
     _this.topRatedData = _this.topRatedData.bind(_assertThisInitialized(_this));
+    _this.toggleHidden = _this.toggleHidden.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1176,7 +1200,7 @@ function (_React$Component) {
         }
 
         ;
-        var temp = {
+        temp = {
           icon: ratingIcon,
           rating: movie.vote_average,
           title: movie.title,
@@ -1188,8 +1212,19 @@ function (_React$Component) {
       return pair;
     }
   }, {
+    key: "toggleHidden",
+    value: function toggleHidden() {
+      this.setState(function (prevState) {
+        return {
+          isHidden: !prevState.isHidden
+        };
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var array = this.topRatedData();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-movie-lists"
@@ -1200,6 +1235,9 @@ function (_React$Component) {
       }, "Top Rated:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, array.map(function (movie) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: movie.id,
+          onClick: function onClick(e) {
+            return _this2.toggleHidden();
+          },
           className: "movie-list-outeritem"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-list-item"
@@ -1210,9 +1248,11 @@ function (_React$Component) {
           className: "list-score"
         }, movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "list-text"
-        }, movie.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        }, movie.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "poster"
+        }, !_this2.state.isHidden && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
-        }));
+        })));
       }))));
     }
   }]);
@@ -1301,7 +1341,11 @@ function (_React$Component) {
     _classCallCheck(this, UpComingList);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(UpComingList).call(this, props));
+    _this.state = {
+      isHidden: true
+    };
     _this.upComingData = _this.upComingData.bind(_assertThisInitialized(_this));
+    _this.toggleHidden = _this.toggleHidden.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1327,7 +1371,7 @@ function (_React$Component) {
           ratingIcon = window.badImage;
         }
 
-        var temp = {
+        temp = {
           icon: ratingIcon,
           rating: movie.vote_average,
           title: movie.title,
@@ -1339,8 +1383,19 @@ function (_React$Component) {
       return pair;
     }
   }, {
+    key: "toggleHidden",
+    value: function toggleHidden() {
+      this.setState(function (prevState) {
+        return {
+          isHidden: !prevState.isHidden
+        };
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var array = this.upComingData();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-movie-lists"
@@ -1351,6 +1406,9 @@ function (_React$Component) {
       }, "Up Coming:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, array.map(function (movie) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: movie.id,
+          onClick: function onClick(e) {
+            return _this2.toggleHidden();
+          },
           className: "movie-list-outeritem"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-list-item"
@@ -1361,9 +1419,11 @@ function (_React$Component) {
           className: "list-score"
         }, movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "list-text"
-        }, movie.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        }, movie.title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "poster"
+        }, !_this2.state.isHidden && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "https://image.tmdb.org/t/p/original".concat(movie.poster)
-        }));
+        })));
       }))));
     }
   }]);
@@ -1955,7 +2015,7 @@ function (_React$Component) {
         className: "search-bar-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        placeholder: "Search for Movies",
+        placeholder: " Type a letter here...",
         className: "search-bar",
         onChange: this.handleInput,
         value: this.state.text

@@ -3,7 +3,9 @@ import React from 'react';
 class UpComingList extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {isHidden: true};
         this.upComingData = this.upComingData.bind(this);
+        this.toggleHidden = this.toggleHidden.bind(this);
     }
 
     componentDidMount() {
@@ -26,7 +28,7 @@ class UpComingList extends React.Component {
                 ratingIcon = window.badImage;
             }
 
-            let temp = { 
+            temp = { 
                 icon: ratingIcon, 
                 rating: movie.vote_average, 
                 title: movie.title, 
@@ -39,6 +41,9 @@ class UpComingList extends React.Component {
         return pair;
     }
 
+    toggleHidden() {
+        this.setState((prevState)=>({isHidden: !prevState.isHidden}))
+    };
 
     render() {
         let array = this.upComingData()
@@ -49,13 +54,18 @@ class UpComingList extends React.Component {
                     <ul>
                         {
                             array.map((movie) => (
-                                <li key={movie.id} className="movie-list-outeritem">
+                                <li key={movie.id} onClick={(e) =>this.toggleHidden()} className="movie-list-outeritem">
+
                                     <div className="movie-list-item">
                                         <img src={movie.icon} className="list-icon" />
                                         <div className="list-score">{movie.rating}</div>
                                         <div className="list-text">{movie.title}</div>
                                     </div>
-                                    <img src={`https://image.tmdb.org/t/p/original${movie.poster}`}/>
+
+                                    <div className="poster">
+                                        {!this.state.isHidden && <img src={`https://image.tmdb.org/t/p/original${movie.poster}`}/>}
+                                    </div>
+
                                 </li>
                             ))
                         }
