@@ -51,8 +51,7 @@ body {
   display: flex;
   width: 30%;
   align-items: flex-start;
-  flex-direction: column;
-
+  // flex-direction: column;
 }
 
 .combin-lists {
@@ -129,7 +128,7 @@ body {
 //   display: none;
 // }
 
-// #poster.show {
+// .open .poster {
 //   display: block; 
 // }
 

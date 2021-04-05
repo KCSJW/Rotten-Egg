@@ -48,9 +48,7 @@ class TopRatedList extends React.Component {
 
     render() {
         let array = this.topRatedData();
-
         return (
-
             <div className="main-page-movie-lists">
                 <div className="main-page-list-container">
                     <div className="main-page-list-header">Top Rated:</div>
